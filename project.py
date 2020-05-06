@@ -3,6 +3,8 @@ import csv
 from moteur_id3.noeud_de_decision import NoeudDeDecision
 from moteur_id3.id3 import ID3
 
+from bin_test import BinTestEnv
+
 class ResultValues():
 
     def __init__(self):
@@ -10,16 +12,21 @@ class ResultValues():
         # Do computations here
         
         #parsing the data from the csv file
-        train_public_bin_csv = self.parseCSV("test_public_bin.csv")
-        train_public_bin = [ [line["target"], {key:val for key, val in line.items() if key != "target"}] for line in train_public_bin_csv] #I enjoy oneliners a bit too much :)
+        train_bin_csv = self.parseCSV("train_bin.csv")
+        train_bin = [ [line["target"], {key:val for key, val in line.items() if key != "target"}] for line in train_bin_csv] #Gem bcp les oneliners :)
 
         id3 = ID3()
 
         # Task 1
-        self.arbre = id3.construit_arbre(train_public_bin)
+        self.arbre = id3.construit_arbre(train_bin)
 
-        print('Arbre de décision :')
-        print(str(self.arbre)+"\n")
+        #Task 2
+
+        test_public_bin_csv = self.parseCSV("test_public_bin.csv")
+        test_public_bin = [ [line["target"], {key:val for key, val in line.items() if key != "target"}] for line in test_public_bin_csv]
+
+        binTest = BinTestEnv()
+        binTest.test(self.arbre,test_public_bin)
 
         # Task 3
         self.faits_initiaux = None
