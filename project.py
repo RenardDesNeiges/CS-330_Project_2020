@@ -4,6 +4,7 @@ from moteur_id3.noeud_de_decision import NoeudDeDecision
 from moteur_id3.id3 import ID3
 
 from bin_test import BinTestEnv
+from random_forest import RandomForest
 
 class ResultValues():
 
@@ -12,21 +13,29 @@ class ResultValues():
         # Do computations here
         
         #parsing the data from the csv file
+        print("Parsing training data...")
         train_bin_csv = self.parseCSV("train_bin.csv")
         train_bin = [ [line["target"], {key:val for key, val in line.items() if key != "target"}] for line in train_bin_csv] #Gem bcp les oneliners :)
 
         id3 = ID3()
 
         # Task 1
+        print("Generating ID3 tree from " + str(len(train_bin)) + " samples...", end = "")
         self.arbre = id3.construit_arbre(train_bin)
-
+        print(" Done!")
+        
         #Task 2
-
+        print("Parsing testing data...")
         test_public_bin_csv = self.parseCSV("test_public_bin.csv")
         test_public_bin = [ [line["target"], {key:val for key, val in line.items() if key != "target"}] for line in test_public_bin_csv]
 
+        print("Setting up testing environnement...")
         binTest = BinTestEnv()
         binTest.test(self.arbre,test_public_bin)
+
+        print("Testing training with a random forest :")
+        rForest = RandomForest()
+        rForest.generate(train_bin,test_public_bin,2,10000)
 
         # Task 3
         self.faits_initiaux = None
