@@ -1,6 +1,5 @@
 from math import log
 from .noeud_de_decision import NoeudDeDecision
-fd
 class ID3:
     """ Algorithme ID3. 
 
