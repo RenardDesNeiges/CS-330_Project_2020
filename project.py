@@ -42,7 +42,7 @@ class ResultValues():
 
         print("Setting up testing environnement...")
         binTest = BinTestEnv()
-        binTest.test(self.arbre,test_public_bin)
+        binTest.test(self.arbre.racine,test_public_bin)
 
         # print("Testing training with a random forest :")
         # rForest = RandomForest()
@@ -58,7 +58,7 @@ class ResultValues():
         rGen.convert(self.arbre)
 
         # Task 5
-        self.arbre_advance = None"""
+        self.arbre_advance = None
 
     def get_results(self):
         return [self.arbre, self.faits_initiaux, self.regles, self.arbre_advance]
