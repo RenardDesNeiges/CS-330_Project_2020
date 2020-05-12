@@ -9,8 +9,7 @@ Done, pas sur que les résultats soient bons ceci-dit...
 Done
 ## Task 3 :
 Somewhat done
-- Todo : Implémenter la déduction à partir des règles générées
-
+- Todo: decide whether we want the rule based inference to default to anything
 ## Task 4 :
 not done
 
