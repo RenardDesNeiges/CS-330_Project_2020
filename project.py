@@ -46,7 +46,7 @@ class ResultValues():
 
         rGen = RuleGen()
 
-        rGen.convert(rf_tree)
+        rGen.convert(self.arbre.racine)
         binTest.rule_test(rGen, test_public_bin)
 
         # Task 5
