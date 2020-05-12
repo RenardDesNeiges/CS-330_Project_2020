@@ -9,8 +9,7 @@ Done, pas sur que les résultats soient bons ceci-dit...
 Done
 ## Task 3 :
 Somewhat done
-- Todo : Implémenter la déduction à partir des règles générées
-
+- Todo: there is a bug in the rule based inference, somethimes the accuracy is lower than in the tree inference...
 ## Task 4 :
 not done
 

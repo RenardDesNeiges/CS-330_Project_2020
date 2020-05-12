@@ -31,16 +31,18 @@ class BinTestEnv:
         correct_guesses = 0
         i = 0
         for case in test_data:
-            if(i == 0):
-                rules.classifie(case[1])
-            i += 1
-            #if rules.classifie(case[1])[-1] == case[0]:
-                #correct_guesses = correct_guesses + 1
+            a = ''
+            try:
+                a = rules.classifie(case[1])[-1]
+            except:
+                pass
+            if a == case[0]:
+                correct_guesses += 1
 
-        #accuracy = correct_guesses/len(test_data)
+        accuracy = correct_guesses/len(test_data)
 
-        # if verbose:
-        #     print("Ran " + str(len(test_data)) +
-        #           " tests, accuracy of ID3 through rules is : " + str(accuracy*100.0) + "%")
+        if verbose:
+            print("Ran " + str(len(test_data)) +
+                  " tests, accuracy of ID3 through rules is : " + str(accuracy*100.0) + "%")
 
-        #return accuracy
+        return accuracy

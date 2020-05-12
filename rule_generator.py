@@ -36,8 +36,6 @@ class RuleGen():
 
     def depth_first_search(self, node,rule):
         """ Parcourt l'arbre pour générer les règles """
-        #print(rule)
-        #print(self.rules)
         
         if node.terminal():
             rule_copy = deepcopy(rule)
@@ -51,16 +49,8 @@ class RuleGen():
                                             '?x',
                                             str(key),))
                 self.depth_first_search(node.enfants[key], rule_copy)
-    
-    def display_rules(self):
-        print("Rules deduced :")
-        for rule in self.rules:
-            print("    If : ",end= "")
-            for fact in rule[0]:
-                print(fact,end=" & ")
-            print("\n    Then => " + str(rule[1]))
 
-    def classifie(self, case):
+    def classifie(self, case, verbose = False):
         """ Classifie un cas en fonction des règles données au départ """
         #print("Classifying : ")
         facts = self.convert_case_to_facts(case, 'x')
@@ -72,11 +62,13 @@ class RuleGen():
         bc.ajoute_faits(facts)
         bc.ajoute_regles(self.rules)
 
-        
-        moteur = ChainageAvantAvecVariables(connaissances=bc, methode=Unificateur())
-        moteur.chaine()
+        moteur = ChainageAvantAvecVariables(connaissances=bc, methode=Filtre())
+        faits = moteur.chaine()
 
-        moteur.affiche_trace()
+        if(verbose): moteur.affiche_trace()
+
+
+        return list(filter(lambda x: x[0] == 'target', faits))[0][2]
 
     def convert_case_to_facts(self, case,name):
         """ Convertit un cas en faits utilisables par le moteur d'inférence """
