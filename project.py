@@ -26,15 +26,18 @@ class ResultValues():
         print("Generating ID3 tree from " + str(len(train_bin)) + " samples...", end = "")
         self.arbre = Arbre(id3.construit_arbre(train_bin))
         nb_noeuds = len(self.arbre.noeuds)
+        nb_feuilles = len(self.arbre.noeuds_terminaux_profondeur)
         profondeur = self.arbre.profondeur()
         moyenne_longueur_branche = sum([self.arbre.longueur_branche(feuille_longueur[0]) for feuille_longueur in self.arbre.noeuds_terminaux_profondeur])/len(self.arbre.noeuds_terminaux_profondeur)
         moyenne_enfants_noeud = sum([len(noeud.enfants) for noeud in self.arbre.noeuds if noeud.enfants != None])/len([noeud for noeud in self.arbre.noeuds if not noeud.terminal()])
         print(" Done!")
-        print("L'arbre a un {} noeuds".format(nb_noeuds))
+
+        print("L'arbre a un {} noeuds dont {} feuilles".format(nb_noeuds,nb_feuilles))
         print("L'arbre a une profondeur de " + str(profondeur))
         print("La moyenne du nombre d'enfants par noeud est " +str(moyenne_enfants_noeud))
         print("La moyenne de la longueur d'une branche est " +str(moyenne_longueur_branche)) 
         
+
         #Task 2
         print("Parsing testing data...")
         test_public_bin_csv = self.parseCSV("test_public_bin.csv")
@@ -42,11 +45,12 @@ class ResultValues():
 
         print("Setting up testing environnement...")
         binTest = BinTestEnv()
-        binTest.test(self.arbre.racine,test_public_bin)
+
+        binTest.tree_test(self.arbre.racine,test_public_bin)
 
         # print("Testing training with a random forest :")
-        # rForest = RandomForest()
-        # rf_tree = rForest.generate(train_bin,test_public_bin,4,1000)
+        rForest = RandomForest()
+        rf_tree = rForest.generate(train_bin,test_public_bin,4,100)
         # print()
 
         # Task 3
@@ -55,7 +59,11 @@ class ResultValues():
 
         rGen = RuleGen()
 
-        rGen.convert(self.arbre)
+        rGen.convert(rf_tree)
+        binTest.rule_test(rGen, test_public_bin)
+        
+        #Task 4
+        
 
         # Task 5
         self.arbre_advance = None

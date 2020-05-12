@@ -2,13 +2,14 @@
 
 ## Task 1 :
 Done, pas sur que les résultats soient bons ceci-dit... 
-Also ceci-dit j'utilise l'algo de la correction donc ... ¯\\_(ツ)_/¯
+- Todo : Implémenter un algo + malin que random forests
+- Implémenter des outils de caractérisation des arbres
 
 ## Task 2 :
-Done something, pas sur que ça soit bon...
-
+Done
 ## Task 3 :
-not done
+Somewhat done
+- Todo : Implémenter la déduction à partir des règles générées
 
 ## Task 4 :
 not done
