@@ -13,19 +13,24 @@ class RuleGen():
         print("Running depth first search on tree : ")
         rule = [[],None]
         self.depth_first_search(node,rule)
-        print(self.rules)
+        print(self.rules[0])
 
     def depth_first_search(self, node,rule):
-        rule_copy = rule.copy()
+        
         if node.terminal():
+            rule_copy = rule.copy()
             rule_copy[1] = (node.classe(),'?x')
             self.rules.append(rule_copy)
             #print("Terminal node : " + str(node.classe()))
         else:
-            rule_copy[0].append(
-                (str(node.attribut), 
-                '?x', 
-                 str(node.donnees[node.attribut])))
+            # rule_copy[0].append(
+            #     (str(node.attribut), 
+            #     '?x', 
+            #      node.donee,))
 
             for key in node.enfants:
+                rule_copy = rule.copy()
+                rule_copy[0].append((str(node.attribut),
+                                            '?x',
+                                            key,))
                 self.depth_first_search(node.enfants[key], rule_copy)
