@@ -25,8 +25,17 @@ class ResultValues():
         # Task 1
         print("Generating ID3 tree from " + str(len(train_bin)) + " samples...", end = "")
         self.arbre = Arbre(id3.construit_arbre(train_bin))
+        nb_noeuds = len(self.arbre.noeuds)
+        profondeur = self.arbre.profondeur()
+        moyenne_longueur_branche = sum([self.arbre.longueur_branche(feuille_longueur[0]) for feuille_longueur in self.arbre.noeuds_terminaux_profondeur])/len(self.arbre.noeuds_terminaux_profondeur)
+        moyenne_enfants_noeud = sum([len(noeud.enfants) for noeud in self.arbre.noeuds if noeud.enfants != None])/len([noeud for noeud in self.arbre.noeuds if not noeud.terminal()])
         print(" Done!")
-        """#Task 2
+        print("L'arbre a un {} noeuds".format(nb_noeuds))
+        print("L'arbre a une profondeur de " + str(profondeur))
+        print("La moyenne du nombre d'enfants par noeud est " +str(moyenne_enfants_noeud))
+        print("La moyenne de la longueur d'une branche est " +str(moyenne_longueur_branche)) 
+        
+        #Task 2
         print("Parsing testing data...")
         test_public_bin_csv = self.parseCSV("test_public_bin.csv")
         test_public_bin = [ [line["target"], {key:val for key, val in line.items() if key != "target"}] for line in test_public_bin_csv]
