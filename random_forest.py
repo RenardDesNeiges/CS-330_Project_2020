@@ -7,7 +7,8 @@ from bin_test import BinTestEnv
 from operator import itemgetter 
 
 class RandomForest:
-    """ Implémentation claquée par terre de random forests, claquée par terre mais meilleure que juste run ID3 sur tout le set de données (ça résout un peu le problème d'oversampling) """
+    """ Implémentation claquée par terre de random forests, claquée par terre mais meilleure 
+    que juste run ID3 sur tout le set de données (ça résout un peu le problème d'oversampling) """
     
     def generate(self,train_data,test_data,subsampling,subsamples):
         """ Takes an ID3 generated tree and compares it's predictions to testing data
@@ -50,7 +51,7 @@ class RandomForest:
         train_set = []
 
         if train_size > len(train_data):
-            print("ERROR: trainig data smaller than subsampling size")
+            print("ERROR: training data smaller than subsampling size")
             return None
         
         for j in range(subsamples):
