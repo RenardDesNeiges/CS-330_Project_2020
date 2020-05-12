@@ -3,6 +3,7 @@ import sys
 
 from moteur_id3.noeud_de_decision import NoeudDeDecision
 from moteur_id3.id3 import ID3
+from moteur_id3.arbre import Arbre
 
 from bin_test import BinTestEnv
 from random_forest import RandomForest
@@ -23,7 +24,7 @@ class ResultValues():
 
         # Task 1
         print("Generating ID3 tree from " + str(len(train_bin)) + " samples...", end = "")
-        self.arbre = id3.construit_arbre(train_bin)
+        self.arbre = Arbre(id3.construit_arbre(train_bin))
         print(" Done!")
         
         #Task 2
