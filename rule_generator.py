@@ -4,15 +4,24 @@ from moteur_id3.id3 import ID3
 from moteur_avec_variables.regle_avec_variables import RegleAvecVariables
 
 class RuleGen():
-    """ Converti un graphe de la classe NoeudDeDecision en une liste de règles compatible avec le moteur avec variables de la série 3 """
-    
+    """ Converti un graphe de la classe NoeudDeDecision en une liste de 
+        règles compatible avec le moteur avec variables de la série 3 """
+    def __init__(self):
+        self.rules = []
+
     def convert(self, node):
         print("Running depth first search on tree : ")
-        self.depth_first_search(node)
+        rule = [[],None]
+        self.depth_first_search(node,rule)
+        print(self.rules)
 
-    def depth_first_search(self, node):
+    def depth_first_search(self, node,rule):
+        rule_copy = rule.copy()
         if node.terminal():
-            print("Terminal node : " + str(node.classe()))
+            rule_copy[1] = (node.classe(),)
+            self.rules.append(rule_copy)
+            #print("Terminal node : " + str(node.classe()))
         else:
+            rule_copy[0].append()
             for key in node.enfants:
-                self.depth_first_search(node.enfants[key])
+                self.depth_first_search(node.enfants[key], rule_copy)

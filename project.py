@@ -1,4 +1,5 @@
 import csv
+import sys
 
 from moteur_id3.noeud_de_decision import NoeudDeDecision
 from moteur_id3.id3 import ID3
@@ -60,8 +61,11 @@ class ResultValues():
             :param address: address of the csv file
             :return: a list of dictionnaries
         """
-        with open(address, newline='') as csvfile:
+
+        with open(address, newline='', encoding="utf-8-sig") as csvfile:
+
             reader = csv.reader(csvfile, delimiter=' ', quotechar='|')
+
             first = True
             index = []
             data = []
