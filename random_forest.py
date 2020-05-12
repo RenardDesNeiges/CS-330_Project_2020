@@ -32,7 +32,7 @@ class RandomForest:
         tree_acc_set = [];
         for tree in tree_set: 
             try: #certains arbres générés sont incapables de traiter certaines données (le subset de données d'entrainement ne contenant pas forcément tous les cas de figures pour chaques attribut) c'est méga deg mais je fait juste un try catch pour ignorer ces cas làs...
-                accuracy = binTest.test(tree,test_data,False)
+                accuracy = binTest.tree_test(tree, test_data, False)
             except:
                 pass
             else:
