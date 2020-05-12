@@ -40,7 +40,6 @@ class RuleGen():
         """ Classifie un cas en fonction des règles données au départ """
         #print("Classifying : ")
         facts = self.convert_case_to_facts(case, 'x')
-        
 
 
 
