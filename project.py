@@ -5,6 +5,7 @@ from moteur_id3.id3 import ID3
 
 from bin_test import BinTestEnv
 from random_forest import RandomForest
+from rule_generator import RuleGen
 
 class ResultValues():
 
@@ -33,13 +34,19 @@ class ResultValues():
         binTest = BinTestEnv()
         binTest.test(self.arbre,test_public_bin)
 
-        print("Testing training with a random forest :")
-        rForest = RandomForest()
-        rForest.generate(train_bin,test_public_bin,2,10000)
+        # print("Testing training with a random forest :")
+        # rForest = RandomForest()
+        # rf_tree = rForest.generate(train_bin,test_public_bin,4,1000)
+        # print()
 
         # Task 3
         self.faits_initiaux = None
         self.regles = None
+
+        rGen = RuleGen()
+
+        rGen.convert(self.arbre)
+
         # Task 5
         self.arbre_advance = None
 
