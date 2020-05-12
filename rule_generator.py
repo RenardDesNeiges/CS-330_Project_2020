@@ -18,10 +18,14 @@ class RuleGen():
     def depth_first_search(self, node,rule):
         rule_copy = rule.copy()
         if node.terminal():
-            rule_copy[1] = (node.classe(),)
+            rule_copy[1] = (node.classe(),'?x')
             self.rules.append(rule_copy)
             #print("Terminal node : " + str(node.classe()))
         else:
-            rule_copy[0].append()
+            rule_copy[0].append(
+                (str(node.attribut), 
+                '?x', 
+                 str(node.donnees[node.attribut])))
+
             for key in node.enfants:
                 self.depth_first_search(node.enfants[key], rule_copy)
