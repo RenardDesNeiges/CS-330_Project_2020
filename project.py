@@ -19,7 +19,7 @@ class ResultValues():
         print("Parsing training data...")
         train_bin_csv = self.parseCSV("train_bin.csv")
         train_bin = [ [line["target"], {key:val for key, val in line.items() if key != "target"}] for line in train_bin_csv] #Gem bcp les oneliners :)
-
+        
         id3 = ID3()
 
         # Task 1
@@ -46,8 +46,10 @@ class ResultValues():
 
         rGen = RuleGen()
 
-        rGen.convert(rf_tree)
+        rGen.convert(self.arbre.racine)
         binTest.rule_test(rGen, test_public_bin)
+
+        rGen.diagnostic()
 
         # Task 5
         self.arbre_advance = None

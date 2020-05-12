@@ -36,6 +36,7 @@ class BinTestEnv:
                 a = rules.classifie(case[1])[-1]
             except:
                 pass
+                #print(rules.classifie(case[1],True))
             if a == case[0]:
                 correct_guesses += 1
 
@@ -44,5 +45,6 @@ class BinTestEnv:
         if verbose:
             print("Ran " + str(len(test_data)) +
                   " tests, accuracy of ID3 through rules is : " + str(accuracy*100.0) + "%")
+            print("The accuracy of the rule deduction may be slightly lower than of the  tree dedudction since if it cannot find an explaination it does not default to the most likely value")
 
         return accuracy

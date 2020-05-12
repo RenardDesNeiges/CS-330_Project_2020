@@ -9,7 +9,7 @@ Done, pas sur que les résultats soient bons ceci-dit...
 Done
 ## Task 3 :
 Somewhat done
-- Todo: there is a bug in the rule based inference, somethimes the accuracy is lower than in the tree inference...
+- Todo: decide whether we want the rule based inference to default to anything
 ## Task 4 :
 not done
 
