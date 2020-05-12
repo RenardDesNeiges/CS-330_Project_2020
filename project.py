@@ -26,8 +26,7 @@ class ResultValues():
         print("Generating ID3 tree from " + str(len(train_bin)) + " samples...", end = "")
         self.arbre = Arbre(id3.construit_arbre(train_bin))
         print(" Done!")
-        
-        #Task 2
+        """#Task 2
         print("Parsing testing data...")
         test_public_bin_csv = self.parseCSV("test_public_bin.csv")
         test_public_bin = [ [line["target"], {key:val for key, val in line.items() if key != "target"}] for line in test_public_bin_csv]
@@ -50,7 +49,7 @@ class ResultValues():
         rGen.convert(self.arbre)
 
         # Task 5
-        self.arbre_advance = None
+        self.arbre_advance = None"""
 
     def get_results(self):
         return [self.arbre, self.faits_initiaux, self.regles, self.arbre_advance]
