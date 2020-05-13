@@ -12,11 +12,11 @@ from rule_generator import RuleGen
 class ResultValues():
 
     def __init__(self):
-        
+        """
         # Do computations here
         
         #parsing the data from the csv file
-        print("Parsing training data...")
+        print("Parsing pre-binned training data...")
         train_bin_csv = self.parseCSV("train_bin.csv")
         train_bin = [ [line["target"], {key:val for key, val in line.items() if key != "target"}] for line in train_bin_csv] #Gem bcp les oneliners :)
         
@@ -27,7 +27,7 @@ class ResultValues():
         self.arbre = Arbre(id3.construit_arbre(train_bin))
         print(" Done!")
         #Task 2
-        print("Parsing testing data...")
+        print("Parsing pre-binned testing data...")
         test_public_bin_csv = self.parseCSV("test_public_bin.csv")
         test_public_bin = [ [line["target"], {key:val for key, val in line.items() if key != "target"}] for line in test_public_bin_csv]
 
@@ -49,9 +49,15 @@ class ResultValues():
         rGen.convert(self.arbre.racine)
         binTest.rule_test(rGen, test_public_bin)
 
-        rGen.diagnostic()
-
+        #rGen.diagnostic()
+        """
         # Task 5
+
+        print("Parsing continuous training data...")    
+        train_continuous_csv = self.parseCSV("train_bin.csv")
+        train_continuous = [ [line["target"], {key:val for key, val in line.items() if key != "target"}] for line in train_continuous_csv] #Gem bcp les oneliners :)
+        
+
         self.arbre_advance = None
 
     def get_results(self):
