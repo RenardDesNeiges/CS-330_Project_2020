@@ -11,7 +11,7 @@ Done
 Somewhat done
 - Todo: decide whether we want the rule based inference to default to anything
 ## Task 4 :
-not done
+Somewhat done. Les outils sont là
 
 ## Task 5 :
 not done
