@@ -1,6 +1,6 @@
 from math import log
-from .noeud_de_decision import NoeudDeDecision
-class ID3:
+from .noeud_de_decision_continu import NoeudDeDecision_continu
+class ID3_continu:
     """ Algorithme ID3. 
 
         This is an updated version from the one in the book (Intelligence Artificielle par la pratique).
@@ -13,7 +13,7 @@ class ID3:
 
             :param list donnees: les données d'apprentissage\
             ``[classe, {attribut -> valeur}, ...]``.
-            :return: une instance de NoeudDeDecision correspondant à la racine de\
+            :return: une instance de NoeudDeDecision_continu correspondant à la racine de\
             l'arbre de décision.
         """
         
@@ -42,7 +42,7 @@ class ID3:
             
         arbre = self.construit_arbre_recur(donnees, attributs, predominant_class)
 
-        return arbre
+        #return arbre
 
     def construit_arbre_recur(self, donnees, attributs, predominant_class):
         """ Construit rédurcivement un arbre de décision à partir 
@@ -53,7 +53,7 @@ class ID3:
             ``[classe, {attribut -> valeur}, ...]``.
             :param attributs: un dictionnaire qui associe chaque\
             attribut A à son domaine de valeurs a_j.
-            :return: une instance de NoeudDeDecision correspondant à la racine de\
+            :return: une instance de NoeudDeDecision_continu correspondant à la racine de\
             l'arbre de décision.
         """
         
@@ -68,21 +68,46 @@ class ID3:
                     return False 
             return True
 
+        def valeurs_possibles(attribut):
+            
+            values = list(map(lambda x : x[1][attribut], donnees))
+            return sorted(list(dict.fromkeys(values)))
+
+        def bissect(attribut):
+            print("attribut with min entropy : " + str(attribut))
+            #print("possible values of " + str(attribut) + " : ", end=" ")
+            #print(valeurs_possibles(attribut))
+            max_v = float(valeurs_possibles(attribut)[0])
+            min_v = float(valeurs_possibles(attribut)[-1])
+            avg_v = (max_v+min_v)/2
+            print("possible values range : [" + str(max_v) + ";" + str(min_v) + "], avg = " + str(avg_v))
+            
+
+
         if donnees == []:
-            return NoeudDeDecision(None, [str(predominant_class), dict()], str(predominant_class))
+            return NoeudDeDecision_continu(None, [str(predominant_class), dict()], str(predominant_class))
 
         # Si toutes les données restantes font partie de la même classe,
         # on peut retourner un noeud terminal.         
         elif classe_unique(donnees):
-            return NoeudDeDecision(None, donnees, str(predominant_class))
+            return NoeudDeDecision_continu(None, donnees, str(predominant_class))
             
         else:
             # Sélectionne l'attribut qui réduit au maximum l'entropie.
-            h_C_As_attribs = [(self.h_C_A(donnees, attribut, attributs[attribut]), 
+            h_C_As_attribs = [(self.h_C_A(donnees, attribut, attributs[attribut]),len(valeurs_possibles(attribut)), 
                                attribut) for attribut in attributs]
+            
 
-            attribut = min(h_C_As_attribs, key=lambda h_a: h_a[0])[1]
+            print(h_C_As_attribs)
+            print(valeurs_possibles('age'))
 
+            
+            attribut = min(h_C_As_attribs, key=lambda h_a: h_a[0])[2]
+
+            bissect(attribut)
+            
+
+            """
             # Crée les sous-arbres de manière récursive.
             attributs_restants = attributs.copy()
             del attributs_restants[attribut]
@@ -95,7 +120,8 @@ class ID3:
                                                              attributs_restants,
                                                              predominant_class)
 
-            return NoeudDeDecision(attribut, donnees, str(predominant_class), enfants)
+            return NoeudDeDecision_continu(attribut, donnees, str(predominant_class), enfants)
+            """
 
     def partitionne(self, donnees, attribut, valeurs):
         """ Partitionne les données sur les valeurs a_j de l'attribut A.
