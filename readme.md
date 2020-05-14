@@ -15,4 +15,5 @@ Implémentation réussie dans projet.py. Cela dit les performances sont étonnem
 Aussi il faut voir comment faire l'affichage encore
 
 ## Task 5 :
-not done
+Peut-être Done
+- Valeurs un peu trop bonnes
