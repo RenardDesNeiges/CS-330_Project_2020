@@ -21,7 +21,7 @@ class ResultValues():
     def __init__(self):
         
         # Do computations here
-        
+        """
         #parsing the data from the csv file
         print("Parsing pre-binned training data...")
         train_bin_csv = self.parseCSV("train_bin.csv")
@@ -111,7 +111,7 @@ class ResultValues():
         
 
         #rGen.diagnostic()
-
+        """
         
         # Task 5
 
