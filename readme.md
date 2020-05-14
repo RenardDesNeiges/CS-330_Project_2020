@@ -11,7 +11,8 @@ Done
 Somewhat done
 - Todo: decide whether we want the rule based inference to default to anything
 ## Task 4 :
-Somewhat done. Les outils sont là
+Implémentation réussie dans projet.py. Cela dit les performances sont étonnemments bonnes.
+Aussi il faut voir comment faire l'affichage encore
 
 ## Task 5 :
 not done

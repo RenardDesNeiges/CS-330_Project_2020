@@ -14,21 +14,22 @@ from continuous_test import ContinuousTestEnv
 from random_forest import RandomForest
 from rule_generator import RuleGen
 
+from moteur_diagnostic.diagnostique import Diagnostique
+
 class ResultValues():
 
     def __init__(self):
-        """
+        
         # Do computations here
         
         #parsing the data from the csv file
         print("Parsing pre-binned training data...")
         train_bin_csv = self.parseCSV("train_bin.csv")
         train_bin = [ [line["target"], {key:val for key, val in line.items() if key != "target"}] for line in train_bin_csv] #Gem bcp les oneliners :)
-        
-        id3 = ID3()
 
         # Task 1
         print("Generating ID3 tree from " + str(len(train_bin)) + " samples...", end = "")
+        id3 = ID3()
         self.arbre = Arbre(id3.construit_arbre(train_bin))
         nb_noeuds = len(self.arbre.noeuds)
         nb_feuilles = len(self.arbre.noeuds_terminaux_profondeur)
@@ -51,7 +52,7 @@ class ResultValues():
         print("Setting up testing environnement...")
         binTest = BinTestEnv()
 
-        binTest.tree_test(self.arbre.racine,test_public_bin)
+        binTest.tree_test(self.arbre.racine,train_bin)
 
         # print("Testing training with a random forest :")
         rForest = RandomForest()
@@ -68,13 +69,50 @@ class ResultValues():
 
         rGen.convert(self.arbre.racine)
         binTest.rule_test(rGen, test_public_bin,True)
-        
         #Task 4
+        attributs_et_valeurs = {}
+        first = True
+        for donnee in train_bin:
+            if first:
+                for attribut in donnee[1]:
+                    attributs_et_valeurs[attribut] = set(donnee[1][attribut])
+                first = False
+            else:
+                for attribut in donnee[1]:
+                    attributs_et_valeurs[attribut].update(set(donnee[1][attribut]))
+            #print(attributs_et_valeurs)
+        docteur = Diagnostique(rGen,attributs_et_valeurs)
+        id_patient = 1
+        for patient in test_public_bin:
+            (target,changements,trace) = docteur.diagnostique_patient(patient,2)
+            #print(target,changements,trace)
+            if target == '1':
+                print("Nous n'avons pas trouvé de traitements pour le patient {}".format(str(id_patient)))
+            elif len(changements) == 0:
+                print("Le.la patient.e {} est sain.e. Nous ne proposons pas de traitements".format(str(id_patient)))
+            else:
+                print("On a décélé un risque de maladie cardiaque chez {}".format(str(id_patient)))
+                print("La règle suivante est responsable de cette catégoriation")
+                print(trace)
+                
+                traitement = "Nous recommandons les changements suivants:\n"
+                for attribut in changements:
+                    
+                    if patient[1][attribut] == changements[attribut]:
+                        print('lol')
+                        continue
+                    
+                    traitement += attribut + ": " + str(patient[1][attribut]) + " ---> " + str(changements[attribut]) + "\n"
+                
+                print(traitement)
+                
+            id_patient += 1    
+            
         
 
         #rGen.diagnostic()
 
-        """
+        
         # Task 5
 
         print("Parsing continuous training data...")    

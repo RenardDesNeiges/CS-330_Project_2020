@@ -67,9 +67,14 @@ class RuleGen():
         faits = moteur.chaine()
 
         if(verbose): moteur.affiche_trace()
+        
+        res = list(filter(lambda x: x[0] == 'target', faits))
+        
+        if len(res) == 0:
+            return ('1',moteur.trace)
 
 
-        return list(filter(lambda x: x[0] == 'target', faits))[0][2]
+        return (res[0][2],moteur.trace)
 
     def convert_case_to_facts(self, case,name):
         """ Convertit un cas en faits utilisables par le moteur d'inférence """
