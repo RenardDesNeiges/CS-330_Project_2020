@@ -12,8 +12,7 @@ class Arbre:
     
         self.racine = racine
         self.noeuds = []
-        self.noeuds_terminaux_profondeur = []
-        
+        self.noeuds_terminaux_profondeur = []        
         self.explore_dfs(racine,0)
     
     def explore_dfs(self,noeud,profondeur_actuelle):
@@ -30,19 +29,19 @@ class Arbre:
             for key in noeud.enfants:
                 self.explore_dfs(noeud.enfants[key],profondeur_actuelle+1)  
    
-    def taille(self):
+    def profondeur(self):
         
         if self.racine.terminal():
             return 1
             
-        return max([Arbre(self.racine.enfants[key]).taille() for key in self.racine.enfants])+1
+        return max([Arbre(self.racine.enfants[key]).profondeur() for key in self.racine.enfants])+1
     
     def hauteur_noeud(self,noeud):
         
         if noeud not in self.noeuds:
             raise ValueError('Le noeud passé en paramètre n appartient pas à l arbre donné')
         
-        return Arbre(noeud).taille()
+        return Arbre(noeud).profondeur()
     
     def longueur_branche(self,feuille):
         
@@ -51,3 +50,4 @@ class Arbre:
                 return profondeur
    
         raise ValueError('Le noeud passé en paramètre n est pas une feuille de l arbre')
+   

@@ -60,7 +60,7 @@ class RuleGen():
             lambda descr: RegleAvecVariables(descr[0], descr[1]))
 
 
-        bc.ajoute_faits(facts)
+        bc.ajoute_faits(facts)#Don't care about your feelings ^^
         bc.ajoute_regles(self.rules)
 
         moteur = ChainageAvantAvecVariables(connaissances=bc, methode=Filtre())

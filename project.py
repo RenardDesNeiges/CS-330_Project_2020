@@ -16,7 +16,7 @@ from rule_generator import RuleGen
 class ResultValues():
 
     def __init__(self):
-        """
+        
         # Do computations here
         
         #parsing the data from the csv file
@@ -29,7 +29,19 @@ class ResultValues():
         # Task 1
         print("Generating ID3 tree from " + str(len(train_bin)) + " samples...", end = "")
         self.arbre = Arbre(id3.construit_arbre(train_bin))
+        nb_noeuds = len(self.arbre.noeuds)
+        nb_feuilles = len(self.arbre.noeuds_terminaux_profondeur)
+        profondeur = self.arbre.profondeur()
+        moyenne_longueur_branche = sum([self.arbre.longueur_branche(feuille_longueur[0]) for feuille_longueur in self.arbre.noeuds_terminaux_profondeur])/len(self.arbre.noeuds_terminaux_profondeur)
+        moyenne_enfants_noeud = sum([len(noeud.enfants) for noeud in self.arbre.noeuds if noeud.enfants != None])/len([noeud for noeud in self.arbre.noeuds if not noeud.terminal()])
         print(" Done!")
+
+        print("L'arbre a un {} noeuds dont {} feuilles".format(nb_noeuds,nb_feuilles))
+        print("L'arbre a une profondeur de " + str(profondeur))
+        print("La moyenne du nombre d'enfants par noeud est " +str(moyenne_enfants_noeud))
+        print("La moyenne de la longueur d'une branche est " +str(moyenne_longueur_branche)) 
+        
+
         #Task 2
         print("Parsing pre-binned testing data...")
         test_public_bin_csv = self.parseCSV("test_public_bin.csv")
@@ -37,6 +49,7 @@ class ResultValues():
 
         print("Setting up testing environnement...")
         binTest = BinTestEnv()
+
         binTest.tree_test(self.arbre.racine,test_public_bin)
 
         # print("Testing training with a random forest :")
@@ -54,9 +67,13 @@ class ResultValues():
 
         rGen.convert(self.arbre.racine)
         binTest.rule_test(rGen, test_public_bin,True)
+        
+        #Task 4
+        
 
         #rGen.diagnostic()
-        """
+
+        
         # Task 5
 
         print("Parsing continuous training data...")    
