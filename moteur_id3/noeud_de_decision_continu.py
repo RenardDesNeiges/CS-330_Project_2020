@@ -43,18 +43,22 @@ class NoeudDeDecision_continu:
             :param donnee: la donnée à classifier.
             :return: la classe de la donnée selon le noeud de décision courant.
         """
-
+        
         rep = ''
         if self.terminal():
             rep += 'Alors {}'.format(self.classe().upper())
         else:
             valeur = donnee[self.attribut]
-            enfant = self.enfants[valeur]
             rep += 'Si {} = {}, '.format(self.attribut, valeur.upper())
-            try:
-                rep += enfant.classifie(donnee)
-            except:
-                rep += self.p_class
+        
+            if len(self.enfants) == 2:
+                if float(valeur) <= self.seuil:
+                    rep += self.enfants['low'].classifie(donnee)
+                else:
+                    rep += self.enfants['high'].classifie(donnee)
+            else:
+                rep += self.enfants['unique'].classifie(donnee)
+                
         return rep
 
     def repr_arbre(self, level=0):

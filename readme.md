@@ -3,7 +3,7 @@
 ## Task 1 :
 Done, pas sur que les résultats soient bons ceci-dit... 
 - Todo : Implémenter un algo + malin que random forests
-- Implémenter des outils de caractérisation des arbres
+- Implémenter des outils de caractérisation des arbres : DONE
 
 ## Task 2 :
 Done

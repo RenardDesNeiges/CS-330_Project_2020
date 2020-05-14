@@ -1,7 +1,12 @@
 from math import log
 from .noeud_de_decision_continu import NoeudDeDecision_continu
+from statistics import mean
 
 import matplotlib.pyplot as plt
+
+def round_int(input):
+    if input < 0.5: return 0
+    else: return 1
 
 class ID3_continu:
     """ Algorithme ID3. 
@@ -45,7 +50,7 @@ class ID3_continu:
             
         arbre = self.construit_arbre_recur(donnees, attributs, predominant_class)
 
-        #return arbre
+        return arbre
 
     def construit_arbre_recur(self, donnees, attributs, predominant_class):
         """ Construit rédurcivement un arbre de décision à partir 
@@ -73,61 +78,36 @@ class ID3_continu:
 
         def valeurs_possibles(donnees_input, attribut):
             
-            values = list(map(lambda x : x[1][attribut], donnees_input))
+            values = list(map(lambda x : float(x[1][attribut]), donnees_input))
             return sorted(list(dict.fromkeys(values)))
 
         def partition(attribut):
             
-            last_val = 0
-            cuts = []
-            margin = 0.2
-            thresh = 0
-            if len(valeurs_possibles(donnees,attribut)) <= 2 : 
-                thresh = ((float(valeurs_possibles(donnees, attribut)[1]) - float(valeurs_possibles(donnees, attribut)[0]))/2
-                         + float(valeurs_possibles(donnees,attribut)[0]))
-            else:
-                for i in range(len(valeurs_possibles(donnees,attribut))):
-                    if ( i > len(valeurs_possibles(donnees, attribut))*margin 
-                    and i < len(valeurs_possibles(donnees, attribut))*(1-margin)):
-                        cut = (float(valeurs_possibles(donnees,attribut)[i])-float(last_val))/2 + float(last_val)
-                        cuts.append(cut)
-                    last_val = valeurs_possibles(donnees, attribut)[i]
-                        
+            def score(cut):
+                def pre_class(dataset):
+                    return round_int(mean(list(map(lambda x: float(x[0]), dataset))))
 
-                max_v = float(valeurs_possibles(donnees,attribut)[0])
-                min_v = float(valeurs_possibles(donnees,attribut)[-1])
-                avg_v = (max_v+min_v)/2
-                
-                totalHs = []
+                lV = list(filter(lambda x: float(x[1][attribut]) <= cut, donnees))
+                hV = list(filter(lambda x: float(x[1][attribut]) > cut, donnees))
+                lS = len(list(filter(lambda x: int(x[0]) == int(pre_class(lV)), lV)))
+                hS = len(list(filter(lambda x: int(x[0]) == int(pre_class(hV)), hV)))
 
-                cuts.pop(0)
-                cuts.pop(-1)
+                return lS + hS
 
-                for cut in cuts:
-                    lowValues = list(filter(lambda x: float(x[1][attribut]) <= cut, donnees))
-                    highValues = list(filter(lambda x: float(x[1][attribut]) > cut, donnees))
-                    lowH_C_A = self.h_C_A(
-                        lowValues, attribut, attributs[attribut])/len(valeurs_possibles(lowValues, attribut))
-                    highH_C_A = self.h_C_A(
-                        highValues, attribut, attributs[attribut])/len(valeurs_possibles(highValues, attribut))
-                    totalH = lowH_C_A + highH_C_A
-                    totalHs.append((totalH,cut))
-                    thresh = min(totalHs, key=lambda t: t[0])[1]
-
-            lowValues = list(
-                filter(lambda x: float(x[1][attribut]) <= thresh, donnees))
-            highValues = list(
-                filter(lambda x: float(x[1][attribut]) > thresh, donnees))
-            return (lowValues,highValues,thresh)
-
-            #print("possible values range : [" + str(max_v) + ";" + str(min_v) + "], avg = " + str(avg_v))
+            vals = valeurs_possibles(donnees, attribut)
+            cuts = [(vals[i]+vals[i-1])/2 for i in range(1,len(vals))]
+            scores = [(score(cut),cut) for cut in cuts]
+            thresh = max(scores, key =lambda x : x[0])[1]
+            lV = list(filter(lambda x: float(x[1][attribut]) <= thresh, donnees))
+            hV = list(filter(lambda x: float(x[1][attribut]) > thresh, donnees))
+            return {'hV':hV, 'lV':lV, 'thresh':thresh}
 
         if donnees == []:
             return NoeudDeDecision_continu(None, [str(predominant_class), dict()], str(predominant_class))
 
         # Si toutes les données restantes font partie de la même classe,
         # on peut retourner un noeud terminal.         
-        elif classe_unique(donnees):
+        elif classe_unique(donnees) or len(attributs) == 0:
             return NoeudDeDecision_continu(None, donnees, str(predominant_class))
             
         else:
@@ -137,39 +117,33 @@ class ID3_continu:
             
             #print(h_C_As_attribs)
             
+            #print(h_C_As_attribs)
             attribut = min(h_C_As_attribs, key=lambda h_a: h_a[0])[2]
-            print(attribut)
-            print(list(map(lambda x : x[0],donnees)))
-            if len(valeurs_possibles(donnees, attribut)) > 1 :
-                print("partition")
-                partitions = balayage(attribut)
+
+            #print(attribut)
+            #print(len(donnees))
+
+            if len(valeurs_possibles(donnees,attribut)) > 1:
+                part = partition(attribut)
                 
                 # Crée les sous-arbres de manière récursive.
                 attributs_restants = attributs.copy()
                 del attributs_restants[attribut]
-                
+                    
                 #partitions = self.partitionne(donnees, attribut, attributs[attribut])
-                
+                    
                 enfants = {}
-                #for valeur, partition in partitions.items():
-                enfants['low'] = self.construit_arbre_recur(partitions[0], attributs_restants, predominant_class)
-                enfants['high'] = self.construit_arbre_recur(partitions[1], attributs_restants, predominant_class)
+                enfants['low'] = self.construit_arbre_recur(part['lV'], attributs_restants, predominant_class)
+                enfants['high'] = self.construit_arbre_recur(part['hV'], attributs_restants, predominant_class)
+                return NoeudDeDecision_continu(attribut, donnees, str(predominant_class), enfants, seuil=part['thresh'])
+            else: 
+                # Crée les sous-arbres de manière récursive.
+                attributs_restants = attributs.copy()
+                del attributs_restants[attribut]
+
+                enfants = {}
+                enfants['unique'] = self.construit_arbre_recur(donnees, attributs_restants, predominant_class)
         
-                return NoeudDeDecision_continu(attribut, donnees, str(predominant_class), enfants,seuil = partitions[2])
-            else:
-                print("pas de partition")
-
-                # Crée les sous-arbres de manière récursive.
-                attributs_restants = attributs.copy()
-                del attributs_restants[attribut]
-
-                #partitions = self.partitionne(donnees, attribut, attributs[attribut])
-
-                enfants = {}
-                #for valeur, partition in partitions.items():
-                enfants['unique'] = self.construit_arbre_recur(
-                    donnees, attributs_restants, predominant_class)
-
                 return NoeudDeDecision_continu(attribut, donnees, str(predominant_class), enfants)
     
 

@@ -10,6 +10,7 @@ from moteur_id3.noeud_de_decision_continu import NoeudDeDecision_continu
 from moteur_id3.id3_continu import ID3_continu
 
 from bin_test import BinTestEnv
+from continuous_test import ContinuousTestEnv
 from random_forest import RandomForest
 from rule_generator import RuleGen
 
@@ -79,11 +80,19 @@ class ResultValues():
         print("Parsing continuous training data...")    
         train_continuous_csv = self.parseCSV("train_continuous.csv")
         train_continuous = [ [line["target"], {key:val for key, val in line.items() if key != "target"}] for line in train_continuous_csv] #Gem bcp les oneliners :)
+
+        test_continuous_csv = self.parseCSV("test_public_continuous.csv")
+        test_continuous = [ [line["target"], {key:val for key, val in line.items() if key != "target"}] for line in train_continuous_csv] #Gem bcp les oneliners :)
         
         id3_continuous = ID3_continu()
-        id3_continuous.construit_arbre(train_continuous)
+        self.arbre_advance = id3_continuous.construit_arbre(train_continuous)
 
-        self.arbre_advance = None
+        continuousTest = ContinuousTestEnv()
+
+        continuousTest.test(self.arbre_advance,test_continuous,True)
+
+
+        
 
     def get_results(self):
         return [self.arbre, self.faits_initiaux, self.regles, self.arbre_advance]
