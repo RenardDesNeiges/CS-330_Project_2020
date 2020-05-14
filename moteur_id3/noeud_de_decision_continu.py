@@ -5,7 +5,7 @@ class NoeudDeDecision_continu:
         Specifically, if we can not classify a data point, we return the predominant class (see lines 53 - 56). 
     """
 
-    def __init__(self, attribut, donnees, p_class, enfants=None):
+    def __init__(self, attribut, donnees, p_class, enfants=None, seuil = 0):
         """
             :param attribut: l'attribut de partitionnement du noeud (``None`` si\
             le noeud est un noeud terminal).
@@ -20,6 +20,7 @@ class NoeudDeDecision_continu:
         self.donnees = donnees
         self.enfants = enfants
         self.p_class = p_class
+        self.seuil = seuil
 
     def terminal(self):
         """ Vérifie si le noeud courant est terminal. """

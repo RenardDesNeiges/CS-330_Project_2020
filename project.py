@@ -16,7 +16,7 @@ from rule_generator import RuleGen
 class ResultValues():
 
     def __init__(self):
-        
+        """
         # Do computations here
         
         #parsing the data from the csv file
@@ -54,7 +54,7 @@ class ResultValues():
 
         # print("Testing training with a random forest :")
         rForest = RandomForest()
-        rf_tree = rForest.generate(train_bin,test_public_bin,4,10000)
+        rf_tree = rForest.generate(train_bin,test_public_bin,2,500)
 
         #binTest.test_forest(rForest,test_public_bin,True)
         # print()
@@ -73,7 +73,7 @@ class ResultValues():
 
         #rGen.diagnostic()
 
-        
+        """
         # Task 5
 
         print("Parsing continuous training data...")    

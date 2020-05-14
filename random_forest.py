@@ -32,7 +32,7 @@ class RandomForest:
         self.tree_acc_set = [];
         for tree in tree_set: 
             try: #certains arbres générés sont incapables de traiter certaines données (le subset de données d'entrainement ne contenant pas forcément tous les cas de figures pour chaques attribut) c'est méga deg mais je fait juste un try catch pour ignorer ces cas làs...
-                accuracy = binTest.tree_test(tree, test_data, False)
+                accuracy = binTest.tree_test(tree, train_data, False)
             except:
                 pass
             else:
@@ -42,7 +42,7 @@ class RandomForest:
         inv_numb = len(tree_set) - len(self.tree_acc_set)
 
         bestTree = max(self.tree_acc_set, key = itemgetter(0))
-        print("Accuracy = " + str(bestTree[0]*100) + "%")
+        print("Accuracy = " + str(binTest.tree_test(bestTree[1],test_data,False)*100) + "%")
         print(str(inv_numb) + " invalid trees, invalid rate is : " + str(inv_rate*100) + "%")
         return bestTree[1]
 
