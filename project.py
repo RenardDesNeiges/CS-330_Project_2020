@@ -19,9 +19,9 @@ from moteur_diagnostic.diagnostique import Diagnostique
 class ResultValues():
 
     def __init__(self):
-        
-        # Do computations here
         """
+        # Do computations here
+        
         #parsing the data from the csv file
         print("Parsing pre-binned training data...")
         train_bin_csv = self.parseCSV("train_bin.csv")
@@ -81,6 +81,7 @@ class ResultValues():
                 for attribut in donnee[1]:
                     attributs_et_valeurs[attribut].update(set(donnee[1][attribut]))
             #print(attributs_et_valeurs)
+        
         docteur = Diagnostique(rGen,attributs_et_valeurs)
         id_patient = 1
         for patient in test_public_bin:
@@ -111,8 +112,8 @@ class ResultValues():
         
 
         #rGen.diagnostic()
-        """
         
+        """
         # Task 5
 
         print("Parsing continuous training data...")    

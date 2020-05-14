@@ -2,11 +2,17 @@ from math import log
 from .noeud_de_decision_continu import NoeudDeDecision_continu
 from statistics import mean
 
-import matplotlib.pyplot as plt
+#import matplotlib.pyplot as plt
 
 def binarise(input):
     if input < 0.5: return 0
     else: return 1
+
+def variance(input):
+    if len(input) > 1:
+        return (1/len(input)) * sum(list(map(lambda x: float(x[0]) - mean(map(lambda x: float(x[0]),input)), input)))
+    else:
+        return 0
 
 class ID3_continu:
     """ Algorithme ID3. 
@@ -89,8 +95,8 @@ class ID3_continu:
 
                 lV = list(filter(lambda x: float(x[1][attribut]) <= cut, donnees))
                 hV = list(filter(lambda x: float(x[1][attribut]) > cut, donnees))
-                lS = len(list(filter(lambda x: int(x[0]) == int(pre_class(lV)), lV)))
-                hS = len(list(filter(lambda x: int(x[0]) == int(pre_class(hV)), hV)))
+                lS = self.h_C_A(lV, attribut, valeurs_possibles(lV,attribut))*len(lV) #variance(lV)*len(lV) #len(list(filter(lambda x: int(x[0]) == int(pre_class(lV)), lV)))
+                hS = self.h_C_A(hV, attribut, valeurs_possibles(hV,attribut))*len(hV)#variance(hV)*len(hV) #len(list(filter(lambda x: int(x[0]) == int(pre_class(hV)), hV)))
 
                 return lS + hS
 
