@@ -29,19 +29,19 @@ class RandomForest:
         
 
         print("Evaluating trees ...")
-        tree_acc_set = [];
+        self.tree_acc_set = [];
         for tree in tree_set: 
             try: #certains arbres générés sont incapables de traiter certaines données (le subset de données d'entrainement ne contenant pas forcément tous les cas de figures pour chaques attribut) c'est méga deg mais je fait juste un try catch pour ignorer ces cas làs...
                 accuracy = binTest.tree_test(tree, test_data, False)
             except:
                 pass
             else:
-                tree_acc_set.append( (accuracy, tree) )
+                self.tree_acc_set.append( (accuracy, tree) )
         
-        inv_rate = len(tree_acc_set)/len(tree_set)
-        inv_numb = len(tree_set) - len(tree_acc_set)
+        inv_rate = len(self.tree_acc_set)/len(tree_set)
+        inv_numb = len(tree_set) - len(self.tree_acc_set)
 
-        bestTree = max(tree_acc_set, key = itemgetter(0))
+        bestTree = max(self.tree_acc_set, key = itemgetter(0))
         print("Accuracy = " + str(bestTree[0]*100) + "%")
         print(str(inv_numb) + " invalid trees, invalid rate is : " + str(inv_rate*100) + "%")
         return bestTree[1]
@@ -62,3 +62,22 @@ class RandomForest:
             train_set.append(subsample)
         
         return train_set
+
+    def forest_classify(self,case, verbose = False):
+        #class_list = []
+        acc = 0
+        total_acc = 0
+        
+        for tree in self.tree_acc_set:
+            acc += int(tree[1].classifie(case)[-1])*tree[0]
+            total_acc += tree[0]
+
+        #map(lambda x: int(x),class_list)
+
+        
+        avg_c = acc/total_acc
+        classification = 0
+        if(avg_c>0.5): classification = 1
+        else: classification = 0
+        if(verbose): print("average_classification : " + str(avg_c) + " , value chosen : " + str(classification))
+        return classification

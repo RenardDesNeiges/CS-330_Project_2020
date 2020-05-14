@@ -3,7 +3,11 @@ import sys
 
 from moteur_id3.noeud_de_decision import NoeudDeDecision
 from moteur_id3.id3 import ID3
+
 from moteur_id3.arbre import Arbre
+
+from moteur_id3.noeud_de_decision_continu import NoeudDeDecision_continu
+from moteur_id3.id3_continu import ID3_continu
 
 from bin_test import BinTestEnv
 from random_forest import RandomForest
@@ -18,7 +22,7 @@ class ResultValues():
         # Do computations here
         
         #parsing the data from the csv file
-        print("Parsing training data...")
+        print("Parsing pre-binned training data...")
         train_bin_csv = self.parseCSV("train_bin.csv")
         train_bin = [ [line["target"], {key:val for key, val in line.items() if key != "target"}] for line in train_bin_csv] #Gem bcp les oneliners :)
 
@@ -40,7 +44,7 @@ class ResultValues():
         
 
         #Task 2
-        print("Parsing testing data...")
+        print("Parsing pre-binned testing data...")
         test_public_bin_csv = self.parseCSV("test_public_bin.csv")
         test_public_bin = [ [line["target"], {key:val for key, val in line.items() if key != "target"}] for line in test_public_bin_csv]
 
@@ -51,7 +55,9 @@ class ResultValues():
 
         # print("Testing training with a random forest :")
         rForest = RandomForest()
-        rf_tree = rForest.generate(train_bin,test_public_bin,4,100)
+        rf_tree = rForest.generate(train_bin,test_public_bin,4,10000)
+
+        #binTest.test_forest(rForest,test_public_bin,True)
         # print()
 
         # Task 3
@@ -61,8 +67,7 @@ class ResultValues():
         rGen = RuleGen()
 
         rGen.convert(self.arbre.racine)
-        binTest.rule_test(rGen, test_public_bin)
-
+        binTest.rule_test(rGen, test_public_bin,True)
         #Task 4
         attributs_et_valeurs = {}
         first = True
@@ -103,7 +108,16 @@ class ResultValues():
             id_patient += 1    
             
         
+
         # Task 5
+
+        print("Parsing continuous training data...")    
+        train_continuous_csv = self.parseCSV("train_continuous.csv")
+        train_continuous = [ [line["target"], {key:val for key, val in line.items() if key != "target"}] for line in train_continuous_csv] #Gem bcp les oneliners :)
+        
+        id3_continuous = ID3_continu()
+        id3_continuous.construit_arbre(train_continuous)
+
         self.arbre_advance = None
 
     def get_results(self):

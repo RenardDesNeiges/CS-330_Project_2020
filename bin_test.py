@@ -48,3 +48,22 @@ class BinTestEnv:
             print("The accuracy of the rule deduction may be slightly lower than of the  tree dedudction since if it cannot find an explaination it does not default to the most likely value")
 
         return accuracy
+
+    def test_forest(self,forest,test_data,verbose = True):
+        """ Takes an ID3 generated tree and compares it's predictions to testing data
+
+            :param arbre: an ID3 generated classification tree
+            :param test_data: testing data formalised as in serie 10
+        """
+        correct_guesses = 0
+        for case in test_data:
+            if forest.forest_classify(case[1]) == int(case[0]):
+                correct_guesses = correct_guesses + 1
+
+        accuracy = correct_guesses/len(test_data)
+
+        if verbose:
+            print("Ran " + str(len(test_data)) +
+                  " tests, accuracy of Random Forest is : " + str(accuracy*100.0) + "%")
+
+        return accuracy
