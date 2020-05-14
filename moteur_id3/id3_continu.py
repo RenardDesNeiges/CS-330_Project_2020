@@ -2,7 +2,7 @@ from math import log
 from .noeud_de_decision_continu import NoeudDeDecision_continu
 from statistics import mean
 
-import matplotlib.pyplot as plt
+#import matplotlib.pyplot as plt
 
 def round_int(input):
     if input < 0.5: return 0
