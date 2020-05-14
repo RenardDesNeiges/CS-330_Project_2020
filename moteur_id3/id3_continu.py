@@ -83,7 +83,6 @@ class ID3_continu:
             return True
 
         def valeurs_possibles(donnees_input, attribut):
-            
             values = list(map(lambda x : float(x[1][attribut]), donnees_input))
             return sorted(list(dict.fromkeys(values)))
 
