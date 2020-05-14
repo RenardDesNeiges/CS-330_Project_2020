@@ -119,7 +119,7 @@ class ResultValues():
         train_continuous_csv = self.parseCSV("train_continuous.csv")
         train_continuous = [ [line["target"], {key:val for key, val in line.items() if key != "target"}] for line in train_continuous_csv] #Gem bcp les oneliners :)
         test_continuous_csv = self.parseCSV("test_public_continuous.csv")
-        test_continuous = [ [line["target"], {key:val for key, val in line.items() if key != "target"}] for line in train_continuous_csv] #Gem bcp les oneliners :)
+        test_continuous = [ [line["target"], {key:val for key, val in line.items() if key != "target"}] for line in test_continuous_csv]
         
         id3_continuous = ID3_continu()
         self.arbre_advance = id3_continuous.construit_arbre(train_continuous)

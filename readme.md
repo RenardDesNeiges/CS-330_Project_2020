@@ -16,4 +16,4 @@ Aussi il faut voir comment faire l'affichage encore
 
 ## Task 5 :
 Peut-être Done
-- Valeurs un peu trop bonnes
+- Valeurs un peu trop bonnes => c'est réglé lol
