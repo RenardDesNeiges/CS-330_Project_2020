@@ -4,7 +4,7 @@ from statistics import mean
 
 #import matplotlib.pyplot as plt
 
-def round_int(input):
+def binarise(input):
     if input < 0.5: return 0
     else: return 1
 
@@ -85,7 +85,7 @@ class ID3_continu:
             
             def score(cut):
                 def pre_class(dataset):
-                    return round_int(mean(list(map(lambda x: float(x[0]), dataset))))
+                    return binarise(mean(list(map(lambda x: float(x[0]), dataset))))
 
                 lV = list(filter(lambda x: float(x[1][attribut]) <= cut, donnees))
                 hV = list(filter(lambda x: float(x[1][attribut]) > cut, donnees))
@@ -146,25 +146,6 @@ class ID3_continu:
         
                 return NoeudDeDecision_continu(attribut, donnees, str(predominant_class), enfants)
     
-
-    def partitionne(self, donnees, attribut, valeurs):
-        """ Partitionne les données sur les valeurs a_j de l'attribut A.
-
-            :param list donnees: les données à partitioner.
-            :param attribut: l'attribut A de partitionnement.
-            :param list valeurs: les valeurs a_j de l'attribut A.
-            :return: un dictionnaire qui associe à chaque valeur a_j de\
-            l'attribut A une liste l_j contenant les données pour lesquelles A\
-            vaut a_j.
-        """
-        partitions = {valeur: [] for valeur in valeurs}
-        
-        for donnee in donnees:
-            partition = partitions[donnee[1][attribut]]
-            partition.append(donnee)
-            
-        return partitions
-
     def p_aj(self, donnees, attribut, valeur):
         """ p(a_j) - la probabilité que la valeur de l'attribut A soit a_j.
 
