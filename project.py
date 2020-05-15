@@ -12,14 +12,14 @@ from moteur_id3.id3_continu import ID3_continu
 from bin_test import BinTestEnv
 from continuous_test import ContinuousTestEnv
 from random_forest import RandomForest
-from rule_generator import RuleGen
+from moteur_diagnostic.first_year_md import FirstYearMedSchool 
 
-from moteur_diagnostic.diagnostique import Diagnostique
+from moteur_diagnostic.docteur import Docteur
 
 class ResultValues():
 
     def __init__(self):
-        """
+
         # Do computations here
         
         #parsing the data from the csv file
@@ -28,6 +28,7 @@ class ResultValues():
         train_bin = [ [line["target"], {key:val for key, val in line.items() if key != "target"}] for line in train_bin_csv] #Gem bcp les oneliners :)
 
         # Task 1
+        
         print("Generating ID3 tree from " + str(len(train_bin)) + " samples...", end = "")
         id3 = ID3()
         self.arbre = Arbre(id3.construit_arbre(train_bin))
@@ -45,9 +46,11 @@ class ResultValues():
         
 
         #Task 2
+        
         print("Parsing pre-binned testing data...")
         test_public_bin_csv = self.parseCSV("test_public_bin.csv")
         test_public_bin = [ [line["target"], {key:val for key, val in line.items() if key != "target"}] for line in test_public_bin_csv]
+        """
 
         print("Setting up testing environnement...")
         binTest = BinTestEnv()
@@ -60,16 +63,23 @@ class ResultValues():
 
         #binTest.test_forest(rForest,test_public_bin,True)
         # print()
-
+        """
         # Task 3
+        """
         self.faits_initiaux = None
         self.regles = None
 
-        rGen = RuleGen()
-
-        rGen.convert(self.arbre.racine)
-        binTest.rule_test(rGen, test_public_bin,True)
+        Titou = FirstYearMedSchool()
+        Titou.apprend(self.arbre.racine)
+        
+        diagnostics = Titou.diagnostique_hopital(test_public_bin)
+        Titou.affiche_diagnostics_hopital(diagnostics)
+        #binTest.rule_test(rGen, test_public_bin,True)
+        """
+        
+        
         #Task 4
+        
         attributs_et_valeurs = {}
         first = True
         for donnee in train_bin:
@@ -81,41 +91,18 @@ class ResultValues():
                 for attribut in donnee[1]:
                     attributs_et_valeurs[attribut].update(set(donnee[1][attribut]))
             #print(attributs_et_valeurs)
+<<<<<<< HEAD
         
-        docteur = Diagnostique(rGen,attributs_et_valeurs)
-        id_patient = 1
-        for patient in test_public_bin:
-            (target,changements,trace) = docteur.diagnostique_patient(patient,2)
-            #print(target,changements,trace)
-            if target == '1':
-                print("Nous n'avons pas trouvé de traitements pour le patient {}".format(str(id_patient)))
-            elif len(changements) == 0:
-                print("Le.la patient.e {} est sain.e. Nous ne proposons pas de traitements".format(str(id_patient)))
-            else:
-                print("On a décélé un risque de maladie cardiaque chez {}".format(str(id_patient)))
-                print("La règle suivante est responsable de cette catégoriation")
-                print(trace)
-                
-                traitement = "Nous recommandons les changements suivants:\n"
-                for attribut in changements:
-                    
-                    if patient[1][attribut] == changements[attribut]:
-                        print('lol')
-                        continue
-                    
-                    traitement += attribut + ": " + str(patient[1][attribut]) + " ---> " + str(changements[attribut]) + "\n"
-                
-                print(traitement)
-                
-            id_patient += 1    
-            
+        Chris = Docteur(attributs_et_valeurs)
+        Chris.apprend(self.arbre.racine)
         
+        diagnostics = Chris.diagnostique_hopital(test_public_bin)
+        traitements = Chris.traitements_hopital(test_public_bin,2)
+        
+        Chris.affiche_diagnostics_et_traitements_hopital(diagnostics,traitements)
 
-        #rGen.diagnostic()
-        
-        """
         # Task 5
-
+        """
         print("Parsing continuous training data...")    
         train_continuous_csv = self.parseCSV("train_continuous.csv")
         train_continuous = [ [line["target"], {key:val for key, val in line.items() if key != "target"}] for line in train_continuous_csv] #Gem bcp les oneliners :)
@@ -128,6 +115,7 @@ class ResultValues():
         continuousTest = ContinuousTestEnv()
 
         continuousTest.test(self.arbre_advance,test_continuous,True)
+        """
 
 
         
