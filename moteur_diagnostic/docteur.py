@@ -122,4 +122,13 @@ class Docteur(FirstYearMedSchool):
             print("\n")
             
             no_patient += 1
+    
+    def ratio_succes(self,traitements):
+        réussites = 0
+        
+        for traitement in traitements:
+            if traitements[traitement][0] == '0':
+                réussites += 1
+        
+        return réussites
    

@@ -91,7 +91,6 @@ class ResultValues():
                 for attribut in donnee[1]:
                     attributs_et_valeurs[attribut].update(set(donnee[1][attribut]))
             #print(attributs_et_valeurs)
-<<<<<<< HEAD
         
         Chris = Docteur(attributs_et_valeurs)
         Chris.apprend(self.arbre.racine)
@@ -100,6 +99,9 @@ class ResultValues():
         traitements = Chris.traitements_hopital(test_public_bin,2)
         
         Chris.affiche_diagnostics_et_traitements_hopital(diagnostics,traitements)
+        
+        nb_traité_nontraités = Chris.ratio_succes(traitements)
+        print("On arrive à traiter {} patient.e.s sur 80".format(nb_traité_nontraités))
 
         # Task 5
         """
