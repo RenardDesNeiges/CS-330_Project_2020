@@ -94,8 +94,8 @@ class ID3_continu:
 
                 lV = list(filter(lambda x: float(x[1][attribut]) <= cut, donnees))
                 hV = list(filter(lambda x: float(x[1][attribut]) > cut, donnees))
-                lS = self.h_C_A(lV, attribut, valeurs_possibles(lV,attribut))*len(lV) #variance(lV)*len(lV) #len(list(filter(lambda x: int(x[0]) == int(pre_class(lV)), lV)))
-                hS = self.h_C_A(hV, attribut, valeurs_possibles(hV,attribut))*len(hV)#variance(hV)*len(hV) #len(list(filter(lambda x: int(x[0]) == int(pre_class(hV)), hV)))
+                lS = self.h_C_A(lV, attribut, valeurs_possibles(lV,attribut)) #variance(lV)*len(lV) #len(list(filter(lambda x: int(x[0]) == int(pre_class(lV)), lV)))
+                hS = self.h_C_A(hV, attribut, valeurs_possibles(hV,attribut))#variance(hV)*len(hV) #len(list(filter(lambda x: int(x[0]) == int(pre_class(hV)), hV)))
 
                 return lS + hS
 
