@@ -1,5 +1,6 @@
 from moteur_sans_variables.chainage import Chainage
 from .filtre import Filtre
+from .regle_avec_variables import RegleAvecVariables
 
 class ChainageAvantAvecVariables(Chainage):
     """ Un moteur d'inférence à chaînage avant avec variables. """
@@ -55,6 +56,6 @@ class ChainageAvantAvecVariables(Chainage):
                         # les environnements possibles.
                         if len(envs) > 0:
                             queue.extend(self.instancie_conclusion(regle, envs))
-                            self.trace.append(regle)
+                            self.trace[0] = regle
 
         return self.solutions
