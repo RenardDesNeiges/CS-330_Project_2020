@@ -17,3 +17,6 @@ Aussi il faut voir comment faire l'affichage encore
 ## Task 5 :
 Peut-être Done
 - Valeurs un peu trop bonnes => c'est réglé lol
+
+## Other stuff :
+breast_cancer.py tests the algorithms on the breast-cancer-wisconsin dataset
