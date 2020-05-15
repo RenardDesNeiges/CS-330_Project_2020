@@ -10,6 +10,7 @@ Done
 ## Task 3 :
 Somewhat done
 - Todo: decide whether we want the rule based inference to default to anything
+- "Graphic" implementation in the main project : done
 ## Task 4 :
 Done et prête pour le rendu. Pas mal de modifs faites et revue de l'"architecture" de la task 4
 
