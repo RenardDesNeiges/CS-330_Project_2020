@@ -11,8 +11,7 @@ Done
 Somewhat done
 - Todo: decide whether we want the rule based inference to default to anything
 ## Task 4 :
-Implémentation réussie dans projet.py. Cela dit les performances sont étonnemments bonnes.
-Aussi il faut voir comment faire l'affichage encore
+Done et prête pour le rendu. Pas mal de modifs faites et revue de l'"architecture" de la task 4
 
 ## Task 5 :
 Peut-être Done
@@ -20,3 +19,4 @@ Peut-être Done
 
 ## Other stuff :
 breast_cancer.py tests the algorithms on the breast-cancer-wisconsin dataset
+Implémenter adaboost sur random forest
