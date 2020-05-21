@@ -14,7 +14,7 @@ class BinTestEnv:
         for case in test_data:
             if arbre.classifie(case[1])[-1] == case[0]:
                 correct_guesses = correct_guesses + 1
-
+        
         accuracy = correct_guesses/len(test_data)
 
         if verbose:

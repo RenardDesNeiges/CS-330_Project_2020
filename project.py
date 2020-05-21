@@ -16,6 +16,8 @@ from moteur_diagnostic.first_year_md import FirstYearMedSchool
 
 from moteur_diagnostic.docteur import Docteur
 
+import matplotlib.pyplot as plt
+
 class ResultValues():
 
     def __init__(self):
@@ -26,8 +28,8 @@ class ResultValues():
         print("Parsing pre-binned training data...")
         train_bin_csv = self.parseCSV("train_bin.csv")
         train_bin = [ [line["target"], {key:val for key, val in line.items() if key != "target"}] for line in train_bin_csv] #Gem bcp les oneliners :)
-
-        # Task 1
+        """
+        print("Task 1")
         
         print("Generating ID3 tree from " + str(len(train_bin)) + " samples...", end = "")
         id3 = ID3()
@@ -44,41 +46,64 @@ class ResultValues():
         print("La moyenne du nombre d'enfants par noeud est " +str(moyenne_enfants_noeud))
         print("La moyenne de la longueur d'une branche est " +str(moyenne_longueur_branche)) 
         
-
-        #Task 2
+        print("---------------------------------------------------------------------------------------------------------")
+        print("Task 2")
         
         print("Parsing pre-binned testing data...")
         test_public_bin_csv = self.parseCSV("test_public_bin.csv")
         test_public_bin = [ [line["target"], {key:val for key, val in line.items() if key != "target"}] for line in test_public_bin_csv]
-        """
+        
 
         print("Setting up testing environnement...")
         binTest = BinTestEnv()
 
-        binTest.tree_test(self.arbre.racine,train_bin)
+        binTest.tree_test(self.arbre.racine,test_public_bin)
 
         # print("Testing training with a random forest :")
-        rForest = RandomForest()
-        rf_tree = rForest.generate(train_bin,test_public_bin,2,500)
+        
 
         #binTest.test_forest(rForest,test_public_bin,True)
         # print()
         """
-        # Task 3
+        print("---------------------------------------------------------------------------------------------------------")
+        print("Task 2 bis")
+        
+        rForest = RandomForest()
+        subsamplings = list(range(1,81))
+        invalid_trees_ratios =[]
+        for x in subsamplings:
+            test_invalid_ratio = []
+            for i in range(100):
+                rForest.generate_trees(train_bin,x,1000)
+                rForest.select_valid_trees(train_bin)
+                test_invalid_ratio.append(rForest.valid_trees_ratio())
+            
+            invalid_trees_ratios.append(sum(test_invalid_ratio)/100)
+        
+        plt.plot(subsamplings,invalid_trees_ratios)
+        plt.title("Valid trees ratio")
+        plt.xlabel('Subsamplings')
+        plt.ylabel('Ratio of valid trees generated')
+        #plt.legend()
+        
+        plt.savefig("Valid_trees_ratio.png")
+        print("---------------------------------------------------------------------------------------------------------")
         """
+        print("Task 3")
+        
         self.faits_initiaux = None
         self.regles = None
 
         Titou = FirstYearMedSchool()
-        Titou.apprend(self.arbre.racine)
+        self.regles = Titou.apprend(self.arbre.racine)
         
         diagnostics = Titou.diagnostique_hopital(test_public_bin)
         Titou.affiche_diagnostics_hopital(diagnostics)
         #binTest.rule_test(rGen, test_public_bin,True)
-        """
         
         
-        #Task 4
+        print("---------------------------------------------------------------------------------------------------------")
+        print("Task 4")
         
         attributs_et_valeurs = {}
         first = True
@@ -102,8 +127,9 @@ class ResultValues():
         
         nb_traité_nontraités = Chris.ratio_succes(traitements)
         print("On arrive à traiter {} patient.e.s sur 80".format(nb_traité_nontraités))
-
-        # Task 5
+        print("---------------------------------------------------------------------------------------------------------")
+        print("Task 5")
+        """
         """
         print("Parsing continuous training data...")    
         train_continuous_csv = self.parseCSV("train_continuous.csv")
@@ -112,8 +138,8 @@ class ResultValues():
         test_continuous = [ [line["target"], {key:val for key, val in line.items() if key != "target"}] for line in test_continuous_csv]
         
         id3_continuous = ID3_continu()
-        self.arbre_advance = id3_continuous.construit_arbre(train_continuous)
-
+        arbre_continuous = Arbre(id3_continuous.construit_arbre(train_continuous))
+        self.arbre_advance = arbre_continuous.racine
         continuousTest = ContinuousTestEnv()
 
         continuousTest.test(self.arbre_advance,test_continuous,True)
@@ -123,7 +149,7 @@ class ResultValues():
         
 
     def get_results(self):
-        return [self.arbre, self.faits_initiaux, self.regles, self.arbre_advance]
+        return [self.arbre.racine, self.faits_initiaux, self.regles, self.arbre_advance]
 
     def parseCSV(self,address):
         """ Takes a .csv file and returns a list of dictonaries where each element is has a key 

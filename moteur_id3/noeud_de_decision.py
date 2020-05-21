@@ -48,6 +48,7 @@ class NoeudDeDecision:
             rep += 'Alors {}'.format(self.classe().upper())
         else:
             valeur = donnee[self.attribut]
+            #print("Enfants: ",self.enfants,"Valeur: ",valeur)
             enfant = self.enfants[valeur]
             rep += 'Si {} = {}, '.format(self.attribut, valeur.upper())
             try:
