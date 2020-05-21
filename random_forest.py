@@ -36,6 +36,8 @@ class RandomForest:
         binTest = BinTestEnv()
         for item in train_sets:
             self.trees.append(id3.construit_arbre(item))
+
+        return self.trees
     
     def select_valid_trees(self,train_data):
         print("Evaluating trees ...")
@@ -48,6 +50,8 @@ class RandomForest:
                 pass
             else:
                 self.valid_trees_accuracy.append((accuracy, tree))
+
+        return self.valid_trees_accuracy
     
     def valid_trees_ratio(self):
         return len(self.valid_trees_accuracy)/len(self.trees)
