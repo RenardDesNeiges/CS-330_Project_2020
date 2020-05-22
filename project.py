@@ -1,12 +1,9 @@
 import csv
 import sys
 
-<<<<<<< HEAD
-from moteur_avec_variables.regle_avec_variables import RegleAvecVariables
-=======
 import pickle
->>>>>>> e44e920b08ef7008d945a3a464d87f772a4d1053
 
+from moteur_avec_variables.regle_avec_variables import RegleAvecVariables
 from moteur_id3.noeud_de_decision import NoeudDeDecision
 from moteur_id3.id3 import ID3
 
@@ -82,41 +79,55 @@ class ResultValues():
         print("Done with Task 2")
         print("---------------------------------------------------------------------------------------------------------")
         print("Task 2 bis")
-        """
+        """Adaboost tree test"""
+        test_adaboost_tree = BinTestEnv()
+        accuracy_total = 0
+        rF_adaboost_tree = RandomForest()
+        for i in range(1000):
+            rF_adaboost_tree.generate_trees(train_bin,4,1000)
+            rF_adaboost_tree.select_valid_trees(train_bin)
+            rF_adaboost_tree.construct_classifier_adaboost(train_bin)
+            accuracy_total += test_adaboost_tree.test_forest(rF_adaboost_tree,'AdaBoost',test_public_bin)
+        
+        iTurnedMyselfIntoAPickleMorty(accuracy_total/1000,"AdaBoost_test_accuracy.pkl")
+        
+        """Majority tree test"""
+        test_majority_tree = BinTestEnv()
+        accuracy_total = 0
+        rF_majority_tree = RandomForest()
+        for i in range(1000):
+            rF_majority_tree.generate_trees(train_bin,4,1000)
+            rF_majority_tree.select_valid_trees(train_bin)
+            accuracy_total += test_majority_tree.test_forest(rF_majority_tree,'MajorityVote',test_public_bin)
+        
+        iTurnedMyselfIntoAPickleMorty(accuracy_total/1000,"Majority_test_accuracy.pkl")
+        
+        """Best tree test"""
+        test_best_tree = BinTestEnv()
+        accuracy_total = 0
+        rF_best_tree = RandomForest()
+        for i in range(1000):
+            rF_best_tree.generate_trees(train_bin,4,1000)
+            rF_best_tree.select_valid_trees(train_bin)
+            rF_best_tree.construct_best_tree()
+            accuracy_total += test_best_tree.test_forest(rF_best_tree,'BestTree',test_public_bin)
+        
+        iTurnedMyselfIntoAPickleMorty(accuracy_total/1000,"BestTree_test_accuracy.pkl")
+
+        """Valid trees ratio test"""
         rForest = RandomForest()
-        subsamplings = list(range(1,81,5))
-        invalid_trees_ratios =[]
-        iSpeakForTheTrees = []
+        subsamplings = range(1,141)
+        invalid_trees_ratios =  {}
         for x in subsamplings:
             test_invalid_ratio = []
-            for i in range(1):
-                rForest.generate_trees(train_bin,x,1000)
-                iSpeakForTheTrees.append(rForest.select_valid_trees(train_bin)[1])
+            for i in range(1000):
+                rForest.generate_trees(train_bin,x+1,1)
                 test_invalid_ratio.append(rForest.valid_trees_ratio())
             
-            invalid_trees_ratios.append(sum(test_invalid_ratio)/1)
+            invalid_trees_ratios.update({x:sum(test_invalid_ratio)/100})
         
-        rick = [subsamplings,invalid_trees_ratios]
-
-        iTurnedMyselfIntoAPickleMorty(rick,"graph.pkl")
-
-        lorax = iSpeakForTheTrees
-
-        iTurnedMyselfIntoAPickleMorty(lorax,"trees.pkl")
+        iTurnedMyselfIntoAPickleMorty(invalid_trees_ratios,"x=subsamplings_y=invalid_trees_ratios.pkl")
         
-        """plt.plot(subsamplings,invalid_trees_ratios)
-        plt.title("Valid trees ratio")
-        plt.xlabel('Subsamplings')
-        plt.ylabel('Ratio of valid trees generated')
-        #plt.legend()
-        
-<<<<<<< HEAD
-        plt.savefig("Valid_trees_ratio.png")
-=======
-        plt.savefig("Valid_trees_ratio.png")"""
-        print("---------------------------------------------------------------------------------------------------------")
->>>>>>> e44e920b08ef7008d945a3a464d87f772a4d1053
-        """
         print("Done with Task 2 bis")
         print("---------------------------------------------------------------------------------------------------------")
         print("Task 3")
@@ -173,7 +184,6 @@ class ResultValues():
         task4_report.write('Taux de personnes pour lesquelles ont a réussi à administrer un traitement : {}'.format(Chris.ratio_succes(traitements)))
         print("---------------------------------------------------------------------------------------------------------")
         print("Task 5")
-        """
         print("Parsing continuous training data...")    
         train_continuous_csv = self.parseCSV("train_continuous.csv")
         train_continuous = [ [line["target"], {key:val for key, val in line.items() if key != "target"}] for line in train_continuous_csv] #Gem bcp les oneliners :)
@@ -186,10 +196,6 @@ class ResultValues():
         continuousTest = ContinuousTestEnv()
 
         continuousTest.test(self.arbre_advance,test_continuous,True)
-        """
-
-
-        
 
     def get_results(self):
         return [self.arbre.racine, self.faits_initiaux, self.regles, self.arbre_advance]

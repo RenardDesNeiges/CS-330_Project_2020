@@ -65,64 +65,60 @@ class RandomForest:
             
 
     def construct_best_tree(self):
-        
-        self.best_tree[1] = max(self.valid_trees_accuracy, key = itemgetter(0))
+        self.best_tree = max(self.valid_trees_accuracy, key = itemgetter(0))[1]
     
     def construct_classifier_adaboost(self,train_data):    
-        
         total_nb_cases = len(train_data)
        
         if total_nb_cases == 0:
             raise ValueError('No train data given')
         
         attributes = list(train_data[0][1].keys())
-        
-        if method == 'Adaboosting':
-            #Calcul de la probabilité qu'on attribut donné ai une valeur donnée
-            probabilities_attributes = {}
+        #Calcul de la probabilité qu'on attribut donné ai une valeur donnée
+        probabilities_attributes = {}
+        for attribute in attributes:
+            if attribute == 'sex':
+                probabilities_attributes.update({attribute: lambda x:1/2})
+            else:
+                probabilities_attributes.update({attribute: lambda x:len([case for case in train_data if x == case[1][attribute]])/total_nb_cases})
+            
+        #Calcul des probabilités des exemples
+        probabiilities_cases = {}
+        total_prob = 0
+        for i in range(len(train_data)):
+            probability = 1
             for attribute in attributes:
-                if attribute == 'sex':
-                    probabilities_attributes.update({attribute: lambda x:1/2})
-                else:
-                    probabilities_attributes.update({attribute: lambda x:len([case for case in train_data if x == case[1][attribute]])/total_nb_cases})
-            
-            #Calcul des probabilités des exemples
-            probabiilities_cases = {}
-            total_prob = 0
-            for case in train_data:
-                probability = 1
-                for attribute in attributes:
-                    probability *= probabilities_attributes[attribute](case[1][attribute])
+                probability *= probabilities_attributes[attribute](train_data[i][1][attribute])
                 
-                probabiilities_cases.update({case:probability})
-                total_prob += probability
+            probabiilities_cases.update({i:probability})
+            total_prob += probability
  
-            #Normalisation des probabilité des exemples
+        #Normalisation des probabilité des exemples
+        for case in probabiilities_cases:
+            probabiilities_cases[case] /= total_prob
+            
+        #on en garde que les arbres avec moins de 50% de probabilité d'erreur
+        bricks_trees = [arbre[1] for arbre in self.valid_trees_accuracy if sum([probabiilities_cases[i]*abs(int(arbre[1].classifie(train_data[i]))-int(train_data[i][0])) for i in range(len(train_data))])<0.5]
+            
+        #Initialisation de l'algorithm Adaboosting
+        wis = probabiilities_cases
+        total_wis = 1
+            
+        #Adaboosting
+        for tree in bricks_trees:
             for case in probabiilities_cases:
-                probabiilities_cases[case] /= total_prob
-            
-            #on en garde que les arbres avec moins de 50% de probabilité d'erreur
-            bricks_trees = [arbre[1] for arbre in self.valid_trees_accuracy if sum([probabiilities_cases[case]*abs(int(arbre[1].classifie(case))-int(case[0]))])<0.5]
-            
-            #Initialisation de l'algorithm Adaboosting
-            wis = probabiilities_cases
-            total_wis = 1
-            
-            #Adaboosting
-            for tree in bricks_trees:
-                for case in probabiilities_cases:
-                    probabiilities_cases[case] = wis[case]/total_wis
+                probabiilities_cases[case] = wis[case]/total_wis
                 
-                epsilon  = sum([probabiilities_cases[case]*abs(int(tree.classifie(case))-int(case[0])) for case in probabiilities_cases])
-                self.betas[tree] = epsilon/(1-epsilon)
-                total_wis = 0
+            epsilon  = sum([probabiilities_cases[case]*abs(int(tree.classifie(train_data[case]))-int(train_data[case][0])) for case in probabiilities_cases])
+            self.betas[tree] = epsilon/(1-epsilon)
+            total_wis = 0
                  
-                for case in wis:
-                    wis[case] = wis[case]*pow(betas[tree],1-abs(int(tree.classifie(case))-int(case[0])))
-                    total_wis += wis[case]
+            for case in wis:
+                wis[case] = wis[case]*pow(self.betas[tree],1-abs(int(tree.classifie(train_data[case]))-int(train_data[case][0])))
+                total_wis += wis[case]
             
-            #Construction du classifier
-            self.classifier = lambda x:str(binari(sum([-log(self.betas[tree])*(int(tree.classifie(x))-1/2)])))
+        #Construction du classifier
+        self.adaboost = lambda x:str(binari(sum([-log(self.betas[tree])*(int(tree.classifie(x))-1/2)])))
 
     def generate_training_set(self,train_data,train_size,subsamples):
 
@@ -142,21 +138,24 @@ class RandomForest:
         return train_sets
     
     
-    def forest_classify(self,case, verbose = False):
-        #class_list = []
-        acc = 0
-        total_acc = 0
+    def forest_classify(self,case,method, verbose = False):
+        if method == 'MajorityVote':
+            acc = 0
+            total_acc = 0
         
-        for tree in self.valid_trees_accuracy:
-            acc += int(tree[1].classifie(case)[-1])*tree[0]
-            total_acc += tree[0]
-
-        #map(lambda x: int(x),class_list)
-
+            for tree in self.valid_trees_accuracy:
+                acc += int(tree[1].classifie(case)[-1])*tree[0]
+                total_acc += tree[0]
         
-        avg_c = acc/total_acc
-        classification = 0
-        if(avg_c>0.5): classification = 1
-        else: classification = 0
-        if(verbose): print("average_classification : " + str(avg_c) + " , value chosen : " + str(classification))
-        return classification
+            avg_c = acc/total_acc
+            classification = 0
+            if(avg_c>0.5): classification = 1
+            else: classification = 0
+            if(verbose): print("average_classification : " + str(avg_c) + " , value chosen : " + str(classification))
+            return str(classification)
+        
+        if method == 'BestTree':
+            return self.best_tree.classifie(case)[-1]
+        
+        if method == 'AdaBoost':
+            return self.adaboost(case)

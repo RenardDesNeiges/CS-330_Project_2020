@@ -13,7 +13,7 @@ class BinTestEnv:
         correct_guesses = 0
         for case in test_data:
             if arbre.classifie(case[1])[-1] == case[0]:
-                correct_guesses = correct_guesses + 1
+                correct_guesses += 1
         
         accuracy = correct_guesses/len(test_data)
 
@@ -49,7 +49,7 @@ class BinTestEnv:
 
         return accuracy
 
-    def test_forest(self,forest,test_data,verbose = True):
+    def test_forest(self,forest,method,test_data,verbose = False):
         """ Takes an ID3 generated tree and compares it's predictions to testing data
 
             :param arbre: an ID3 generated classification tree
@@ -57,8 +57,13 @@ class BinTestEnv:
         """
         correct_guesses = 0
         for case in test_data:
-            if forest.forest_classify(case[1]) == int(case[0]):
-                correct_guesses = correct_guesses + 1
+            a = ''
+            try:
+                a = forest.forest_classify(case[1],method)
+            except:    
+                pass
+            if a == case[0]:
+                correct_guesses += 1
 
         accuracy = correct_guesses/len(test_data)
 
