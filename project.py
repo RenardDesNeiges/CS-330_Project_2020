@@ -1,7 +1,11 @@
 import csv
 import sys
 
+<<<<<<< HEAD
 from moteur_avec_variables.regle_avec_variables import RegleAvecVariables
+=======
+import pickle
+>>>>>>> e44e920b08ef7008d945a3a464d87f772a4d1053
 
 from moteur_id3.noeud_de_decision import NoeudDeDecision
 from moteur_id3.id3 import ID3
@@ -19,6 +23,10 @@ from moteur_diagnostic.first_year_md import FirstYearMedSchool
 from moteur_diagnostic.docteur import Docteur
 
 import matplotlib.pyplot as plt
+
+def iTurnedMyselfIntoAPickleMorty(obj, filename):
+    with open(filename, 'wb') as output:  # Overwrites any existing file.
+        pickle.dump(obj, output, pickle.HIGHEST_PROTOCOL)
 
 class ResultValues():
 
@@ -74,25 +82,40 @@ class ResultValues():
         print("Done with Task 2")
         print("---------------------------------------------------------------------------------------------------------")
         print("Task 2 bis")
-        """ Valide trees ratio
-        subsamplings = list(range(1,81))
-        invalid_trees_ratios = []
+        """
+        rForest = RandomForest()
+        subsamplings = list(range(1,81,5))
+        invalid_trees_ratios =[]
+        iSpeakForTheTrees = []
         for x in subsamplings:
             test_invalid_ratio = []
-            for i in range(100):
+            for i in range(1):
                 rForest.generate_trees(train_bin,x,1000)
-                rForest.select_valid_trees(train_bin)
+                iSpeakForTheTrees.append(rForest.select_valid_trees(train_bin)[1])
                 test_invalid_ratio.append(rForest.valid_trees_ratio())
             
-            invalid_trees_ratios.append(sum(test_invalid_ratio)/100)
+            invalid_trees_ratios.append(sum(test_invalid_ratio)/1)
         
-        plt.plot(subsamplings,invalid_trees_ratios)
+        rick = [subsamplings,invalid_trees_ratios]
+
+        iTurnedMyselfIntoAPickleMorty(rick,"graph.pkl")
+
+        lorax = iSpeakForTheTrees
+
+        iTurnedMyselfIntoAPickleMorty(lorax,"trees.pkl")
+        
+        """plt.plot(subsamplings,invalid_trees_ratios)
         plt.title("Valid trees ratio")
         plt.xlabel('Subsamplings')
         plt.ylabel('Ratio of valid trees generated')
         #plt.legend()
         
+<<<<<<< HEAD
         plt.savefig("Valid_trees_ratio.png")
+=======
+        plt.savefig("Valid_trees_ratio.png")"""
+        print("---------------------------------------------------------------------------------------------------------")
+>>>>>>> e44e920b08ef7008d945a3a464d87f772a4d1053
         """
         print("Done with Task 2 bis")
         print("---------------------------------------------------------------------------------------------------------")
