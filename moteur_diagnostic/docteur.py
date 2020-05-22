@@ -1,6 +1,7 @@
 from moteur_avec_variables.chainage_avant_avec_variables import ChainageAvantAvecVariables
 from copy import deepcopy
 from moteur_diagnostic.first_year_md import FirstYearMedSchool
+from moteur_avec_variables.regle_avec_variables import RegleAvecVariables
 
 
 class Docteur(FirstYearMedSchool):
@@ -63,28 +64,30 @@ class Docteur(FirstYearMedSchool):
         
         return traitement
     
-    def affiche_traitement(self,traitement):
+    def repr_traitement(self,traitement):
         """Affiche un traitement 
         :param traitement: un traitement établit au format de la méthode précédente"""
+        repr_traitement = ""
         
         if traitement[0] == '1':
-            print("Nous n'avons pas pu trouver de traitement...")
+            return "Nous n'avons pas pu trouver de traitement..."
         
         elif traitement[0] == '0':
         
             if len(traitement[2]) == 0:
-                print("Pas de traitement à afficher.")
+                return "Pas de traitement à afficher."
             
             else:
-                print('Et voici le traitement que je recommande:')
+                res = ""
+                res += 'Et voici le traitement que je recommande:\n'
                 changement = traitement[2]
                 for attribut in changement:
                     if changement[attribut] == traitement[3][1][attribut]:
-                        print('Big oof')
                         continue
-                    print(attribut + ": " + traitement[3][1][attribut] + " ---> " + traitement[2][attribut])
-                print('Ce traitement est basé sur la règle suivante:')
-                print(traitement[1])
+                    res += (attribut + ": " + traitement[3][1][attribut] + " ---> " + traitement[2][attribut] + "\n")
+                res += 'Ce traitement est basé sur la règle suivante:\n'
+                res += (RegleAvecVariables.__repr__(traitement[1])+"\n")
+                return res
         
         else:
             raise ValueError("Quel étrange traitement !? Je ne sais pas quoi en faire...")
@@ -101,27 +104,26 @@ class Docteur(FirstYearMedSchool):
             res.update({no_patient:self.traitement(patient,k)})
             no_patient += 1
             
-        return res
+        return res 
     
-        
-    
-    def affiche_diagnostics_et_traitements_hopital(self,diagnostics,traitements):
+    def repr_diagnostics_et_traitements_hopital(self,diagnostics,traitements):
         """Affiche les diagnostiques et les traitements pour des patients
         :param diagnostics: un dictionnaire de diagnostics au format de la méthode .diagnostique_hopital
         :param traitements: un dictionnaire de traitements au format de la méthode . traitements_hopitalS"""
         
-        print("Bonjour, je suis {} et serai votre médecin aujourd'hui".format(self.titre))
-        
         no_patient = 1
+        res = ""
         
         for patient in diagnostics:
             
-            print("Pour le.la patiente no {}, voici mon diagnostic et le traitement approprié:".format(no_patient))
-            self.affiche_diagnostic(diagnostics[patient])
-            self.affiche_traitement(traitements[patient])
-            print("\n")
+            res += "Pour le.la patiente no {}, voici mon diagnostic et le traitement approprié:\n".format(no_patient)
+            res += self.repr_diagnostic(diagnostics[patient])
+            res += self.repr_traitement(traitements[patient])
+            res += "\n"
             
             no_patient += 1
+        
+        return res
     
     def ratio_succes(self,traitements):
         réussites = 0
@@ -130,5 +132,5 @@ class Docteur(FirstYearMedSchool):
             if traitements[traitement][0] == '0':
                 réussites += 1
         
-        return réussites
+        return réussites/len(traitements)
    

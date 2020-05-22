@@ -24,8 +24,8 @@ class FirstYearMedSchool():
         règles compatible avec le moteur avec variables de la série 3 """
 
         print("Running depth first search on tree ... ")
-        rule = [[],None]
-        self.depth_first_search(node,rule)
+        cond = []
+        self.depth_first_search(node,cond)
         print("Rules generated")
         return self.rules
 
@@ -37,22 +37,22 @@ class FirstYearMedSchool():
             facts.append(fact)
         return facts
 
-    def depth_first_search(self, node,rule):
+    def depth_first_search(self, node,cond):
         """ Parcourt en DFS l'arbre pour générer les règles """
         
         if node.terminal():
-            rule_copy = deepcopy(rule)
-            rule_copy[1] = ('target', '?x', node.classe())
-            self.rules.append(rule_copy)
+            cond_copy = deepcopy(cond)
+            conclusion = ('target', '?x', node.classe())
+            self.rules.append(RegleAvecVariables(cond_copy,conclusion))
         else:
             for key in node.enfants:
-                rule_copy = deepcopy(rule)
+                cond_copy = deepcopy(cond)
 
                 #del rule_copy[-1]
-                rule_copy[0].append((str(node.attribut),
+                cond_copy.append((str(node.attribut),
                                             '?x',
                                             str(key),))
-                self.depth_first_search(node.enfants[key], rule_copy)
+                self.depth_first_search(node.enfants[key], cond_copy)
 
     def diagnostique(self, case, verbose = False):
         """ Classifie un cas en fonction des règles données au départ """
@@ -60,7 +60,7 @@ class FirstYearMedSchool():
         facts = self.convert_case_to_facts(case, 'subject')
 
         bc = BaseConnaissances(
-            lambda descr: RegleAvecVariables(descr[0], descr[1]))
+            lambda regle: regle)
 
 
         bc.ajoute_faits(facts)#Don't care about your feelings ^^
@@ -79,13 +79,13 @@ class FirstYearMedSchool():
 
         return (res[0][2],moteur.trace[0])
     
-    def affiche_diagnostic(self,diagnostic):
+    def repr_diagnostic(self,diagnostic):
         """Affiche un diagnostics établit par la méthode précédente"""
-        
+        res = ""
         annonce = ""
         
         if diagnostic[0] == '2':
-            print("Le diagnostic n'a pas abouti...")
+            return "Le diagnostic n'a pas abouti..."
         
         else:
             if diagnostic[0] == '1':
@@ -95,16 +95,18 @@ class FirstYearMedSchool():
             else:
                 raise ValueError("Le diagnostic n'a pas abouti...")
         
-            print(annonce)
+            res += (annonce + "\n")
         
-            print("Ce diagnostic est basé sur les faits suivants:")
+            res += "Ce diagnostic est basé sur les faits suivants:\n"
         
             faits_diagnostic = ""
             for cond in diagnostic[1].conditions:
                 faits_diagnostic += cond[0] + " = " + cond[2] + ", "
             faits_diagnostic = faits_diagnostic[:len(faits_diagnostic)-2]
         
-            print(faits_diagnostic)
+            res += (faits_diagnostic + "\n")
+            
+            return res
     
     def diagnostique_hopital(self,patients):
         """"Crée un diagnostique pour chaque patient
@@ -119,15 +121,13 @@ class FirstYearMedSchool():
        
         return res
     
-    def affiche_diagnostics_hopital(self,diagnostics):
+    def repr_diagnostics_hopital(self,diagnostics):
         """Affiche la liste de diagnostic retrounée par la méthode précédents
         :param: Un dictionnaire de diagnostics établi par diagnostique_hopital"""
-        print("Bonjour, je suis {} et serai votre médecin aujourd'hui.".format(self.titre))
-        
+        res = ""
         for no_patient in diagnostics:
-            
-            print("Pour le.la patiente no {}, voici mon diagnostic:".format(no_patient))
-            self.affiche_diagnostic(diagnostics[no_patient])
-            print("\n")
+            res += "Pour le.la patiente no {}, voici mon diagnostic:".format(no_patient)
+            res += self.repr_diagnostic(diagnostics[no_patient])
+            res += "\n"
         
-        print("Merci à tou.te.s. Au revoir.")
+        return res

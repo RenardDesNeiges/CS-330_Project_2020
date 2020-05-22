@@ -1,6 +1,8 @@
 import csv
 import sys
 
+from moteur_avec_variables.regle_avec_variables import RegleAvecVariables
+
 from moteur_id3.noeud_de_decision import NoeudDeDecision
 from moteur_id3.id3 import ID3
 
@@ -28,10 +30,12 @@ class ResultValues():
         print("Parsing pre-binned training data...")
         train_bin_csv = self.parseCSV("train_bin.csv")
         train_bin = [ [line["target"], {key:val for key, val in line.items() if key != "target"}] for line in train_bin_csv] #Gem bcp les oneliners :)
-        """
-        print("Task 1")
+        print(" Done!\n")
         
-        print("Generating ID3 tree from " + str(len(train_bin)) + " samples...", end = "")
+        print("Task 1")
+        task1_report = open('rapport/Task1_data.txt','w')
+        
+        task1_report.write("Generating ID3 tree from " + str(len(train_bin)) + " samples...\n")
         id3 = ID3()
         self.arbre = Arbre(id3.construit_arbre(train_bin))
         nb_noeuds = len(self.arbre.noeuds)
@@ -39,12 +43,15 @@ class ResultValues():
         profondeur = self.arbre.profondeur()
         moyenne_longueur_branche = sum([self.arbre.longueur_branche(feuille_longueur[0]) for feuille_longueur in self.arbre.noeuds_terminaux_profondeur])/len(self.arbre.noeuds_terminaux_profondeur)
         moyenne_enfants_noeud = sum([len(noeud.enfants) for noeud in self.arbre.noeuds if noeud.enfants != None])/len([noeud for noeud in self.arbre.noeuds if not noeud.terminal()])
-        print(" Done!")
+        
 
-        print("L'arbre a un {} noeuds dont {} feuilles".format(nb_noeuds,nb_feuilles))
-        print("L'arbre a une profondeur de " + str(profondeur))
-        print("La moyenne du nombre d'enfants par noeud est " +str(moyenne_enfants_noeud))
-        print("La moyenne de la longueur d'une branche est " +str(moyenne_longueur_branche)) 
+        task1_report.write("L'arbre a un {} noeuds dont {} feuilles\n".format(nb_noeuds,nb_feuilles))
+        task1_report.write("L'arbre a une profondeur de " + str(profondeur) + "\n")
+        task1_report.write("La moyenne du nombre d'enfants par noeud est " +str(moyenne_enfants_noeud) + "\n")
+        task1_report.write("La moyenne de la longueur d'une branche est " +str(moyenne_longueur_branche) + "\n") 
+        
+        task1_report.close()
+        print('Done with task 1')
         
         print("---------------------------------------------------------------------------------------------------------")
         print("Task 2")
@@ -52,25 +59,24 @@ class ResultValues():
         print("Parsing pre-binned testing data...")
         test_public_bin_csv = self.parseCSV("test_public_bin.csv")
         test_public_bin = [ [line["target"], {key:val for key, val in line.items() if key != "target"}] for line in test_public_bin_csv]
+        print("Done!\n")
         
+        task2_report = open("rapport/Task2_data.txt",'w')
 
         print("Setting up testing environnement...")
         binTest = BinTestEnv()
 
-        binTest.tree_test(self.arbre.racine,test_public_bin)
-
-        # print("Testing training with a random forest :")
+        accuracy_id3 = binTest.tree_test(self.arbre.racine,test_public_bin,False)
         
-
-        #binTest.test_forest(rForest,test_public_bin,True)
-        # print()
-        """
+        task2_report.write("The accuracy of the the tree generated in Task 1 on the test data is : {}%".format(accuracy_id3*100))
+        task2_report.close()
+        
+        print("Done with Task 2")
         print("---------------------------------------------------------------------------------------------------------")
         print("Task 2 bis")
-        
-        rForest = RandomForest()
+        """ Valide trees ratio
         subsamplings = list(range(1,81))
-        invalid_trees_ratios =[]
+        invalid_trees_ratios = []
         for x in subsamplings:
             test_invalid_ratio = []
             for i in range(100):
@@ -87,23 +93,39 @@ class ResultValues():
         #plt.legend()
         
         plt.savefig("Valid_trees_ratio.png")
-        print("---------------------------------------------------------------------------------------------------------")
         """
+        print("Done with Task 2 bis")
+        print("---------------------------------------------------------------------------------------------------------")
         print("Task 3")
         
-        self.faits_initiaux = None
-        self.regles = None
-
+        task3_report = open("rapport/Task3_data.txt",'w')
+        
         Titou = FirstYearMedSchool()
         self.regles = Titou.apprend(self.arbre.racine)
         
-        diagnostics = Titou.diagnostique_hopital(test_public_bin)
-        Titou.affiche_diagnostics_hopital(diagnostics)
-        #binTest.rule_test(rGen, test_public_bin,True)
+        task3_report.write('Liste des regles developees :\n')
+        for regle in self.regles:
+            task3_report.write(RegleAvecVariables.__repr__(regle))
+            task3_report.write("\n")
         
+        self.faits_initiaux = []
+        for i in range(len(train_bin)):
+            self.faits_initiaux.append(Titou.convert_case_to_facts(train_bin[i][1],'patient no ' + str(i+1)))
+        
+        task3_report.write('Liste des faits initiaux :\n')
+        for i in range(len(train_bin)):
+            task3_report.write('Patient ' + str(i+1) + ':')
+            task3_report.write(str(self.faits_initiaux[i]))
+            task3_report.write('\n')
+       
+        diagnostics = Titou.diagnostique_hopital(test_public_bin)
+        repr_diagnostics = Titou.repr_diagnostics_hopital(diagnostics)
+        task3_report.write('Liste des diagnostics:\n')
+        task3_report.write(repr_diagnostics)
         
         print("---------------------------------------------------------------------------------------------------------")
         print("Task 4")
+        task4_report = open("rapport/Task4_data.txt",'w')
         
         attributs_et_valeurs = {}
         first = True
@@ -122,14 +144,12 @@ class ResultValues():
         
         diagnostics = Chris.diagnostique_hopital(test_public_bin)
         traitements = Chris.traitements_hopital(test_public_bin,2)
-        
-        Chris.affiche_diagnostics_et_traitements_hopital(diagnostics,traitements)
-        
-        nb_traité_nontraités = Chris.ratio_succes(traitements)
-        print("On arrive à traiter {} patient.e.s sur 80".format(nb_traité_nontraités))
+        task4_report.write('Liste des diagnotisques:\n')
+        task4_report.write(Chris.repr_diagnostics_et_traitements_hopital(diagnostics,traitements))
+        task4_report.write('\n')
+        task4_report.write('Taux de personnes pour lesquelles ont a réussi à administrer un traitement : {}'.format(Chris.ratio_succes(traitements)))
         print("---------------------------------------------------------------------------------------------------------")
         print("Task 5")
-        """
         """
         print("Parsing continuous training data...")    
         train_continuous_csv = self.parseCSV("train_continuous.csv")
