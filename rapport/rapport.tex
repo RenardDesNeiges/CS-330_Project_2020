@@ -7,6 +7,10 @@
 \usepackage[margin=1in]{geometry}
 
 \usepackage[useregional]{datetime2}
+\usepackage{mathtools}
+
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
 
 \title{CS-330 Projet 2020}   % type title between braces
 \author{Christophe MARCIOT, Titouan RENARD}         % type author(s) between braces
@@ -23,7 +27,7 @@ What is intended in this project is to create a tool capable of predicting whete
 The informations given for each patients are :
 	\begin{itemize}
 		\item A variable called \emph{target}, that takes value $0$ or $1$ indicating if the patient does actually suffer from a cardiovascular diesaes or not (here we use the mediacal convention. That is that 0 means negative and 1 means positive in the detection of cardiovascular disease). This is the variable whose behavior we try to predict.
-		\item 13 other variables called respectively \emph{sex}, \emph{cp}, \emph{trestbps}, \emph{chol}, \emph{fbs}, \emph{restecg}, \emph{tahlach}, \emph {exang}, \emph{oldpeak}, \emph{slope}, \emph{ca} and \emph{thal} that can vary between $0$ and $4$ - with minor exceptions.
+		\item 13 other variables called respectively \emph{sex}, \emph{cp}, \emph{trestbps}, \emph{chol}, \emph{fbs}, \emph{restecg}, \emph{tahlach}, \emph {exang}, \emph{oldpeak}, \emph{slope}, \emph{ca} and \emph{thal} that can take up to $4$ different values.
 	\end{itemize}
 From now on, we will refer to those $14$  variables as \emph{attributes} and the number taken by those attributes as \emph{values} of the given attribute for the patient. In the end, the tool should also be able to justify its diagnosis, to advise treatements when a disease is diagnosed and be able to treat with continuous data.
 
@@ -40,9 +44,31 @@ The project is fragmented in $5$ main tasks :
 \section{Discussion of the results}
 
 \subsection{Task $1$}
-
+	The tree genarated for the completion of this task as been genrated by the implementation of the \emph{ID3} algorithm given. We get the following informations about the genrated tree :
+	\begin{itemize}
+		\item It's composed of $94$ nodes $70$ of wich are leaves,
+		\item The size of the tree is 8, which means that the tree wil make at most $8$ desicions before comming to a conclusion,
+		\item The average number of children for a node is $3.88$ - without taking leaves into account. This means that at a given time, the tree has on average $4$ methods of classifying a given patient,
+		\item The average length of a branch is $3.83$.  This means that, on average, the tree will make $4$ decisions before giving a guess of the value of \emph{target}.
+	\end{itemize}
+	We can put those numbers into perspective by comparing them to a dichotomy sorting. For $n$ entries in the data set, using dichotomy ,the number of nodes would be $2n-1$ of wich $n$ are leaves, the size of the tree would be $\ceil*{log_2(n)}$, the average number of children for a given node would $2$ and the averange length of a branch would $log_2(n)$. By substituting $n$ for $143$, we get that those numbers are respectively $285$ for the number of nodes, $8$ for the size of the tree and $7.16$ the average length of a branch.\\
+	We see that the number of nodes is s lot less than what is expected by dichotomy sorting which is a real improvement in term of space complexity. The average length of a branch is also a lot less which will benefit time complexity. We then conclude that \emph{ID3} benifits both time and space complexity from dichotomy sorting.
+		
+		
+		Include something about the attributes of the node and why it matters.
+		
 \subsection{Task $2$}
+	The test of the tree generated in Task $1$ gives us an accuracy of $56.25\%$ on the testing data. On the training data, this number goes as high as $100\%$. This perfect score on the training data allows us to use the PAC method of statiscal analysis to give a lower bound on the number of exemples needed to obtain a good tree. We use the formula seen in the course and we obtain:
+	$$N\geq\frac{log(\delta/|H|)}{log(1-\epsilon)}$$
+where $N$ is the number of examples, $\epsilon$ is the error rate we admit for our tree, $\delta$ is the probality of having a tree with error rate $\geq\epsilon$ and $H$ is the set of all possible trees. Here, as we operate in a medical context, we would like to set both $\epsilon$ and $\delta$ to be low. Let us set $\delta=\epsilon= 0.01$. Now we have to estimate $|H|$. Giving the exact value of $|H|$ is a hard task. The problem lies in the fact that attributes in this problem can take up to 4 values, but for some attributes, such as \emph{sex} and \emph{fbs}, can take less values (only 2 for the mentionned attributes). Here we will rather focus on giving a correct upper and lower bounds while assuming that all attributes can take up to $4$ different values for the upper bound and $2$ for the lower one. This said, we obtain:
+	
+	$$14*13^2*\ldots*3^{2^{11}}*2^{2^{12}}\leq1.90518*10^{3612}\leq|H|\leq 14*13^4*\ldots*3^{4^{11}}*2^{4^{12}}\leq 1.05355*10^{7936038} $$
+	
+	and thus 
+	
+	$$\frac{log(0.01/1.90518*10^{3612})}{log(0.99)}\approx8.28*10^5\leq\frac{log(0.01/|H|)}{log(0.99)}\leq1.82*10^9\approx\frac{log(0.01/1.05355*10^{7936038})}{log(0.99)}$$
 
+This allows us to say that that with $N\geq1.82*10^9$ we know that we habe a probability of $1\%$ that the algorithm gives us a tree with an error rate lower than $0.01$ and that $N$ must at least greater than $8.28*10^5$ for it to be the case.
 \subsection{Task $3$}
 
 \subsection{Task $4$}

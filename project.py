@@ -36,7 +36,7 @@ class ResultValues():
         train_bin_csv = self.parseCSV("train_bin.csv")
         train_bin = [ [line["target"], {key:val for key, val in line.items() if key != "target"}] for line in train_bin_csv] #Gem bcp les oneliners :)
         print(" Done!\n")
-        """
+        
         print("Task 1")
         task1_report = open('rapport/Task1_data.txt','w')
         
@@ -45,7 +45,7 @@ class ResultValues():
         self.arbre = Arbre(id3.construit_arbre(train_bin))
         nb_noeuds = len(self.arbre.noeuds)
         nb_feuilles = len(self.arbre.noeuds_terminaux_profondeur)
-        profondeur = self.arbre.profondeur()
+        profondeur = self.arbre.profondeur()        
         moyenne_longueur_branche = sum([self.arbre.longueur_branche(feuille_longueur[0]) for feuille_longueur in self.arbre.noeuds_terminaux_profondeur])/len(self.arbre.noeuds_terminaux_profondeur)
         moyenne_enfants_noeud = sum([len(noeud.enfants) for noeud in self.arbre.noeuds if noeud.enfants != None])/len([noeud for noeud in self.arbre.noeuds if not noeud.terminal()])
         
@@ -70,14 +70,16 @@ class ResultValues():
 
         print("Setting up testing environnement...")
         binTest = BinTestEnv()
-
+        accuracy_id3_train = binTest.tree_test(self.arbre.racine,train_bin,False)
         accuracy_id3 = binTest.tree_test(self.arbre.racine,test_public_bin,False)
         
+        task2_report.write("The accuracy of the the tree generated in Task 1 on the train data is : {}%\n".format(accuracy_id3_train*100)) 
         task2_report.write("The accuracy of the the tree generated in Task 1 on the test data is : {}%".format(accuracy_id3*100))
         task2_report.close()
         
         print("Done with Task 2")
         print("---------------------------------------------------------------------------------------------------------")
+        """
         print("Task 2 bis")
         Adaboost tree test
         test_adaboost_tree = BinTestEnv()
@@ -113,8 +115,8 @@ class ResultValues():
             accuracy_total += test_best_tree.test_forest(rF_best_tree,'BestTree',test_public_bin)
         
         iTurnedMyselfIntoAPickleMorty(accuracy_total/100,"BestTree_test_accuracy.pkl")
-        """
-        """Valid trees ratio test"""
+        
+        Valid trees ratio test
         rForest = RandomForest()
         subsamplings = range(1,141)
         invalid_trees_ratios =  {}
@@ -128,7 +130,7 @@ class ResultValues():
             invalid_trees_ratios.update({x:sum(test_invalid_ratio)/100})
         
         iTurnedMyselfIntoAPickleMorty(invalid_trees_ratios,"x=subsamplings_y=invalid_trees_ratios.pkl")
-        """
+        
         print("Done with Task 2 bis")
         print("---------------------------------------------------------------------------------------------------------")
         print("Task 3")
