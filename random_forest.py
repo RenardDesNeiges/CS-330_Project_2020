@@ -57,7 +57,7 @@ class RandomForest:
         return len(self.valid_trees_accuracy)/len(self.trees)
    
     #Used in Adaboosting
-    def binari(x):
+    def binari(self,x):
         if x >= 0:
             return 1
         else:
@@ -98,8 +98,8 @@ class RandomForest:
             probabiilities_cases[case] /= total_prob
             
         #on en garde que les arbres avec moins de 50% de probabilité d'erreur
-        bricks_trees = [arbre[1] for arbre in self.valid_trees_accuracy if sum([probabiilities_cases[i]*abs(int(arbre[1].classifie(train_data[i]))-int(train_data[i][0])) for i in range(len(train_data))])<0.5]
-            
+        bricks_trees = [arbre[1] for arbre in self.valid_trees_accuracy if sum([probabiilities_cases[i]*abs(int(arbre[1].classifie(train_data[i][1])[-1])-int(train_data[i][0])) for i in range(len(train_data))])<0.5]
+        
         #Initialisation de l'algorithm Adaboosting
         wis = probabiilities_cases
         total_wis = 1
@@ -109,17 +109,16 @@ class RandomForest:
             for case in probabiilities_cases:
                 probabiilities_cases[case] = wis[case]/total_wis
                 
-            epsilon  = sum([probabiilities_cases[case]*abs(int(tree.classifie(train_data[case]))-int(train_data[case][0])) for case in probabiilities_cases])
+            epsilon  = sum([probabiilities_cases[case]*abs(int(tree.classifie(train_data[case][1])[-1])-int(train_data[case][0])) for case in probabiilities_cases])
             self.betas[tree] = epsilon/(1-epsilon)
             total_wis = 0
                  
             for case in wis:
-                wis[case] = wis[case]*pow(self.betas[tree],1-abs(int(tree.classifie(train_data[case]))-int(train_data[case][0])))
+                wis[case] = wis[case]*pow(self.betas[tree],1-abs(int(tree.classifie(train_data[case][1])[-1])-int(train_data[case][0])))
                 total_wis += wis[case]
-            
+        
         #Construction du classifier
-        self.adaboost = lambda x:str(binari(sum([-log(self.betas[tree])*(int(tree.classifie(x))-1/2)])))
-
+        self.adaboost = lambda x:str(self.binari(sum([-log(self.betas[tree])*(int(tree.classifie(x)[-1])-1/2) for tree in self.betas])))
     def generate_training_set(self,train_data,train_size,subsamples):
 
         train_sets = []
@@ -139,6 +138,11 @@ class RandomForest:
     
     
     def forest_classify(self,case,method, verbose = False):
+        methods_available = ['MajorityVote','BestTree','AdaBoost']
+        
+        if method not in methods_available:
+            raise ValueError('Les méthodes possibles sont : MajorityVote, BestTree et AdaBoost. Veuillez entrer une de ces trois méthodes')
+        
         if method == 'MajorityVote':
             acc = 0
             total_acc = 0

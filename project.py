@@ -28,7 +28,7 @@ def iTurnedMyselfIntoAPickleMorty(obj, filename):
 class ResultValues():
 
     def __init__(self):
-
+        
         # Do computations here
         
         #parsing the data from the csv file
@@ -36,7 +36,7 @@ class ResultValues():
         train_bin_csv = self.parseCSV("train_bin.csv")
         train_bin = [ [line["target"], {key:val for key, val in line.items() if key != "target"}] for line in train_bin_csv] #Gem bcp les oneliners :)
         print(" Done!\n")
-        
+        """
         print("Task 1")
         task1_report = open('rapport/Task1_data.txt','w')
         
@@ -79,55 +79,56 @@ class ResultValues():
         print("Done with Task 2")
         print("---------------------------------------------------------------------------------------------------------")
         print("Task 2 bis")
-        """Adaboost tree test"""
+        Adaboost tree test
         test_adaboost_tree = BinTestEnv()
         accuracy_total = 0
         rF_adaboost_tree = RandomForest()
-        for i in range(1000):
+        for i in range(100):
             rF_adaboost_tree.generate_trees(train_bin,4,1000)
             rF_adaboost_tree.select_valid_trees(train_bin)
             rF_adaboost_tree.construct_classifier_adaboost(train_bin)
             accuracy_total += test_adaboost_tree.test_forest(rF_adaboost_tree,'AdaBoost',test_public_bin)
         
-        iTurnedMyselfIntoAPickleMorty(accuracy_total/1000,"AdaBoost_test_accuracy.pkl")
-        
-        """Majority tree test"""
+        iTurnedMyselfIntoAPickleMorty(accuracy_total/100,"AdaBoost_test_accuracy.pkl")
+
+        Majority tree test
         test_majority_tree = BinTestEnv()
         accuracy_total = 0
         rF_majority_tree = RandomForest()
-        for i in range(1000):
+        for i in range(100):
             rF_majority_tree.generate_trees(train_bin,4,1000)
             rF_majority_tree.select_valid_trees(train_bin)
             accuracy_total += test_majority_tree.test_forest(rF_majority_tree,'MajorityVote',test_public_bin)
         
-        iTurnedMyselfIntoAPickleMorty(accuracy_total/1000,"Majority_test_accuracy.pkl")
+        iTurnedMyselfIntoAPickleMorty(accuracy_total/100,"Majority_test_accuracy.pkl")
         
-        """Best tree test"""
+        Best tree test
         test_best_tree = BinTestEnv()
         accuracy_total = 0
         rF_best_tree = RandomForest()
-        for i in range(1000):
+        for i in range(100):
             rF_best_tree.generate_trees(train_bin,4,1000)
             rF_best_tree.select_valid_trees(train_bin)
             rF_best_tree.construct_best_tree()
             accuracy_total += test_best_tree.test_forest(rF_best_tree,'BestTree',test_public_bin)
         
-        iTurnedMyselfIntoAPickleMorty(accuracy_total/1000,"BestTree_test_accuracy.pkl")
-
+        iTurnedMyselfIntoAPickleMorty(accuracy_total/100,"BestTree_test_accuracy.pkl")
+        """
         """Valid trees ratio test"""
         rForest = RandomForest()
         subsamplings = range(1,141)
         invalid_trees_ratios =  {}
         for x in subsamplings:
             test_invalid_ratio = []
-            for i in range(1000):
-                rForest.generate_trees(train_bin,x+1,1)
+            for i in range(100):
+                rForest.generate_trees(train_bin,x,1000)
+                rForest.select_valid_trees(train_bin)
                 test_invalid_ratio.append(rForest.valid_trees_ratio())
             
             invalid_trees_ratios.update({x:sum(test_invalid_ratio)/100})
         
         iTurnedMyselfIntoAPickleMorty(invalid_trees_ratios,"x=subsamplings_y=invalid_trees_ratios.pkl")
-        
+        """
         print("Done with Task 2 bis")
         print("---------------------------------------------------------------------------------------------------------")
         print("Task 3")
@@ -196,7 +197,7 @@ class ResultValues():
         continuousTest = ContinuousTestEnv()
 
         continuousTest.test(self.arbre_advance,test_continuous,True)
-
+        """
     def get_results(self):
         return [self.arbre.racine, self.faits_initiaux, self.regles, self.arbre_advance]
 

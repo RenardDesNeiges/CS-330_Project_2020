@@ -29,7 +29,6 @@ class BinTestEnv:
             :param test_data: testing data formalised as in serie 10
         """
         correct_guesses = 0
-        i = 0
         for case in test_data:
             a = ''
             try:
@@ -60,7 +59,7 @@ class BinTestEnv:
             a = ''
             try:
                 a = forest.forest_classify(case[1],method)
-            except:    
+            except:  
                 pass
             if a == case[0]:
                 correct_guesses += 1
