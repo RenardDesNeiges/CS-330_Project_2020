@@ -4,7 +4,7 @@
 \usepackage[T1]{fontenc}
 \usepackage{babel}
 \usepackage{blindtext}
-\usepackage[margin=1.4in]{geometry}
+\usepackage[margin=1in]{geometry}
 
 \usepackage[useregional]{datetime2}
 
@@ -15,12 +15,39 @@
 \begin{document}
 \maketitle
 
-\section{Section}
+\section{Introduction}
 
-lol
+\subsection{Goal}
 
-\subsection{subsection}
+What is intended in this project is to create a tool capable of predicting wheter a patient suffers from a cardiovascular disease given a set of informations.
+The informations given for each patients are :
+	\begin{itemize}
+		\item A variable called \emph{target}, that takes value $0$ or $1$ indicating if the patient does actually suffer from a cardiovascular diesaes or not (here we use the mediacal convention. That is that 0 means negative and 1 means positive in the detection of cardiovascular disease). This is the variable whose behavior we try to predict.
+		\item 13 other variables called respectively \emph{sex}, \emph{cp}, \emph{trestbps}, \emph{chol}, \emph{fbs}, \emph{restecg}, \emph{tahlach}, \emph {exang}, \emph{oldpeak}, \emph{slope}, \emph{ca} and \emph{thal} that can vary between $0$ and $4$ - with minor exceptions.
+	\end{itemize}
+From now on, we will refer to those $14$  variables as \emph{attributes} and the number taken by those attributes as \emph{values} of the given attribute for the patient. In the end, the tool should also be able to justify its diagnosis, to advise treatements when a disease is diagnosed and be able to treat with continuous data.
 
-texte mdr
+\subsection{Structure of the project}
+The project is fragmented in $5$ main tasks :
+	\begin{itemize} 
+		\item Task $1$ : Create a tree capable of guessing the value of \emph{target} for a given patient using a first set of data - given in the file \emph{train\_bin.csv} - using the \emph{ID3} algorithm,
+		\item Task $2$ : Test the accuracy of the tree obtained in Task $1$ on a second set of data - given in the file \emph{test\_public\_bin.csv},
+		\item Task $3 $: Deduce rules from the tree produced in Task $1$. Design a function capable of predicting the value of \emph{target} using only the aformentionned rules and use them to give a justification of the prediction based on the rules used,
+		\item Task $4$ : Improve Task $3$. Design a tool that is capable of the same tasks as in $3$, but it must also be able to give a treatement for the patient when the person is diagnosed with a disease and justify said treatment,
+		\item Task $5$ : Improve the \emph{ID3} implementation of Task $1$ such that the new implementation is capable of dealing with continuous data instead of only discrete ones.
+	\end{itemize}
 
+\section{Discussion of the results}
+
+\subsection{Task $1$}
+
+\subsection{Task $2$}
+
+\subsection{Task $3$}
+
+\subsection{Task $4$}
+
+\subsection{Task $5$}
+
+\section{Conclusion}
 \end{document}

@@ -24,7 +24,7 @@ class RandomForest:
 
             :param arbre: an ID3 generated classification tree
             :param test_data: testing data formalised as in serie 10
-        """
+             """
         self.trees.clear()
         
         print("Generating " + str(subsamples) + " subsamples with " + str(subsampling) + " times subsampling")
