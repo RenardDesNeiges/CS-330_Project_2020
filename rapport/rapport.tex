@@ -60,18 +60,23 @@ The project is fragmented in $5$ main tasks :
 \subsection{Task $2$}
 	The test of the tree generated in Task $1$ gives us an accuracy of $56.25\%$ on the testing data. On the training data, this number goes as high as $100\%$. This perfect score on the training data allows us to use the PAC method of statiscal analysis to give a lower bound on the number of exemples needed to obtain a good tree. We use the formula seen in the course and we obtain:
 	$$N\geq\frac{log(\delta/|H|)}{log(1-\epsilon)}$$
-where $N$ is the number of examples, $\epsilon$ is the error rate we admit for our tree, $\delta$ is the probality of having a tree with error rate $\geq\epsilon$ and $H$ is the set of all possible trees. Here, as we operate in a medical context, we would like to set both $\epsilon$ and $\delta$ to be low. Let us set $\delta=\epsilon= 0.01$. Now we have to estimate $|H|$. Giving the exact value of $|H|$ is a hard task. The problem lies in the fact that attributes in this problem can take up to 4 values, but for some attributes, such as \emph{sex} and \emph{fbs}, can take less values (only 2 for the mentionned attributes). Here we will rather focus on giving a correct upper and lower bounds while assuming that all attributes can take up to $4$ different values for the upper bound and $2$ for the lower one. This said, we obtain:
+where $N$ is the number of examples, $\epsilon$ is the error rate we admit for our tree, $\delta$ is the probality of having a tree with error rate $\geq\epsilon$ and $H$ is the set of all possible trees. Here, as we operate in a medical context, we would like to set $\epsilon$  to be low. Let us set $\delta=\epsilon= 0.01$. Now we have to estimate $|H|$. Giving the exact value of $|H|$ is a hard task. The problem lies in the fact that attributes in this problem can take up to 4 values, but for some attributes, such as \emph{sex} and \emph{fbs}, can take less values (only 2 for the mentionned attributes). Here we will rather focus on giving a correct upper and lower bounds while assuming that all attributes can take up to $4$ different values for the upper bound and $2$ for the lower one. This said, we obtain:
 	
-	$$14*13^2*\ldots*3^{2^{11}}*2^{2^{12}}\leq1.90518*10^{3612}\leq|H|\leq 14*13^4*\ldots*3^{4^{11}}*2^{4^{12}}\leq 1.05355*10^{7936038} $$
+	$$14*13^2*\ldots*3^{2^{11}}*2^{2^{12}}\approx1.90518*10^{3612}\leq|H|\leq 1.05355*10^{7936038}\approx 14*13^4*\ldots*3^{4^{11}}*2^{4^{12}}  $$
 	
 	and thus 
 	
-	$$\frac{log(0.01/1.90518*10^{3612})}{log(0.99)}\approx8.28*10^5\leq\frac{log(0.01/|H|)}{log(0.99)}\leq1.82*10^9\approx\frac{log(0.01/1.05355*10^{7936038})}{log(0.99)}$$
+	$$\frac{log(0.01/1.90518*10^{3612})}{log(0.99)}\approx8.28*10^5\leq\frac{log(0.01/|H|)}{log(0.99)}\leq1.82*10^9\approx\frac{log(0.01/1.05355*10^{7936038})}{log(0.99)}.$$
 
-This allows us to say that that with $N\geq1.82*10^9$ we know that we habe a probability of $1\%$ that the algorithm gives us a tree with an error rate lower than $0.01$ and that $N$ must at least greater than $8.28*10^5$ for it to be the case.
+This allows us to say that that with $N\geq1.82*10^9$ we know that we habe a probability of $0.01$ that the algorithm gives us a tree with an error rate lower than $0.01$ and that $N$ must at least greater than $8.28*10^5$ for it to be the case.
+
 \subsection{Task $3$}
-
+	For this task, we use a \emph{DFS} algorithm on the tree generated in Task $1$ to cover the tree and generate rules based on the nodes covered in th path. Doing this provides on rule per leaf, that is one rule per branch. The rules generated are of the form $$ [(`\mathrm{attribute}_1`,` ?x`, `\mathrm{value}_1`),\ldots,(`\mathrm{attribute}_k`,` ?x`, `\mathrm{value}_k`)]\Rightarrow(`target`, `?x` , `\mathrm{guess}`)$$ where $`?x`$ denotes a variable that will be used in the by the inference engine to do the guess.\\
+	To make a deduction from those facts, we use forward chaining while giving to the engine initial facts of the form $[(`age`, `\mathrm{patient\ no}\ k`, `age(\mathrm{patient\ no}\ k)`),\ldots,(`thal`, `\mathrm{patient\ no}\ k`, `thal(\mathrm{patient\ no}\ k)`)]$. We make it so that the engine gives us the guess and the rule that was used to make the deduction. We then use this rule to give the motivation of the guess. Once we get those motivations, we can arrange them in a way to display the diagnosis in a more readable way as can be found in the file \emph{Task3\_data.txt}. Those deductions are made from the test data set.\\
+	We notice that one of the guess canno't be done by the inference engine (patient no. $61$). This i sdue to the fact that there are no rules that can treat this case. By guessing using the tree, we have that even if the leaf can not treat the given patient, the predominant class can give a classification nonetheless. That is why, we can produce a guess using the tree while not being able to with the inference engine.
+	
 \subsection{Task $4$}
+	In this part of the project
 
 \subsection{Task $5$}
 

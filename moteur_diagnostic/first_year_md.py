@@ -63,7 +63,7 @@ class FirstYearMedSchool():
             lambda regle: regle)
 
 
-        bc.ajoute_faits(facts)#Don't care about your feelings ^^
+        bc.ajoute_faits(facts)
         bc.ajoute_regles(self.rules)
 
         moteur = ChainageAvantAvecVariables(connaissances=bc, methode=Filtre())
@@ -75,7 +75,6 @@ class FirstYearMedSchool():
         
         if len(res) == 0:
             return ('2',moteur.trace[0])
-
 
         return (res[0][2],moteur.trace[0])
     

@@ -47,11 +47,11 @@ class NoeudDeDecision:
         if self.terminal():
             rep += 'Alors {}'.format(self.classe().upper())
         else:
+            valeur = donnee[self.attribut]
+            #print("Enfants: ",self.enfants,"Valeur: ",valeur)
+            enfant = self.enfants[valeur]
+            rep += 'Si {} = {}, '.format(self.attribut, valeur.upper())
             try:
-                valeur = donnee[self.attribut]
-                #print("Enfants: ",self.enfants,"Valeur: ",valeur)
-                enfant = self.enfants[valeur]
-                rep += 'Si {} = {}, '.format(self.attribut, valeur.upper())
                 rep += enfant.classifie(donnee)
             except:
                 rep += self.p_class
