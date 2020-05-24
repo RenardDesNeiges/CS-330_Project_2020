@@ -50,4 +50,13 @@ class Arbre:
                 return profondeur
    
         raise ValueError('Le noeud passé en paramètre n est pas une feuille de l arbre')
-   
+    
+    def repartition_atttributs_noeuds(self):
+        attributs_occurences = {'age':0,'sex':0,'cp':0,'trestbps':0,'chol':0,'fbs':0,'restecg':0,'thalach':0,'exang':0,'oldpeak':0,'slope':0,'ca':0,'thal':0}
+        
+        for noeud in self.noeuds:
+            if noeud.attribut is None:
+                continue
+            attributs_occurences[noeud.attribut] += 1
+        
+        return attributs_occurences

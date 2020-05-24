@@ -54,7 +54,8 @@ class ResultValues():
         task1_report.write("L'arbre a une profondeur de " + str(profondeur) + "\n")
         task1_report.write("La moyenne du nombre d'enfants par noeud est " +str(moyenne_enfants_noeud) + "\n")
         task1_report.write("La moyenne de la longueur d'une branche est " +str(moyenne_longueur_branche) + "\n")
-        task1_report.write(NoeudDeDecision.__repr__(self.arbre.racine))
+        task1_report.write("La répartition des attributs sur les noeuds est la suivante:\n" + str(self.arbre.repartition_atttributs_noeuds()) + "\n")
+        task1_report.write("Voilà à quoi ressemble l'arbre:\n" + NoeudDeDecision.__repr__(self.arbre.racine))
         
         task1_report.close()
         print('Done with task 1')
