@@ -36,7 +36,7 @@ class ResultValues():
         train_bin_csv = self.parseCSV("train_bin.csv")
         train_bin = [ [line["target"], {key:val for key, val in line.items() if key != "target"}] for line in train_bin_csv] #Gem bcp les oneliners :)
         print(" Done!\n")
-        """
+        
         print("Task 1")
         task1_report = open('rapport/Task1_data.txt','w')
         
@@ -77,6 +77,8 @@ class ResultValues():
         task2_report.close()
         
         print("Done with Task 2")
+        
+        """
         print("---------------------------------------------------------------------------------------------------------")
         print("Task 2 bis")
         Adaboost tree test
@@ -113,8 +115,8 @@ class ResultValues():
             accuracy_total += test_best_tree.test_forest(rF_best_tree,'BestTree',test_public_bin)
         
         iTurnedMyselfIntoAPickleMorty(accuracy_total/100,"BestTree_test_accuracy.pkl")
-        """
-        """Valid trees ratio test"""
+        
+        #Valid trees ratio test
         rForest = RandomForest()
         subsamplings = range(1,141)
         invalid_trees_ratios =  {}
@@ -128,7 +130,7 @@ class ResultValues():
             invalid_trees_ratios.update({x:sum(test_invalid_ratio)/100})
         
         iTurnedMyselfIntoAPickleMorty(invalid_trees_ratios,"x=subsamplings_y=invalid_trees_ratios.pkl")
-        """
+        
         print("Done with Task 2 bis")
         print("---------------------------------------------------------------------------------------------------------")
         print("Task 3")
@@ -184,6 +186,7 @@ class ResultValues():
         task4_report.write('\n')
         task4_report.write('Taux de personnes pour lesquelles ont a réussi à administrer un traitement : {}'.format(Chris.ratio_succes(traitements)))
         print("---------------------------------------------------------------------------------------------------------")
+        """
         print("Task 5")
         print("Parsing continuous training data...")    
         train_continuous_csv = self.parseCSV("train_continuous.csv")
@@ -197,7 +200,7 @@ class ResultValues():
         continuousTest = ContinuousTestEnv()
 
         continuousTest.test(self.arbre_advance,test_continuous,True)
-        """
+
     def get_results(self):
         return [self.arbre.racine, self.faits_initiaux, self.regles, self.arbre_advance]
 
