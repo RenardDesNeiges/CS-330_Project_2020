@@ -34,7 +34,7 @@ class ResultValues():
         #parsing the data from the csv file
         print("Parsing pre-binned training data...")
         train_bin_csv = self.parseCSV("train_bin.csv")
-        train_bin = [ [line["target"], {key:val for key, val in line.items() if key != "target"}] for line in train_bin_csv] #Gem bcp les oneliners :)
+        train_bin = [ [line["target"], {key:val for key, val in line.items() if key != "target"}] for line in train_bin_csv]
         print(" Done!\n")
         
         print("Task 1")
@@ -55,7 +55,6 @@ class ResultValues():
         task1_report.write("La moyenne du nombre d'enfants par noeud est " +str(moyenne_enfants_noeud) + "\n")
         task1_report.write("La moyenne de la longueur d'une branche est " +str(moyenne_longueur_branche) + "\n")
         task1_report.write("La répartition des attributs sur les noeuds est la suivante:\n" + str(self.arbre.repartition_atttributs_noeuds()) + "\n")
-        task1_report.write("Voilà à quoi ressemble l'arbre:\n" + NoeudDeDecision.__repr__(self.arbre.racine))
         
         task1_report.close()
         print('Done with task 1')
@@ -120,7 +119,7 @@ class ResultValues():
             accuracy_total += test_best_tree.test_forest(rF_best_tree,'BestTree',test_public_bin)
         
         iTurnedMyselfIntoAPickleMorty(accuracy_total/100,"BestTree_test_accuracy.pkl")
-        """
+        
         #Valid trees ratio test
         rForest = RandomForest()
         subsamplings = range(1,141)
@@ -135,7 +134,7 @@ class ResultValues():
             invalid_trees_ratios.update({x:sum(test_invalid_ratio)/100})
         
         iTurnedMyselfIntoAPickleMorty(invalid_trees_ratios,"x=subsamplings_y=invalid_trees_ratios.pkl")
-        
+
         print("Done with Task 2 bis")
         print("---------------------------------------------------------------------------------------------------------")
         print("Task 3")
@@ -209,14 +208,47 @@ class ResultValues():
         train_continuous = [ [line["target"], {key:val for key, val in line.items() if key != "target"}] for line in train_continuous_csv] #Gem bcp les oneliners :)
         test_continuous_csv = self.parseCSV("test_public_continuous.csv")
         test_continuous = [ [line["target"], {key:val for key, val in line.items() if key != "target"}] for line in test_continuous_csv]
+
+
+        task5_report = open('rapport/Task5_data.txt','w')
+        task5_report.write("Generating continuous binary ID3 tree from " + str(len(train_continuous)) + " samples...\n")
+
+        #tree generation
         
         id3_continuous = ID3_continu()
         arbre_continuous = Arbre(id3_continuous.construit_arbre(train_continuous))
         self.arbre_advance = arbre_continuous.racine
+
+        #tree characterisation
+
+        continu_nb_noeuds = len(arbre_continuous.noeuds)
+        continu_nb_feuilles = len(arbre_continuous.noeuds_terminaux_profondeur)
+        continu_profondeur = arbre_continuous.profondeur()        
+        continu_moyenne_longueur_branche = sum([arbre_continuous.longueur_branche(feuille_longueur[0]) for feuille_longueur in arbre_continuous.noeuds_terminaux_profondeur])/len(arbre_continuous.noeuds_terminaux_profondeur)
+        continu_moyenne_enfants_noeud = sum([len(noeud.enfants) for noeud in arbre_continuous.noeuds if noeud.enfants != None])/len([noeud for noeud in arbre_continuous.noeuds if not noeud.terminal()])
+        
+        task5_report.write("L'arbre a un {} noeuds dont {} feuilles\n".format(continu_nb_noeuds,continu_nb_feuilles))
+        task5_report.write("L'arbre a une profondeur de "
+                            + str(continu_profondeur) + "\n")
+        task5_report.write("La moyenne du nombre d'enfants par noeud est " 
+                            + str(continu_moyenne_enfants_noeud) + "\n")
+        task5_report.write("La moyenne de la longueur d'une branche est " 
+                            + str(continu_moyenne_longueur_branche) + "\n")
+        task5_report.write("La répartition des attributs sur les noeuds est la suivante:\n" 
+                            + str(arbre_continuous.repartition_atttributs_noeuds()) + "\n")
+        
+
+        #accuracy measurement
+        
         continuousTest = ContinuousTestEnv()
 
-        continuousTest.test(self.arbre_advance,test_continuous,True)
-        
+        accuracy_self_continuous = continuousTest.test(self.arbre_advance,train_continuous,False)
+        accuracy_test_continuous = continuousTest.test(self.arbre_advance,test_continuous,False)
+
+        task5_report.write("The accuracy of the the tree generated in Task 5 on the train data is : {}%\n".format(accuracy_self_continuous*100)) 
+        task5_report.write("The accuracy of the the tree generated in Task 5 on the test data is : {}%".format(accuracy_test_continuous*100))
+        task5_report.close()
+
     def get_results(self):
         return [self.arbre.racine, self.faits_initiaux, self.regles, self.arbre_advance]
 
@@ -229,7 +261,6 @@ class ResultValues():
         """
 
         with open(address, newline='', encoding="utf-8-sig") as csvfile:
-
             reader = csv.reader(csvfile, delimiter=' ', quotechar='|')
 
             first = True

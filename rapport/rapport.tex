@@ -12,6 +12,7 @@
 \DeclarePairedDelimiter\ceil{\lceil}{\rceil}
 \DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
 
+
 \title{CS-330 Projet 2020 - Cardiovascular diseases diagnosis}   % type title between braces
 \author{Christophe MARCIOT, Titouan RENARD}         % type author(s) between braces
 
@@ -63,7 +64,7 @@ The project is fragmented in $5$ main tasks :
 			\hline
 		\end{tabular}
 	\end{center}
-	We first notice that the $age$ attribute is the most prevalent attribute present in the nodes. This seems actually relevant as one would expect age to be an attribute that minimise the entropy as older people tend to be more suffering from cardiovascular disease. Also we note that the $fbs$ and $oldpeak$ attributes are never used in the tree. This allows to say that, in this particular context, these two variables are useless to the construction of a tree using our \emph{ID3} algorithm.
+	We first notice that the $age$ attribute is the most prevalent attribute present in the nodes. This seems actually relevant as one would expect age to be an attribute that minimize the entropy as older people tend to be more suffering from cardiovascular disease. Also we note that the $fbs$ and $oldpeak$ attributes are never used in the tree. This allows to say that, in this particular context, these two variables are useless to the construction of a tree using our \emph{ID3} algorithm.
 		
 		
 \subsection{Task $2$}
@@ -90,14 +91,18 @@ This allows us to say that that with $N\geq1.82*10^9$ we know that we have a pro
 	In this part of the project we improve on the previous part. In this part, we implement a tool that is capable of prescribing a treatment when necessary. We assume that a treatment is necessary for a given patient if the diagnosis proposed in Task $3$ concludes that $target=1$ or if the procedure in Task $3$ could not draw any conclusion.\\
 	The way we produce a treatment is by modeling this as a problem of diagnosis by induction. Here, we assume that each value to each attribute can be considered as defective. For a given patient, we use a \emph{BFS} algorithm on the following tree:
 	\begin{itemize}
-		\item To each node is associated a \emph{change}. A change is a list of attributes and values such that the value associated to the given attribute is different from the value associated to the same attribut and the patient.
+		\item To each node is associated a \emph{change}. A change is a list of attributes and values such that the value associated to the given attribute is different from the value associated to the same attribute and the patient.
 		\item The initial node is associated to the imply change.
 		\item The children of a given node are the changes that are just the change of the current node to which we add an attribute that is not already present in it with a value that is different to the value associated to the given attribute and the patient.
 		\item When coming to a node, we diagnose the patient whose information are updated with the values present in the change. If the diagnosis returns $target=0$, we then consider that the change is the treatment. Also we use the rule used in the diagnosis to justify the treatment. If the diagnosis returns $target=1$ we then queue up the children of the current node in the queue - as it is usually done in \emph{BFS}.
 	\end{itemize}
-Restricting us to changes of size smaller or equal to $2$, we see that we can actually treat all patients that were diagnosed to be ill. In fact we notice that there usually more than $400$ changes available of size smaller or equal to $2$ and thus it is not really surprising to see a treatment to be possible. Also we have designed a function that is able to represent the diagnosis and the treatment as well as the justifications for both of them. A list of all diagnosis' and treatments cas be found in the file \emph{Task4\_data.txt}.
+Restricting us to changes of size smaller or equal to $2$, we see that we can actually treat all patients that were diagnosed to be ill. In fact we notice that there usually more than $400$ changes available of size smaller or equal to $2$ and thus it is not really surprising to see a treatment to be possible. Also we have designed a function that is able to represent the diagnosis and the treatment as well as the justifications for both of them. A list of all diagnosis' and treatments cases be found in the file \emph{Task4\_data.txt}.
 
 \subsection{Task $5$}
+
+In this part of the project, we modify the ID3 algorithm so that it is able to deal we continuous instead of binned values data attributes. Unlike the previous implementation, the new algorithm produces binary trees. At each node, patients as separated in two subsets according to a threshold value on the attribute that maximizes : $[H(C) - H(C|A)] / {values(A)}$. This threshold value is selected to minimize the entropy of the target value after partitioning. \\
+Because of the small size of the dataset, we did not implement a root-finding algorithm, we simply try every value in between two existing values in the dataset for the attribute we are evaluating. That being said, such an algorithm would definitely be worth implementing if we were to consider significantly larger datasets. \\
+The performance of the continuous diagnosis algorithm is slightly but not significantly better than discrete one. We get an accuracy of $58.75\%$. As for task 2 we think that this is partly due to the way the data-points are separated between the \emph{test\_public\_continuous.csv} and \emph{train\_continuous.csv}. 
 
 \subsection{Task $2$ bis}
 	In this supplementary section, we tried to implement the \emph{random forests} algorithm. We generate trees with randomly chosen subparts of the original training data set and then consider only the ones that can treat the whole original training data set. While testing the trees, we also compute their accuracy on the original data set.Then we can use $3$ different classifiers. Here we implemented the \emph{BESTTREE}, the \emph{MAJORITYVOTE} and the \emph{ADABOOST} algorithms. We describe them the following way :
@@ -117,6 +122,5 @@ Restricting us to changes of size smaller or equal to $2$, we see that we can ac
 		\end{tabular}
 	\end{center}
 	We clearly see that the \emph{BESTREE} and \emph{MAJORITYVOTE} algorithms are worse than the expected accuracy of guessing randomly which allows us to conclude that they are practically useless. This said we note that \emph{ADABOOST} is a notable improvement has a better accuracy than guessing randomly.
-\section{Conclusion}
 
 \end{document}
