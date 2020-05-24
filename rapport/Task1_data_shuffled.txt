@@ -1,0 +1,496 @@
+Generating ID3 tree from 143 samples...
+L'arbre a un 113 noeuds dont 85 feuilles
+L'arbre a une profondeur de 7
+La moyenne du nombre d'enfants par noeud est 4.0
+La moyenne de la longueur d'une branche est 3.8941176470588235
+Si ca = 1: 
+---Si cp = 1: 
+------Si trestbps = 1: 
+---------Alors 1
+---------Décision basée sur les données:
+---------['1', {'age': '2', 'sex': '0', 'cp': '1', 'trestbps': '1', 'chol': '1', 'fbs': '0', 'restecg': '1', 'thalach': '3', 'exang': '0', 'oldpeak': '1', 'slope': '2', 'ca': '1', 'thal': '2'}]
+------Si trestbps = 3: 
+---------Alors 0
+---------Décision basée sur les données:
+---------['0', {'age': '3', 'sex': '1', 'cp': '1', 'trestbps': '3', 'chol': '1', 'fbs': '0', 'restecg': '0', 'thalach': '3', 'exang': '0', 'oldpeak': '1', 'slope': '2', 'ca': '1', 'thal': '2'}]
+------Si trestbps = 4: 
+---------Alors 0
+---------Décision basée sur les données:
+---------0
+---------{}
+------Si trestbps = 5: 
+---------Alors 0
+---------Décision basée sur les données:
+---------0
+---------{}
+------Si trestbps = 2: 
+---------Si fbs = 1: 
+------------Alors 1
+------------Décision basée sur les données:
+------------['1', {'age': '3', 'sex': '0', 'cp': '1', 'trestbps': '2', 'chol': '2', 'fbs': '1', 'restecg': '0', 'thalach': '3', 'exang': '1', 'oldpeak': '1', 'slope': '2', 'ca': '1', 'thal': '2'}]
+---------Si fbs = 0: 
+------------Alors 0
+------------Décision basée sur les données:
+------------['0', {'age': '3', 'sex': '0', 'cp': '1', 'trestbps': '2', 'chol': '2', 'fbs': '0', 'restecg': '0', 'thalach': '4', 'exang': '0', 'oldpeak': '1', 'slope': '1', 'ca': '1', 'thal': '2'}]
+---Si cp = 0: 
+------Si trestbps = 1: 
+---------Alors 0
+---------Décision basée sur les données:
+---------['0', {'age': '2', 'sex': '1', 'cp': '0', 'trestbps': '1', 'chol': '2', 'fbs': '0', 'restecg': '0', 'thalach': '3', 'exang': '0', 'oldpeak': '1', 'slope': '2', 'ca': '1', 'thal': '2'}]
+---------['0', {'age': '3', 'sex': '1', 'cp': '0', 'trestbps': '1', 'chol': '1', 'fbs': '0', 'restecg': '1', 'thalach': '3', 'exang': '0', 'oldpeak': '1', 'slope': '2', 'ca': '1', 'thal': '3'}]
+---------['0', {'age': '4', 'sex': '1', 'cp': '0', 'trestbps': '1', 'chol': '1', 'fbs': '0', 'restecg': '0', 'thalach': '2', 'exang': '1', 'oldpeak': '1', 'slope': '2', 'ca': '1', 'thal': '2'}]
+---------['0', {'age': '3', 'sex': '1', 'cp': '0', 'trestbps': '1', 'chol': '2', 'fbs': '0', 'restecg': '1', 'thalach': '2', 'exang': '1', 'oldpeak': '2', 'slope': '1', 'ca': '1', 'thal': '3'}]
+---------['0', {'age': '3', 'sex': '1', 'cp': '0', 'trestbps': '1', 'chol': '2', 'fbs': '0', 'restecg': '1', 'thalach': '3', 'exang': '1', 'oldpeak': '3', 'slope': '1', 'ca': '1', 'thal': '3'}]
+---------['0', {'age': '3', 'sex': '1', 'cp': '0', 'trestbps': '1', 'chol': '1', 'fbs': '0', 'restecg': '1', 'thalach': '2', 'exang': '0', 'oldpeak': '1', 'slope': '1', 'ca': '1', 'thal': '3'}]
+---------['0', {'age': '2', 'sex': '1', 'cp': '0', 'trestbps': '1', 'chol': '1', 'fbs': '0', 'restecg': '0', 'thalach': '4', 'exang': '0', 'oldpeak': '1', 'slope': '2', 'ca': '1', 'thal': '2'}]
+---------['0', {'age': '3', 'sex': '1', 'cp': '0', 'trestbps': '1', 'chol': '2', 'fbs': '0', 'restecg': '1', 'thalach': '3', 'exang': '1', 'oldpeak': '2', 'slope': '1', 'ca': '1', 'thal': '3'}]
+---------['0', {'age': '3', 'sex': '1', 'cp': '0', 'trestbps': '1', 'chol': '2', 'fbs': '0', 'restecg': '0', 'thalach': '1', 'exang': '1', 'oldpeak': '2', 'slope': '0', 'ca': '1', 'thal': '2'}]
+---------['0', {'age': '3', 'sex': '1', 'cp': '0', 'trestbps': '1', 'chol': '2', 'fbs': '0', 'restecg': '0', 'thalach': '3', 'exang': '1', 'oldpeak': '1', 'slope': '1', 'ca': '1', 'thal': '3'}]
+------Si trestbps = 3: 
+---------Alors 0
+---------Décision basée sur les données:
+---------['0', {'age': '3', 'sex': '1', 'cp': '0', 'trestbps': '3', 'chol': '2', 'fbs': '0', 'restecg': '0', 'thalach': '3', 'exang': '1', 'oldpeak': '1', 'slope': '1', 'ca': '1', 'thal': '3'}]
+---------['0', {'age': '3', 'sex': '1', 'cp': '0', 'trestbps': '3', 'chol': '1', 'fbs': '0', 'restecg': '1', 'thalach': '3', 'exang': '0', 'oldpeak': '1', 'slope': '2', 'ca': '1', 'thal': '3'}]
+------Si trestbps = 4: 
+---------Alors 0
+---------Décision basée sur les données:
+---------0
+---------{}
+------Si trestbps = 5: 
+---------Alors 0
+---------Décision basée sur les données:
+---------0
+---------{}
+------Si trestbps = 2: 
+---------Si chol = 1: 
+------------Alors 0
+------------Décision basée sur les données:
+------------['0', {'age': '3', 'sex': '1', 'cp': '0', 'trestbps': '2', 'chol': '1', 'fbs': '0', 'restecg': '0', 'thalach': '2', 'exang': '1', 'oldpeak': '3', 'slope': '1', 'ca': '1', 'thal': '2'}]
+------------['0', {'age': '3', 'sex': '1', 'cp': '0', 'trestbps': '2', 'chol': '1', 'fbs': '0', 'restecg': '0', 'thalach': '2', 'exang': '1', 'oldpeak': '2', 'slope': '1', 'ca': '1', 'thal': '1'}]
+------------['0', {'age': '3', 'sex': '1', 'cp': '0', 'trestbps': '2', 'chol': '1', 'fbs': '0', 'restecg': '1', 'thalach': '3', 'exang': '1', 'oldpeak': '1', 'slope': '2', 'ca': '1', 'thal': '3'}]
+---------Si chol = 2: 
+------------Si thalach = 1: 
+---------------Alors 0
+---------------Décision basée sur les données:
+---------------0
+---------------{}
+------------Si thalach = 3: 
+---------------Alors 0
+---------------Décision basée sur les données:
+---------------['0', {'age': '3', 'sex': '1', 'cp': '0', 'trestbps': '2', 'chol': '2', 'fbs': '0', 'restecg': '1', 'thalach': '3', 'exang': '1', 'oldpeak': '1', 'slope': '2', 'ca': '1', 'thal': '3'}]
+---------------['0', {'age': '3', 'sex': '1', 'cp': '0', 'trestbps': '2', 'chol': '2', 'fbs': '0', 'restecg': '0', 'thalach': '3', 'exang': '1', 'oldpeak': '2', 'slope': '1', 'ca': '1', 'thal': '3'}]
+------------Si thalach = 4: 
+---------------Alors 0
+---------------Décision basée sur les données:
+---------------0
+---------------{}
+------------Si thalach = 5: 
+---------------Alors 0
+---------------Décision basée sur les données:
+---------------0
+---------------{}
+------------Si thalach = 2: 
+---------------Alors 1
+---------------Décision basée sur les données:
+---------------['1', {'age': '3', 'sex': '1', 'cp': '0', 'trestbps': '2', 'chol': '2', 'fbs': '0', 'restecg': '1', 'thalach': '2', 'exang': '1', 'oldpeak': '1', 'slope': '1', 'ca': '1', 'thal': '3'}]
+---------Si chol = 3: 
+------------Alors 0
+------------Décision basée sur les données:
+------------['0', {'age': '3', 'sex': '1', 'cp': '0', 'trestbps': '2', 'chol': '3', 'fbs': '0', 'restecg': '1', 'thalach': '2', 'exang': '1', 'oldpeak': '1', 'slope': '1', 'ca': '1', 'thal': '3'}]
+---Si cp = 2: 
+------Si age = 1: 
+---------Alors 0
+---------Décision basée sur les données:
+---------0
+---------{}
+------Si age = 4: 
+---------Alors 0
+---------Décision basée sur les données:
+---------0
+---------{}
+------Si age = 2: 
+---------Alors 1
+---------Décision basée sur les données:
+---------['1', {'age': '2', 'sex': '1', 'cp': '2', 'trestbps': '1', 'chol': '1', 'fbs': '0', 'restecg': '1', 'thalach': '3', 'exang': '1', 'oldpeak': '1', 'slope': '2', 'ca': '1', 'thal': '3'}]
+------Si age = 3: 
+---------Alors 0
+---------Décision basée sur les données:
+---------['0', {'age': '3', 'sex': '1', 'cp': '2', 'trestbps': '2', 'chol': '2', 'fbs': '1', 'restecg': '0', 'thalach': '3', 'exang': '1', 'oldpeak': '1', 'slope': '1', 'ca': '1', 'thal': '1'}]
+---------['0', {'age': '3', 'sex': '1', 'cp': '2', 'trestbps': '2', 'chol': '1', 'fbs': '0', 'restecg': '0', 'thalach': '3', 'exang': '0', 'oldpeak': '1', 'slope': '1', 'ca': '1', 'thal': '3'}]
+---------['0', {'age': '3', 'sex': '1', 'cp': '2', 'trestbps': '1', 'chol': '1', 'fbs': '0', 'restecg': '0', 'thalach': '3', 'exang': '0', 'oldpeak': '2', 'slope': '1', 'ca': '1', 'thal': '3'}]
+---------['0', {'age': '3', 'sex': '1', 'cp': '2', 'trestbps': '2', 'chol': '1', 'fbs': '1', 'restecg': '1', 'thalach': '2', 'exang': '0', 'oldpeak': '2', 'slope': '1', 'ca': '1', 'thal': '1'}]
+---Si cp = 3: 
+------Si trestbps = 1: 
+---------Alors 0
+---------Décision basée sur les données:
+---------0
+---------{}
+------Si trestbps = 3: 
+---------Alors 1
+---------Décision basée sur les données:
+---------['1', {'age': '4', 'sex': '1', 'cp': '3', 'trestbps': '3', 'chol': '1', 'fbs': '1', 'restecg': '0', 'thalach': '2', 'exang': '0', 'oldpeak': '1', 'slope': '1', 'ca': '1', 'thal': '2'}]
+------Si trestbps = 4: 
+---------Alors 0
+---------Décision basée sur les données:
+---------0
+---------{}
+------Si trestbps = 5: 
+---------Alors 0
+---------Décision basée sur les données:
+---------0
+---------{}
+------Si trestbps = 2: 
+---------Alors 0
+---------Décision basée sur les données:
+---------['0', {'age': '4', 'sex': '1', 'cp': '3', 'trestbps': '2', 'chol': '2', 'fbs': '1', 'restecg': '0', 'thalach': '4', 'exang': '0', 'oldpeak': '1', 'slope': '1', 'ca': '1', 'thal': '2'}]
+Si ca = 3: 
+---Si cp = 1: 
+------Alors 0
+------Décision basée sur les données:
+------['0', {'age': '4', 'sex': '1', 'cp': '1', 'trestbps': '3', 'chol': '2', 'fbs': '0', 'restecg': '1', 'thalach': '2', 'exang': '1', 'oldpeak': '1', 'slope': '1', 'ca': '3', 'thal': '1'}]
+---Si cp = 0: 
+------Alors 0
+------Décision basée sur les données:
+------['0', {'age': '3', 'sex': '1', 'cp': '0', 'trestbps': '3', 'chol': '2', 'fbs': '1', 'restecg': '0', 'thalach': '2', 'exang': '0', 'oldpeak': '1', 'slope': '1', 'ca': '3', 'thal': '3'}]
+------['0', {'age': '3', 'sex': '1', 'cp': '0', 'trestbps': '2', 'chol': '2', 'fbs': '1', 'restecg': '0', 'thalach': '2', 'exang': '1', 'oldpeak': '2', 'slope': '2', 'ca': '3', 'thal': '3'}]
+------['0', {'age': '2', 'sex': '1', 'cp': '0', 'trestbps': '2', 'chol': '2', 'fbs': '0', 'restecg': '1', 'thalach': '2', 'exang': '1', 'oldpeak': '3', 'slope': '1', 'ca': '3', 'thal': '3'}]
+------['0', {'age': '3', 'sex': '0', 'cp': '0', 'trestbps': '2', 'chol': '2', 'fbs': '1', 'restecg': '1', 'thalach': '2', 'exang': '0', 'oldpeak': '2', 'slope': '1', 'ca': '3', 'thal': '2'}]
+------['0', {'age': '3', 'sex': '0', 'cp': '0', 'trestbps': '3', 'chol': '1', 'fbs': '0', 'restecg': '0', 'thalach': '3', 'exang': '0', 'oldpeak': '5', 'slope': '0', 'ca': '3', 'thal': '3'}]
+------['0', {'age': '4', 'sex': '1', 'cp': '0', 'trestbps': '2', 'chol': '2', 'fbs': '0', 'restecg': '0', 'thalach': '2', 'exang': '0', 'oldpeak': '2', 'slope': '1', 'ca': '3', 'thal': '2'}]
+------['0', {'age': '3', 'sex': '1', 'cp': '0', 'trestbps': '1', 'chol': '2', 'fbs': '0', 'restecg': '2', 'thalach': '3', 'exang': '0', 'oldpeak': '3', 'slope': '0', 'ca': '3', 'thal': '1'}]
+---Si cp = 2: 
+------Si age = 1: 
+---------Alors 0
+---------Décision basée sur les données:
+---------0
+---------{}
+------Si age = 4: 
+---------Alors 0
+---------Décision basée sur les données:
+---------['0', {'age': '4', 'sex': '1', 'cp': '2', 'trestbps': '2', 'chol': '2', 'fbs': '0', 'restecg': '0', 'thalach': '3', 'exang': '0', 'oldpeak': '2', 'slope': '1', 'ca': '3', 'thal': '3'}]
+------Si age = 2: 
+---------Alors 0
+---------Décision basée sur les données:
+---------0
+---------{}
+------Si age = 3: 
+---------Alors 1
+---------Décision basée sur les données:
+---------['1', {'age': '3', 'sex': '1', 'cp': '2', 'trestbps': '2', 'chol': '1', 'fbs': '0', 'restecg': '1', 'thalach': '3', 'exang': '0', 'oldpeak': '2', 'slope': '1', 'ca': '3', 'thal': '3'}]
+---Si cp = 3: 
+------Alors 0
+------Décision basée sur les données:
+------0
+------{}
+Si ca = 4: 
+---Alors 0
+---Décision basée sur les données:
+---['0', {'age': '2', 'sex': '1', 'cp': '0', 'trestbps': '2', 'chol': '2', 'fbs': '1', 'restecg': '0', 'thalach': '3', 'exang': '1', 'oldpeak': '1', 'slope': '1', 'ca': '4', 'thal': '3'}]
+Si ca = 0: 
+---Si slope = 1: 
+------Si oldpeak = 1: 
+---------Si thal = 1: 
+------------Alors 1
+------------Décision basée sur les données:
+------------['1', {'age': '3', 'sex': '1', 'cp': '0', 'trestbps': '1', 'chol': '1', 'fbs': '0', 'restecg': '1', 'thalach': '2', 'exang': '1', 'oldpeak': '1', 'slope': '1', 'ca': '0', 'thal': '1'}]
+---------Si thal = 0: 
+------------Alors 0
+------------Décision basée sur les données:
+------------0
+------------{}
+---------Si thal = 2: 
+------------Si trestbps = 1: 
+---------------Alors 1
+---------------Décision basée sur les données:
+---------------['1', {'age': '2', 'sex': '1', 'cp': '0', 'trestbps': '1', 'chol': '2', 'fbs': '0', 'restecg': '1', 'thalach': '4', 'exang': '0', 'oldpeak': '1', 'slope': '1', 'ca': '0', 'thal': '2'}]
+---------------['1', {'age': '2', 'sex': '1', 'cp': '2', 'trestbps': '1', 'chol': '1', 'fbs': '0', 'restecg': '1', 'thalach': '3', 'exang': '1', 'oldpeak': '1', 'slope': '1', 'ca': '0', 'thal': '2'}]
+---------------['1', {'age': '2', 'sex': '0', 'cp': '2', 'trestbps': '1', 'chol': '1', 'fbs': '0', 'restecg': '1', 'thalach': '4', 'exang': '0', 'oldpeak': '1', 'slope': '1', 'ca': '0', 'thal': '2'}]
+------------Si trestbps = 3: 
+---------------Alors 0
+---------------Décision basée sur les données:
+---------------['0', {'age': '3', 'sex': '0', 'cp': '0', 'trestbps': '3', 'chol': '2', 'fbs': '0', 'restecg': '1', 'thalach': '3', 'exang': '1', 'oldpeak': '1', 'slope': '1', 'ca': '0', 'thal': '2'}]
+------------Si trestbps = 4: 
+---------------Alors 0
+---------------Décision basée sur les données:
+---------------['0', {'age': '3', 'sex': '0', 'cp': '0', 'trestbps': '4', 'chol': '2', 'fbs': '0', 'restecg': '1', 'thalach': '3', 'exang': '1', 'oldpeak': '1', 'slope': '1', 'ca': '0', 'thal': '2'}]
+------------Si trestbps = 5: 
+---------------Alors 0
+---------------Décision basée sur les données:
+---------------0
+---------------{}
+------------Si trestbps = 2: 
+---------------Alors 1
+---------------Décision basée sur les données:
+---------------['1', {'age': '3', 'sex': '0', 'cp': '0', 'trestbps': '2', 'chol': '1', 'fbs': '0', 'restecg': '1', 'thalach': '2', 'exang': '0', 'oldpeak': '1', 'slope': '1', 'ca': '0', 'thal': '2'}]
+---------------['1', {'age': '3', 'sex': '0', 'cp': '1', 'trestbps': '2', 'chol': '2', 'fbs': '0', 'restecg': '0', 'thalach': '3', 'exang': '0', 'oldpeak': '1', 'slope': '1', 'ca': '0', 'thal': '2'}]
+---------------['1', {'age': '2', 'sex': '0', 'cp': '0', 'trestbps': '2', 'chol': '2', 'fbs': '0', 'restecg': '0', 'thalach': '3', 'exang': '1', 'oldpeak': '1', 'slope': '1', 'ca': '0', 'thal': '2'}]
+---------------['1', {'age': '1', 'sex': '0', 'cp': '2', 'trestbps': '2', 'chol': '1', 'fbs': '0', 'restecg': '1', 'thalach': '3', 'exang': '0', 'oldpeak': '1', 'slope': '1', 'ca': '0', 'thal': '2'}]
+---------------['1', {'age': '2', 'sex': '0', 'cp': '1', 'trestbps': '2', 'chol': '1', 'fbs': '0', 'restecg': '0', 'thalach': '4', 'exang': '0', 'oldpeak': '1', 'slope': '1', 'ca': '0', 'thal': '2'}]
+---------Si thal = 3: 
+------------Si cp = 1: 
+---------------Alors 0
+---------------Décision basée sur les données:
+---------------0
+---------------{}
+------------Si cp = 0: 
+---------------Alors 0
+---------------Décision basée sur les données:
+---------------['0', {'age': '3', 'sex': '0', 'cp': '0', 'trestbps': '2', 'chol': '2', 'fbs': '0', 'restecg': '1', 'thalach': '2', 'exang': '1', 'oldpeak': '1', 'slope': '1', 'ca': '0', 'thal': '3'}]
+---------------['0', {'age': '1', 'sex': '1', 'cp': '0', 'trestbps': '1', 'chol': '1', 'fbs': '0', 'restecg': '1', 'thalach': '3', 'exang': '0', 'oldpeak': '1', 'slope': '1', 'ca': '0', 'thal': '3'}]
+---------------['0', {'age': '3', 'sex': '0', 'cp': '0', 'trestbps': '2', 'chol': '2', 'fbs': '0', 'restecg': '0', 'thalach': '3', 'exang': '1', 'oldpeak': '1', 'slope': '1', 'ca': '0', 'thal': '3'}]
+---------------['0', {'age': '2', 'sex': '0', 'cp': '0', 'trestbps': '2', 'chol': '2', 'fbs': '0', 'restecg': '1', 'thalach': '3', 'exang': '1', 'oldpeak': '1', 'slope': '1', 'ca': '0', 'thal': '3'}]
+------------Si cp = 2: 
+---------------Si age = 1: 
+------------------Alors 0
+------------------Décision basée sur les données:
+------------------0
+------------------{}
+---------------Si age = 4: 
+------------------Alors 0
+------------------Décision basée sur les données:
+------------------['0', {'age': '4', 'sex': '1', 'cp': '2', 'trestbps': '3', 'chol': '1', 'fbs': '0', 'restecg': '0', 'thalach': '3', 'exang': '0', 'oldpeak': '1', 'slope': '1', 'ca': '0', 'thal': '3'}]
+---------------Si age = 2: 
+------------------Alors 0
+------------------Décision basée sur les données:
+------------------0
+------------------{}
+---------------Si age = 3: 
+------------------Alors 1
+------------------Décision basée sur les données:
+------------------['1', {'age': '3', 'sex': '1', 'cp': '2', 'trestbps': '1', 'chol': '2', 'fbs': '0', 'restecg': '0', 'thalach': '3', 'exang': '1', 'oldpeak': '1', 'slope': '1', 'ca': '0', 'thal': '3'}]
+------------Si cp = 3: 
+---------------Alors 1
+---------------Décision basée sur les données:
+---------------['1', {'age': '3', 'sex': '1', 'cp': '3', 'trestbps': '3', 'chol': '1', 'fbs': '0', 'restecg': '0', 'thalach': '3', 'exang': '0', 'oldpeak': '1', 'slope': '1', 'ca': '0', 'thal': '3'}]
+------Si oldpeak = 3: 
+---------Alors 0
+---------Décision basée sur les données:
+---------['0', {'age': '1', 'sex': '1', 'cp': '3', 'trestbps': '1', 'chol': '1', 'fbs': '0', 'restecg': '1', 'thalach': '4', 'exang': '1', 'oldpeak': '3', 'slope': '1', 'ca': '0', 'thal': '3'}]
+---------['0', {'age': '3', 'sex': '0', 'cp': '0', 'trestbps': '4', 'chol': '2', 'fbs': '0', 'restecg': '2', 'thalach': '2', 'exang': '1', 'oldpeak': '3', 'slope': '1', 'ca': '0', 'thal': '2'}]
+---------['0', {'age': '2', 'sex': '1', 'cp': '2', 'trestbps': '3', 'chol': '1', 'fbs': '0', 'restecg': '1', 'thalach': '3', 'exang': '0', 'oldpeak': '3', 'slope': '1', 'ca': '0', 'thal': '2'}]
+------Si oldpeak = 4: 
+---------Alors 0
+---------Décision basée sur les données:
+---------0
+---------{}
+------Si oldpeak = 5: 
+---------Alors 0
+---------Décision basée sur les données:
+---------0
+---------{}
+------Si oldpeak = 2: 
+---------Si age = 1: 
+------------Alors 0
+------------Décision basée sur les données:
+------------['0', {'age': '1', 'sex': '1', 'cp': '0', 'trestbps': '1', 'chol': '1', 'fbs': '0', 'restecg': '0', 'thalach': '2', 'exang': '1', 'oldpeak': '2', 'slope': '1', 'ca': '0', 'thal': '3'}]
+------------['0', {'age': '1', 'sex': '1', 'cp': '0', 'trestbps': '1', 'chol': '1', 'fbs': '0', 'restecg': '1', 'thalach': '2', 'exang': '1', 'oldpeak': '2', 'slope': '1', 'ca': '0', 'thal': '3'}]
+---------Si age = 4: 
+------------Alors 1
+------------Décision basée sur les données:
+------------['1', {'age': '4', 'sex': '0', 'cp': '0', 'trestbps': '1', 'chol': '1', 'fbs': '0', 'restecg': '1', 'thalach': '2', 'exang': '0', 'oldpeak': '2', 'slope': '1', 'ca': '0', 'thal': '2'}]
+---------Si age = 2: 
+------------Alors 0
+------------Décision basée sur les données:
+------------['0', {'age': '2', 'sex': '0', 'cp': '0', 'trestbps': '2', 'chol': '2', 'fbs': '1', 'restecg': '0', 'thalach': '2', 'exang': '1', 'oldpeak': '2', 'slope': '1', 'ca': '0', 'thal': '3'}]
+------------['0', {'age': '2', 'sex': '1', 'cp': '0', 'trestbps': '3', 'chol': '2', 'fbs': '0', 'restecg': '0', 'thalach': '2', 'exang': '0', 'oldpeak': '2', 'slope': '1', 'ca': '0', 'thal': '3'}]
+---------Si age = 3: 
+------------Alors 0
+------------Décision basée sur les données:
+------------['0', {'age': '3', 'sex': '1', 'cp': '1', 'trestbps': '1', 'chol': '2', 'fbs': '0', 'restecg': '0', 'thalach': '3', 'exang': '0', 'oldpeak': '2', 'slope': '1', 'ca': '0', 'thal': '2'}]
+------------['0', {'age': '3', 'sex': '1', 'cp': '2', 'trestbps': '2', 'chol': '1', 'fbs': '0', 'restecg': '0', 'thalach': '3', 'exang': '0', 'oldpeak': '2', 'slope': '1', 'ca': '0', 'thal': '2'}]
+------------['0', {'age': '3', 'sex': '1', 'cp': '2', 'trestbps': '2', 'chol': '2', 'fbs': '0', 'restecg': '1', 'thalach': '2', 'exang': '1', 'oldpeak': '2', 'slope': '1', 'ca': '0', 'thal': '3'}]
+---Si slope = 0: 
+------Si cp = 1: 
+---------Alors 0
+---------Décision basée sur les données:
+---------['0', {'age': '2', 'sex': '1', 'cp': '1', 'trestbps': '1', 'chol': '1', 'fbs': '0', 'restecg': '1', 'thalach': '3', 'exang': '0', 'oldpeak': '1', 'slope': '0', 'ca': '0', 'thal': '3'}]
+------Si cp = 0: 
+---------Alors 0
+---------Décision basée sur les données:
+---------['0', {'age': '2', 'sex': '1', 'cp': '0', 'trestbps': '1', 'chol': '1', 'fbs': '0', 'restecg': '1', 'thalach': '3', 'exang': '1', 'oldpeak': '2', 'slope': '0', 'ca': '0', 'thal': '1'}]
+---------['0', {'age': '3', 'sex': '1', 'cp': '0', 'trestbps': '2', 'chol': '1', 'fbs': '1', 'restecg': '0', 'thalach': '3', 'exang': '1', 'oldpeak': '3', 'slope': '0', 'ca': '0', 'thal': '3'}]
+---------['0', {'age': '3', 'sex': '1', 'cp': '0', 'trestbps': '2', 'chol': '1', 'fbs': '0', 'restecg': '1', 'thalach': '2', 'exang': '1', 'oldpeak': '4', 'slope': '0', 'ca': '0', 'thal': '3'}]
+---------['0', {'age': '3', 'sex': '1', 'cp': '0', 'trestbps': '3', 'chol': '2', 'fbs': '0', 'restecg': '0', 'thalach': '3', 'exang': '1', 'oldpeak': '3', 'slope': '0', 'ca': '0', 'thal': '3'}]
+------Si cp = 2: 
+---------Alors 0
+---------Décision basée sur les données:
+---------0
+---------{}
+------Si cp = 3: 
+---------Alors 1
+---------Décision basée sur les données:
+---------['1', {'age': '4', 'sex': '0', 'cp': '3', 'trestbps': '3', 'chol': '1', 'fbs': '0', 'restecg': '1', 'thalach': '2', 'exang': '0', 'oldpeak': '2', 'slope': '0', 'ca': '0', 'thal': '2'}]
+---------['1', {'age': '3', 'sex': '1', 'cp': '3', 'trestbps': '4', 'chol': '2', 'fbs': '0', 'restecg': '0', 'thalach': '3', 'exang': '0', 'oldpeak': '3', 'slope': '0', 'ca': '0', 'thal': '3'}]
+---Si slope = 2: 
+------Si cp = 1: 
+---------Alors 1
+---------Décision basée sur les données:
+---------['1', {'age': '2', 'sex': '0', 'cp': '1', 'trestbps': '1', 'chol': '2', 'fbs': '0', 'restecg': '1', 'thalach': '3', 'exang': '0', 'oldpeak': '1', 'slope': '2', 'ca': '0', 'thal': '2'}]
+---------['1', {'age': '2', 'sex': '1', 'cp': '1', 'trestbps': '1', 'chol': '2', 'fbs': '0', 'restecg': '1', 'thalach': '4', 'exang': '0', 'oldpeak': '1', 'slope': '2', 'ca': '0', 'thal': '2'}]
+---------['1', {'age': '3', 'sex': '1', 'cp': '1', 'trestbps': '1', 'chol': '2', 'fbs': '0', 'restecg': '1', 'thalach': '4', 'exang': '0', 'oldpeak': '1', 'slope': '2', 'ca': '0', 'thal': '2'}]
+---------['1', {'age': '3', 'sex': '1', 'cp': '1', 'trestbps': '1', 'chol': '2', 'fbs': '0', 'restecg': '1', 'thalach': '3', 'exang': '0', 'oldpeak': '1', 'slope': '2', 'ca': '0', 'thal': '3'}]
+---------['1', {'age': '1', 'sex': '1', 'cp': '1', 'trestbps': '2', 'chol': '1', 'fbs': '0', 'restecg': '0', 'thalach': '5', 'exang': '0', 'oldpeak': '1', 'slope': '2', 'ca': '0', 'thal': '2'}]
+---------['1', {'age': '2', 'sex': '1', 'cp': '1', 'trestbps': '1', 'chol': '1', 'fbs': '1', 'restecg': '1', 'thalach': '3', 'exang': '0', 'oldpeak': '1', 'slope': '2', 'ca': '0', 'thal': '3'}]
+---------['1', {'age': '3', 'sex': '1', 'cp': '1', 'trestbps': '2', 'chol': '1', 'fbs': '0', 'restecg': '0', 'thalach': '3', 'exang': '0', 'oldpeak': '1', 'slope': '2', 'ca': '0', 'thal': '3'}]
+---------['1', {'age': '2', 'sex': '0', 'cp': '1', 'trestbps': '1', 'chol': '1', 'fbs': '0', 'restecg': '1', 'thalach': '4', 'exang': '0', 'oldpeak': '1', 'slope': '2', 'ca': '0', 'thal': '2'}]
+---------['1', {'age': '4', 'sex': '1', 'cp': '1', 'trestbps': '3', 'chol': '2', 'fbs': '0', 'restecg': '0', 'thalach': '3', 'exang': '0', 'oldpeak': '1', 'slope': '2', 'ca': '0', 'thal': '2'}]
+---------['1', {'age': '2', 'sex': '1', 'cp': '1', 'trestbps': '2', 'chol': '2', 'fbs': '0', 'restecg': '1', 'thalach': '4', 'exang': '0', 'oldpeak': '1', 'slope': '2', 'ca': '0', 'thal': '2'}]
+---------['1', {'age': '3', 'sex': '1', 'cp': '1', 'trestbps': '2', 'chol': '1', 'fbs': '1', 'restecg': '0', 'thalach': '3', 'exang': '0', 'oldpeak': '1', 'slope': '2', 'ca': '0', 'thal': '2'}]
+---------['1', {'age': '2', 'sex': '1', 'cp': '1', 'trestbps': '1', 'chol': '1', 'fbs': '0', 'restecg': '1', 'thalach': '3', 'exang': '0', 'oldpeak': '1', 'slope': '2', 'ca': '0', 'thal': '2'}]
+---------['1', {'age': '3', 'sex': '0', 'cp': '1', 'trestbps': '2', 'chol': '2', 'fbs': '0', 'restecg': '1', 'thalach': '3', 'exang': '0', 'oldpeak': '1', 'slope': '2', 'ca': '0', 'thal': '2'}]
+------Si cp = 0: 
+---------Si restecg = 1: 
+------------Alors 1
+------------Décision basée sur les données:
+------------['1', {'age': '2', 'sex': '1', 'cp': '0', 'trestbps': '1', 'chol': '1', 'fbs': '0', 'restecg': '1', 'thalach': '3', 'exang': '0', 'oldpeak': '1', 'slope': '2', 'ca': '0', 'thal': '2'}]
+------------['1', {'age': '2', 'sex': '1', 'cp': '0', 'trestbps': '3', 'chol': '2', 'fbs': '0', 'restecg': '1', 'thalach': '4', 'exang': '0', 'oldpeak': '1', 'slope': '2', 'ca': '0', 'thal': '2'}]
+------------['1', {'age': '3', 'sex': '0', 'cp': '0', 'trestbps': '2', 'chol': '1', 'fbs': '0', 'restecg': '1', 'thalach': '3', 'exang': '0', 'oldpeak': '1', 'slope': '2', 'ca': '0', 'thal': '2'}]
+------------['1', {'age': '3', 'sex': '1', 'cp': '0', 'trestbps': '2', 'chol': '1', 'fbs': '0', 'restecg': '1', 'thalach': '3', 'exang': '1', 'oldpeak': '1', 'slope': '2', 'ca': '0', 'thal': '3'}]
+------------['1', {'age': '2', 'sex': '1', 'cp': '0', 'trestbps': '1', 'chol': '1', 'fbs': '0', 'restecg': '1', 'thalach': '3', 'exang': '0', 'oldpeak': '1', 'slope': '2', 'ca': '0', 'thal': '3'}]
+------------['1', {'age': '2', 'sex': '1', 'cp': '0', 'trestbps': '2', 'chol': '1', 'fbs': '0', 'restecg': '1', 'thalach': '4', 'exang': '0', 'oldpeak': '1', 'slope': '2', 'ca': '0', 'thal': '2'}]
+------------['1', {'age': '3', 'sex': '0', 'cp': '0', 'trestbps': '1', 'chol': '3', 'fbs': '0', 'restecg': '1', 'thalach': '3', 'exang': '1', 'oldpeak': '1', 'slope': '2', 'ca': '0', 'thal': '2'}]
+---------Si restecg = 0: 
+------------Si trestbps = 1: 
+---------------Alors 0
+---------------Décision basée sur les données:
+---------------['0', {'age': '2', 'sex': '1', 'cp': '0', 'trestbps': '1', 'chol': '2', 'fbs': '0', 'restecg': '0', 'thalach': '3', 'exang': '0', 'oldpeak': '1', 'slope': '2', 'ca': '0', 'thal': '3'}]
+---------------['0', {'age': '2', 'sex': '1', 'cp': '0', 'trestbps': '1', 'chol': '1', 'fbs': '0', 'restecg': '0', 'thalach': '3', 'exang': '0', 'oldpeak': '1', 'slope': '2', 'ca': '0', 'thal': '3'}]
+------------Si trestbps = 3: 
+---------------Alors 0
+---------------Décision basée sur les données:
+---------------['0', {'age': '3', 'sex': '1', 'cp': '0', 'trestbps': '3', 'chol': '2', 'fbs': '0', 'restecg': '0', 'thalach': '2', 'exang': '1', 'oldpeak': '1', 'slope': '2', 'ca': '0', 'thal': '3'}]
+------------Si trestbps = 4: 
+---------------Alors 0
+---------------Décision basée sur les données:
+---------------0
+---------------{}
+------------Si trestbps = 5: 
+---------------Alors 0
+---------------Décision basée sur les données:
+---------------0
+---------------{}
+------------Si trestbps = 2: 
+---------------Alors 1
+---------------Décision basée sur les données:
+---------------['1', {'age': '3', 'sex': '0', 'cp': '0', 'trestbps': '2', 'chol': '1', 'fbs': '0', 'restecg': '0', 'thalach': '3', 'exang': '0', 'oldpeak': '1', 'slope': '2', 'ca': '0', 'thal': '2'}]
+---------------['1', {'age': '3', 'sex': '1', 'cp': '0', 'trestbps': '2', 'chol': '1', 'fbs': '0', 'restecg': '0', 'thalach': '2', 'exang': '1', 'oldpeak': '1', 'slope': '2', 'ca': '0', 'thal': '3'}]
+---------Si restecg = 2: 
+------------Alors 0
+------------Décision basée sur les données:
+------------0
+------------{}
+------Si cp = 2: 
+---------Si sex = 1: 
+------------Si chol = 1: 
+---------------Alors 1
+---------------Décision basée sur les données:
+---------------['1', {'age': '2', 'sex': '1', 'cp': '2', 'trestbps': '2', 'chol': '1', 'fbs': '0', 'restecg': '1', 'thalach': '3', 'exang': '0', 'oldpeak': '1', 'slope': '2', 'ca': '0', 'thal': '2'}]
+---------------['1', {'age': '2', 'sex': '1', 'cp': '2', 'trestbps': '1', 'chol': '1', 'fbs': '0', 'restecg': '1', 'thalach': '3', 'exang': '0', 'oldpeak': '1', 'slope': '2', 'ca': '0', 'thal': '2'}]
+---------------['1', {'age': '3', 'sex': '1', 'cp': '2', 'trestbps': '2', 'chol': '1', 'fbs': '1', 'restecg': '0', 'thalach': '3', 'exang': '0', 'oldpeak': '1', 'slope': '2', 'ca': '0', 'thal': '2'}]
+---------------['1', {'age': '3', 'sex': '1', 'cp': '2', 'trestbps': '3', 'chol': '1', 'fbs': '0', 'restecg': '0', 'thalach': '3', 'exang': '0', 'oldpeak': '2', 'slope': '2', 'ca': '0', 'thal': '3'}]
+------------Si chol = 2: 
+---------------Si thalach = 1: 
+------------------Alors 0
+------------------Décision basée sur les données:
+------------------0
+------------------{}
+---------------Si thalach = 3: 
+------------------Alors 0
+------------------Décision basée sur les données:
+------------------['0', {'age': '2', 'sex': '1', 'cp': '2', 'trestbps': '1', 'chol': '2', 'fbs': '0', 'restecg': '1', 'thalach': '3', 'exang': '0', 'oldpeak': '1', 'slope': '2', 'ca': '0', 'thal': '2'}]
+------------------['0', {'age': '3', 'sex': '1', 'cp': '2', 'trestbps': '2', 'chol': '2', 'fbs': '0', 'restecg': '1', 'thalach': '3', 'exang': '0', 'oldpeak': '1', 'slope': '2', 'ca': '0', 'thal': '2'}]
+---------------Si thalach = 4: 
+------------------Alors 1
+------------------Décision basée sur les données:
+------------------['1', {'age': '2', 'sex': '1', 'cp': '2', 'trestbps': '1', 'chol': '2', 'fbs': '0', 'restecg': '1', 'thalach': '4', 'exang': '0', 'oldpeak': '1', 'slope': '2', 'ca': '0', 'thal': '2'}]
+---------------Si thalach = 5: 
+------------------Alors 0
+------------------Décision basée sur les données:
+------------------0
+------------------{}
+---------------Si thalach = 2: 
+------------------Alors 0
+------------------Décision basée sur les données:
+------------------0
+------------------{}
+------------Si chol = 3: 
+---------------Alors 0
+---------------Décision basée sur les données:
+---------------0
+---------------{}
+---------Si sex = 0: 
+------------Alors 1
+------------Décision basée sur les données:
+------------['1', {'age': '3', 'sex': '0', 'cp': '2', 'trestbps': '2', 'chol': '2', 'fbs': '0', 'restecg': '1', 'thalach': '2', 'exang': '0', 'oldpeak': '1', 'slope': '2', 'ca': '0', 'thal': '3'}]
+------------['1', {'age': '2', 'sex': '0', 'cp': '2', 'trestbps': '2', 'chol': '2', 'fbs': '0', 'restecg': '0', 'thalach': '3', 'exang': '0', 'oldpeak': '1', 'slope': '2', 'ca': '0', 'thal': '2'}]
+------------['1', {'age': '3', 'sex': '0', 'cp': '2', 'trestbps': '1', 'chol': '2', 'fbs': '0', 'restecg': '1', 'thalach': '4', 'exang': '0', 'oldpeak': '1', 'slope': '2', 'ca': '0', 'thal': '2'}]
+------------['1', {'age': '3', 'sex': '0', 'cp': '2', 'trestbps': '2', 'chol': '1', 'fbs': '0', 'restecg': '0', 'thalach': '2', 'exang': '0', 'oldpeak': '1', 'slope': '2', 'ca': '0', 'thal': '0'}]
+------------['1', {'age': '3', 'sex': '0', 'cp': '2', 'trestbps': '2', 'chol': '2', 'fbs': '1', 'restecg': '1', 'thalach': '4', 'exang': '0', 'oldpeak': '1', 'slope': '2', 'ca': '0', 'thal': '2'}]
+------------['1', {'age': '2', 'sex': '0', 'cp': '2', 'trestbps': '2', 'chol': '2', 'fbs': '0', 'restecg': '1', 'thalach': '3', 'exang': '0', 'oldpeak': '1', 'slope': '2', 'ca': '0', 'thal': '2'}]
+------------['1', {'age': '4', 'sex': '0', 'cp': '2', 'trestbps': '3', 'chol': '2', 'fbs': '0', 'restecg': '1', 'thalach': '3', 'exang': '0', 'oldpeak': '1', 'slope': '2', 'ca': '0', 'thal': '2'}]
+------------['1', {'age': '3', 'sex': '0', 'cp': '2', 'trestbps': '1', 'chol': '2', 'fbs': '0', 'restecg': '0', 'thalach': '3', 'exang': '0', 'oldpeak': '1', 'slope': '2', 'ca': '0', 'thal': '2'}]
+------------['1', {'age': '2', 'sex': '0', 'cp': '2', 'trestbps': '1', 'chol': '2', 'fbs': '0', 'restecg': '0', 'thalach': '4', 'exang': '1', 'oldpeak': '1', 'slope': '2', 'ca': '0', 'thal': '2'}]
+------------['1', {'age': '1', 'sex': '0', 'cp': '2', 'trestbps': '1', 'chol': '1', 'fbs': '0', 'restecg': '1', 'thalach': '4', 'exang': '0', 'oldpeak': '1', 'slope': '2', 'ca': '0', 'thal': '2'}]
+------------['1', {'age': '2', 'sex': '0', 'cp': '2', 'trestbps': '1', 'chol': '2', 'fbs': '0', 'restecg': '0', 'thalach': '3', 'exang': '0', 'oldpeak': '1', 'slope': '2', 'ca': '0', 'thal': '2'}]
+------Si cp = 3: 
+---------Alors 1
+---------Décision basée sur les données:
+---------['1', {'age': '1', 'sex': '1', 'cp': '3', 'trestbps': '1', 'chol': '1', 'fbs': '0', 'restecg': '0', 'thalach': '4', 'exang': '0', 'oldpeak': '1', 'slope': '2', 'ca': '0', 'thal': '2'}]
+---------['1', {'age': '1', 'sex': '1', 'cp': '3', 'trestbps': '2', 'chol': '1', 'fbs': '0', 'restecg': '1', 'thalach': '4', 'exang': '1', 'oldpeak': '1', 'slope': '2', 'ca': '0', 'thal': '3'}]
+Si ca = 2: 
+---Si thal = 1: 
+------Alors 0
+------Décision basée sur les données:
+------['0', {'age': '3', 'sex': '1', 'cp': '0', 'trestbps': '3', 'chol': '1', 'fbs': '1', 'restecg': '0', 'thalach': '1', 'exang': '0', 'oldpeak': '1', 'slope': '1', 'ca': '2', 'thal': '1'}]
+------['0', {'age': '4', 'sex': '1', 'cp': '0', 'trestbps': '1', 'chol': '2', 'fbs': '0', 'restecg': '0', 'thalach': '3', 'exang': '0', 'oldpeak': '1', 'slope': '2', 'ca': '2', 'thal': '1'}]
+---Si thal = 0: 
+------Alors 0
+------Décision basée sur les données:
+------0
+------{}
+---Si thal = 2: 
+------Si restecg = 1: 
+---------Si cp = 1: 
+------------Alors 0
+------------Décision basée sur les données:
+------------0
+------------{}
+---------Si cp = 0: 
+------------Alors 1
+------------Décision basée sur les données:
+------------['1', {'age': '4', 'sex': '0', 'cp': '0', 'trestbps': '1', 'chol': '1', 'fbs': '0', 'restecg': '1', 'thalach': '3', 'exang': '0', 'oldpeak': '1', 'slope': '2', 'ca': '2', 'thal': '2'}]
+------------['1', {'age': '3', 'sex': '0', 'cp': '0', 'trestbps': '2', 'chol': '2', 'fbs': '0', 'restecg': '1', 'thalach': '2', 'exang': '0', 'oldpeak': '2', 'slope': '1', 'ca': '2', 'thal': '2'}]
+---------Si cp = 2: 
+------------Alors 1
+------------Décision basée sur les données:
+------------['1', {'age': '2', 'sex': '1', 'cp': '2', 'trestbps': '2', 'chol': '2', 'fbs': '1', 'restecg': '1', 'thalach': '4', 'exang': '0', 'oldpeak': '1', 'slope': '2', 'ca': '2', 'thal': '2'}]
+---------Si cp = 3: 
+------------Alors 0
+------------Décision basée sur les données:
+------------['0', {'age': '3', 'sex': '1', 'cp': '3', 'trestbps': '2', 'chol': '1', 'fbs': '0', 'restecg': '1', 'thalach': '3', 'exang': '0', 'oldpeak': '2', 'slope': '1', 'ca': '2', 'thal': '2'}]
+------Si restecg = 0: 
+---------Alors 0
+---------Décision basée sur les données:
+---------['0', {'age': '3', 'sex': '1', 'cp': '0', 'trestbps': '2', 'chol': '2', 'fbs': '0', 'restecg': '0', 'thalach': '2', 'exang': '1', 'oldpeak': '3', 'slope': '1', 'ca': '2', 'thal': '2'}]
+---------['0', {'age': '4', 'sex': '1', 'cp': '0', 'trestbps': '1', 'chol': '2', 'fbs': '0', 'restecg': '0', 'thalach': '2', 'exang': '1', 'oldpeak': '1', 'slope': '1', 'ca': '2', 'thal': '2'}]
+---------['0', {'age': '3', 'sex': '0', 'cp': '0', 'trestbps': '2', 'chol': '2', 'fbs': '0', 'restecg': '0', 'thalach': '3', 'exang': '0', 'oldpeak': '3', 'slope': '0', 'ca': '2', 'thal': '2'}]
+------Si restecg = 2: 
+---------Alors 0
+---------Décision basée sur les données:
+---------0
+---------{}
+---Si thal = 3: 
+------Alors 0
+------Décision basée sur les données:
+------['0', {'age': '3', 'sex': '1', 'cp': '0', 'trestbps': '2', 'chol': '2', 'fbs': '0', 'restecg': '0', 'thalach': '2', 'exang': '1', 'oldpeak': '2', 'slope': '1', 'ca': '2', 'thal': '3'}]
+------['0', {'age': '3', 'sex': '1', 'cp': '0', 'trestbps': '2', 'chol': '2', 'fbs': '0', 'restecg': '0', 'thalach': '4', 'exang': '0', 'oldpeak': '1', 'slope': '1', 'ca': '2', 'thal': '3'}]
+------['0', {'age': '3', 'sex': '1', 'cp': '0', 'trestbps': '2', 'chol': '2', 'fbs': '0', 'restecg': '1', 'thalach': '1', 'exang': '1', 'oldpeak': '2', 'slope': '1', 'ca': '2', 'thal': '3'}]
+------['0', {'age': '4', 'sex': '0', 'cp': '0', 'trestbps': '4', 'chol': '1', 'fbs': '1', 'restecg': '1', 'thalach': '3', 'exang': '1', 'oldpeak': '1', 'slope': '1', 'ca': '2', 'thal': '3'}]
+------['0', {'age': '3', 'sex': '1', 'cp': '0', 'trestbps': '2', 'chol': '2', 'fbs': '0', 'restecg': '0', 'thalach': '4', 'exang': '0', 'oldpeak': '1', 'slope': '2', 'ca': '2', 'thal': '3'}]
+------['0', {'age': '4', 'sex': '1', 'cp': '0', 'trestbps': '2', 'chol': '2', 'fbs': '1', 'restecg': '1', 'thalach': '3', 'exang': '0', 'oldpeak': '1', 'slope': '1', 'ca': '2', 'thal': '3'}]
+------['0', {'age': '2', 'sex': '1', 'cp': '0', 'trestbps': '2', 'chol': '2', 'fbs': '0', 'restecg': '1', 'thalach': '2', 'exang': '1', 'oldpeak': '2', 'slope': '1', 'ca': '2', 'thal': '3'}]
+------['0', {'age': '3', 'sex': '1', 'cp': '0', 'trestbps': '2', 'chol': '1', 'fbs': '0', 'restecg': '0', 'thalach': '3', 'exang': '1', 'oldpeak': '3', 'slope': '2', 'ca': '2', 'thal': '3'}]
+------['0', {'age': '3', 'sex': '1', 'cp': '0', 'trestbps': '1', 'chol': '2', 'fbs': '0', 'restecg': '1', 'thalach': '1', 'exang': '1', 'oldpeak': '2', 'slope': '1', 'ca': '2', 'thal': '3'}]
+------['0', {'age': '3', 'sex': '1', 'cp': '2', 'trestbps': '2', 'chol': '1', 'fbs': '0', 'restecg': '0', 'thalach': '4', 'exang': '0', 'oldpeak': '3', 'slope': '2', 'ca': '2', 'thal': '3'}]
+------['0', {'age': '3', 'sex': '0', 'cp': '0', 'trestbps': '5', 'chol': '2', 'fbs': '1', 'restecg': '0', 'thalach': '2', 'exang': '1', 'oldpeak': '3', 'slope': '0', 'ca': '2', 'thal': '3'}]
+------['0', {'age': '3', 'sex': '0', 'cp': '0', 'trestbps': '3', 'chol': '2', 'fbs': '0', 'restecg': '0', 'thalach': '3', 'exang': '0', 'oldpeak': '2', 'slope': '1', 'ca': '2', 'thal': '3'}]
