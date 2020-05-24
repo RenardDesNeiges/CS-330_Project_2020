@@ -172,7 +172,7 @@ class ResultValues():
                 case += str(i+1) + ','
             if len(case) > 0:
                 case = case[:len(case)-1]
-            task3_report.write("Les guess sont dlfférents pour le moteur d'inférence et pour l'arbre de décision pour les cas: " + case)
+            task3_report.write("Les guess sont différents pour le moteur d'inférence et pour l'arbre de décision pour les cas: " + case)
         task3_report.close()
         
         print("---------------------------------------------------------------------------------------------------------")
