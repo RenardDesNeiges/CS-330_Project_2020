@@ -54,7 +54,8 @@ class ResultValues():
         task1_report.write("L'arbre a une profondeur de " + str(profondeur) + "\n")
         task1_report.write("La moyenne du nombre d'enfants par noeud est " +str(moyenne_enfants_noeud) + "\n")
         task1_report.write("La moyenne de la longueur d'une branche est " +str(moyenne_longueur_branche) + "\n")
-        task1_report.write(NoeudDeDecision.__repr__(self.arbre.racine))
+        task1_report.write("La répartition des attributs sur les noeuds est la suivante:\n" + str(self.arbre.repartition_atttributs_noeuds()) + "\n")
+        task1_report.write("Voilà à quoi ressemble l'arbre:\n" + NoeudDeDecision.__repr__(self.arbre.racine))
         
         task1_report.close()
         print('Done with task 1')
@@ -84,13 +85,13 @@ class ResultValues():
         print("---------------------------------------------------------------------------------------------------------")
 
         print("Task 2 bis")
-        """
+        
         #Adaboost tree test
         test_adaboost_tree = BinTestEnv()
         accuracy_total = 0
         rF_adaboost_tree = RandomForest()
         for i in range(100):
-            rF_adaboost_tree.generate_trees(train_bin,4,1000)
+            rF_adaboost_tree.generate_trees(train_bin,2,1000)
             rF_adaboost_tree.select_valid_trees(train_bin)
             rF_adaboost_tree.construct_classifier_adaboost(train_bin)
             accuracy_total += test_adaboost_tree.test_forest(rF_adaboost_tree,'AdaBoost',test_public_bin)
@@ -102,7 +103,7 @@ class ResultValues():
         accuracy_total = 0
         rF_majority_tree = RandomForest()
         for i in range(100):
-            rF_majority_tree.generate_trees(train_bin,4,1000)
+            rF_majority_tree.generate_trees(train_bin,2,1000)
             rF_majority_tree.select_valid_trees(train_bin)
             accuracy_total += test_majority_tree.test_forest(rF_majority_tree,'MajorityVote',test_public_bin)
         
@@ -113,13 +114,13 @@ class ResultValues():
         accuracy_total = 0
         rF_best_tree = RandomForest()
         for i in range(100):
-            rF_best_tree.generate_trees(train_bin,4,1000)
+            rF_best_tree.generate_trees(train_bin,2,1000)
             rF_best_tree.select_valid_trees(train_bin)
             rF_best_tree.construct_best_tree()
             accuracy_total += test_best_tree.test_forest(rF_best_tree,'BestTree',test_public_bin)
         
         iTurnedMyselfIntoAPickleMorty(accuracy_total/100,"BestTree_test_accuracy.pkl")
-
+        """
         #Valid trees ratio test
         rForest = RandomForest()
         subsamplings = range(1,141)

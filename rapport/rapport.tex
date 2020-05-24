@@ -51,11 +51,20 @@ The project is fragmented in $5$ main tasks :
 		\item The average number of children for a node is $3.88$ - without taking leaves into account. This means that at a given time, the tree has on average $4$ methods of classifying a given patient,
 		\item The average length of a branch is $3.83$.  This means that, on average, the tree will make $4$ decisions before giving a guess of the value of \emph{target}.
 	\end{itemize}
-	We can put those numbers into perspective by comparing them to a dichotomy sorting. For $n$ entries in the data set, using dichotomy ,the number of nodes would be $2n-1$ of which $n$ are leaves, the size of the tree would be $\ceil*{log_2(n)}$, the average number of children for a given node would $2$ and the average length of a branch would $log_2(n)$. By substituting $n$ for $143$, we get that those numbers are respectively $285$ for the number of nodes, $8$ for the size of the tree and $7.16$ the average length of a branch.\\
-	We see that the number of nodes is s lot less than what is expected by dichotomy sorting which is a real improvement in term of space complexity. The average length of a branch is also a lot less which will benefit time complexity. We then conclude that \emph{ID3} benefits both time and space complexity from dichotomy sorting.
+	We can put those numbers into perspective by comparing them to a dichotomy sorting. For $n$ entries in the data set, using dichotomy ,the number of nodes would be $2n-1$ of wich $n$ are leaves, the size of the tree would be $\ceil*{log_2(n)}$, the average number of children for a given node would $2$ and the averange length of a branch would $log_2(n)$. By substituting $n$ for $143$, we get that those numbers are respectively $285$ for the number of nodes, $8$ for the size of the tree and $7.16$ the average length of a branch.\\
+	We see that the number of nodes is s lot less than what is expected by dichotomy sorting which is a real improvement in term of space complexity. The average length of a branch is also a lot less which will benefit time complexity. We then conclude that \emph{ID3} benifits both time and space complexity from dichotomy sorting.\\
+	Below, we give a table containing the repartition of attributes along the nodes of the tree
+	\begin{center}
+		\begin{tabular}{ |c|c|c|c|c|c|c|c|c|c|c|c|c| }
+			\hline
+			$age$ & $sex$ & $cp$ & $trestbps$ & $chol$ & $fbs$ & $restecg$ & $thalach$ & $exang$ & $oldpeak$ & $slope$ & $ca$ & $thal$\\
+			\hline
+			$5$ & $3$ & $1$ & $3$ & $3$ & $0$ & $2$ & $1$ & $1$ & $0$ & $2$  & $2$ & $1$\\
+			\hline
+		\end{tabular}
+	\end{center}
+	We first notice that the $age$ attribute is the most prevalent attribute present in the nodes. This seems actually relevant as one would expect age to be an attribute that minimise the entropy as older people tend to be more suffering from cardiovascular disease. Also we note that the $fbs$ and $oldpeak$ attributes are never used in the tree. This allows to say that, in this particular context, these two variables are useless to the construction of a tree using our \emph{ID3} algorithm.
 		
-		
-		Include something about the attributes of the node and why it matters.
 		
 \subsection{Task $2$}
 	The test of the tree generated in Task $1$ gives us an accuracy of $56.25\%$ on the testing data. This is obviously a disappointing result, we partly attribute the low accuracy of ID3 on the way the training and testing data was selected, indeed, a quick look at the input dataset shows us that the average value for the \emph{target} attribute in the \emph{train\_bin.csv} file is $0.2307$ whereas it is $0.8250$ for the \emph{test\_public\_bin.csv} dataset, this bias in data selection throws off the ID3 algorithm. This can be shown by simply shuffling the data of \emph{train\_bin.csv} and \emph{test\_public\_bin.csv} together and the separating them in new training and testing datasets, simply doing this gives an accuracy of $66.25\%$, we have written an small example program to show this, it is included in the files we are submitting as \emph{shuffled\_data.py}.
@@ -90,6 +99,24 @@ Restricting us to changes of size smaller or equal to $2$, we see that we can ac
 
 \subsection{Task $5$}
 
+\subsection{Task $2$ bis}
+	In this supplementary section, we tried to implement the \emph{random forests} algorithm. We generate trees with randomly chosen subparts of the original training data set and then consider only the ones that can treat the whole original training data set. While testing the trees, we also compute their accuracy on the original data set.Then we can use $3$ different classifiers. Here we implemented the \emph{BESTTREE}, the \emph{MAJORITYVOTE} and the \emph{ADABOOST} algorithms. We describe them the following way :
+	\begin{itemize}
+		\item \emph{BESTTREE} algorithm : Choose the tree with the greater accuracy on the training data set and use it as a classifier,
+		\item \emph{MAJORITYVOTE} algorithm : Consider the guesses of all the trees generated and then gives a guess corresponding to the majority of the guesses,
+		\item \emph{ADABOOST} algorithm : Consider only the trees with a probability of error smaller to $50\%$  - as weak methods - and construct a classifier using the \emph{ADABOOST} algorithm presented in class.
+	\end{itemize}
+	We tested the accuracy of these algorithms on the test data set by genreating $1000$ trees from a randomly chosen quater of the training data. As the randomness play a big role in, we computed the accuracy $100$ times and considered the mean of these accuracies. The means of the computed accuracies are given in the following table.
+	\begin{center}
+		\begin{tabular}{ |c|c|c| }
+			\hline
+			\emph{BESTTREE} & \emph{MAJORITYVOTE} & \emph{ADABOOST}\\
+			\hline
+			$\approx 0.48$ & $\approx 0.42$ & $\approx 0.55$\\
+			\hline
+		\end{tabular}
+	\end{center}
+	We clearly see that the \emph{BESTREE} and \emph{MAJORITYVOTE} algorithms are worse than the expected accuracy of guessing randomly which allows us to conclude that they are practically useless. This said we note that \emph{ADABOOST} is a notable improvement has a better accuracy than guessing randomly.
 \section{Conclusion}
 
 \end{document}

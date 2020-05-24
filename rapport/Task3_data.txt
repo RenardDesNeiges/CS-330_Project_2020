@@ -1,0 +1,535 @@
+Liste des regles developees :
+[('cp', '?x', '1'), ('age', '?x', '2'), ('slope', '?x', '1')] => ('target', '?x', '1')
+[('cp', '?x', '1'), ('age', '?x', '2'), ('slope', '?x', '2')] => ('target', '?x', '1')
+[('cp', '?x', '1'), ('age', '?x', '2'), ('slope', '?x', '0')] => ('target', '?x', '0')
+[('cp', '?x', '1'), ('age', '?x', '5')] => ('target', '?x', '0')
+[('cp', '?x', '1'), ('age', '?x', '1')] => ('target', '?x', '0')
+[('cp', '?x', '1'), ('age', '?x', '3'), ('chol', '?x', '1')] => ('target', '?x', '1')
+[('cp', '?x', '1'), ('age', '?x', '3'), ('chol', '?x', '3')] => ('target', '?x', '0')
+[('cp', '?x', '1'), ('age', '?x', '3'), ('chol', '?x', '2')] => ('target', '?x', '0')
+[('cp', '?x', '1'), ('age', '?x', '3'), ('chol', '?x', '5')] => ('target', '?x', '0')
+[('cp', '?x', '1'), ('age', '?x', '4')] => ('target', '?x', '0')
+[('cp', '?x', '3'), ('trestbps', '?x', '2'), ('age', '?x', '2')] => ('target', '?x', '0')
+[('cp', '?x', '3'), ('trestbps', '?x', '2'), ('age', '?x', '5')] => ('target', '?x', '0')
+[('cp', '?x', '3'), ('trestbps', '?x', '2'), ('age', '?x', '1')] => ('target', '?x', '1')
+[('cp', '?x', '3'), ('trestbps', '?x', '2'), ('age', '?x', '3')] => ('target', '?x', '0')
+[('cp', '?x', '3'), ('trestbps', '?x', '2'), ('age', '?x', '4')] => ('target', '?x', '0')
+[('cp', '?x', '3'), ('trestbps', '?x', '5')] => ('target', '?x', '0')
+[('cp', '?x', '3'), ('trestbps', '?x', '1'), ('restecg', '?x', '1')] => ('target', '?x', '0')
+[('cp', '?x', '3'), ('trestbps', '?x', '1'), ('restecg', '?x', '2')] => ('target', '?x', '0')
+[('cp', '?x', '3'), ('trestbps', '?x', '1'), ('restecg', '?x', '0')] => ('target', '?x', '1')
+[('cp', '?x', '3'), ('trestbps', '?x', '3'), ('age', '?x', '2')] => ('target', '?x', '1')
+[('cp', '?x', '3'), ('trestbps', '?x', '3'), ('age', '?x', '5')] => ('target', '?x', '0')
+[('cp', '?x', '3'), ('trestbps', '?x', '3'), ('age', '?x', '1')] => ('target', '?x', '0')
+[('cp', '?x', '3'), ('trestbps', '?x', '3'), ('age', '?x', '3'), ('sex', '?x', '1')] => ('target', '?x', '0')
+[('cp', '?x', '3'), ('trestbps', '?x', '3'), ('age', '?x', '3'), ('sex', '?x', '0')] => ('target', '?x', '1')
+[('cp', '?x', '3'), ('trestbps', '?x', '3'), ('age', '?x', '4')] => ('target', '?x', '1')
+[('cp', '?x', '3'), ('trestbps', '?x', '4')] => ('target', '?x', '1')
+[('cp', '?x', '2'), ('sex', '?x', '1'), ('trestbps', '?x', '2'), ('ca', '?x', '2')] => ('target', '?x', '0')
+[('cp', '?x', '2'), ('sex', '?x', '1'), ('trestbps', '?x', '2'), ('ca', '?x', '1')] => ('target', '?x', '0')
+[('cp', '?x', '2'), ('sex', '?x', '1'), ('trestbps', '?x', '2'), ('ca', '?x', '3'), ('age', '?x', '2')] => ('target', '?x', '0')
+[('cp', '?x', '2'), ('sex', '?x', '1'), ('trestbps', '?x', '2'), ('ca', '?x', '3'), ('age', '?x', '5')] => ('target', '?x', '0')
+[('cp', '?x', '2'), ('sex', '?x', '1'), ('trestbps', '?x', '2'), ('ca', '?x', '3'), ('age', '?x', '1')] => ('target', '?x', '0')
+[('cp', '?x', '2'), ('sex', '?x', '1'), ('trestbps', '?x', '2'), ('ca', '?x', '3'), ('age', '?x', '3')] => ('target', '?x', '1')
+[('cp', '?x', '2'), ('sex', '?x', '1'), ('trestbps', '?x', '2'), ('ca', '?x', '3'), ('age', '?x', '4')] => ('target', '?x', '0')
+[('cp', '?x', '2'), ('sex', '?x', '1'), ('trestbps', '?x', '2'), ('ca', '?x', '4')] => ('target', '?x', '0')
+[('cp', '?x', '2'), ('sex', '?x', '1'), ('trestbps', '?x', '2'), ('ca', '?x', '0')] => ('target', '?x', '0')
+[('cp', '?x', '2'), ('sex', '?x', '1'), ('trestbps', '?x', '5')] => ('target', '?x', '0')
+[('cp', '?x', '2'), ('sex', '?x', '1'), ('trestbps', '?x', '1'), ('slope', '?x', '1')] => ('target', '?x', '1')
+[('cp', '?x', '2'), ('sex', '?x', '1'), ('trestbps', '?x', '1'), ('slope', '?x', '2'), ('chol', '?x', '1'), ('restecg', '?x', '1')] => ('target', '?x', '1')
+[('cp', '?x', '2'), ('sex', '?x', '1'), ('trestbps', '?x', '1'), ('slope', '?x', '2'), ('chol', '?x', '1'), ('restecg', '?x', '2')] => ('target', '?x', '0')
+[('cp', '?x', '2'), ('sex', '?x', '1'), ('trestbps', '?x', '1'), ('slope', '?x', '2'), ('chol', '?x', '1'), ('restecg', '?x', '0')] => ('target', '?x', '0')
+[('cp', '?x', '2'), ('sex', '?x', '1'), ('trestbps', '?x', '1'), ('slope', '?x', '2'), ('chol', '?x', '3')] => ('target', '?x', '0')
+[('cp', '?x', '2'), ('sex', '?x', '1'), ('trestbps', '?x', '1'), ('slope', '?x', '2'), ('chol', '?x', '2')] => ('target', '?x', '0')
+[('cp', '?x', '2'), ('sex', '?x', '1'), ('trestbps', '?x', '1'), ('slope', '?x', '2'), ('chol', '?x', '5')] => ('target', '?x', '0')
+[('cp', '?x', '2'), ('sex', '?x', '1'), ('trestbps', '?x', '1'), ('slope', '?x', '0')] => ('target', '?x', '1')
+[('cp', '?x', '2'), ('sex', '?x', '1'), ('trestbps', '?x', '3')] => ('target', '?x', '0')
+[('cp', '?x', '2'), ('sex', '?x', '1'), ('trestbps', '?x', '4')] => ('target', '?x', '0')
+[('cp', '?x', '2'), ('sex', '?x', '0')] => ('target', '?x', '1')
+[('cp', '?x', '0'), ('ca', '?x', '2')] => ('target', '?x', '0')
+[('cp', '?x', '0'), ('ca', '?x', '1')] => ('target', '?x', '0')
+[('cp', '?x', '0'), ('ca', '?x', '3')] => ('target', '?x', '0')
+[('cp', '?x', '0'), ('ca', '?x', '4')] => ('target', '?x', '0')
+[('cp', '?x', '0'), ('ca', '?x', '0'), ('thal', '?x', '2'), ('trestbps', '?x', '2'), ('exang', '?x', '1')] => ('target', '?x', '0')
+[('cp', '?x', '0'), ('ca', '?x', '0'), ('thal', '?x', '2'), ('trestbps', '?x', '2'), ('exang', '?x', '0'), ('chol', '?x', '1')] => ('target', '?x', '1')
+[('cp', '?x', '0'), ('ca', '?x', '0'), ('thal', '?x', '2'), ('trestbps', '?x', '2'), ('exang', '?x', '0'), ('chol', '?x', '3')] => ('target', '?x', '1')
+[('cp', '?x', '0'), ('ca', '?x', '0'), ('thal', '?x', '2'), ('trestbps', '?x', '2'), ('exang', '?x', '0'), ('chol', '?x', '2'), ('sex', '?x', '1')] => ('target', '?x', '1')
+[('cp', '?x', '0'), ('ca', '?x', '0'), ('thal', '?x', '2'), ('trestbps', '?x', '2'), ('exang', '?x', '0'), ('chol', '?x', '2'), ('sex', '?x', '0')] => ('target', '?x', '0')
+[('cp', '?x', '0'), ('ca', '?x', '0'), ('thal', '?x', '2'), ('trestbps', '?x', '2'), ('exang', '?x', '0'), ('chol', '?x', '5')] => ('target', '?x', '0')
+[('cp', '?x', '0'), ('ca', '?x', '0'), ('thal', '?x', '2'), ('trestbps', '?x', '5')] => ('target', '?x', '0')
+[('cp', '?x', '0'), ('ca', '?x', '0'), ('thal', '?x', '2'), ('trestbps', '?x', '1'), ('thalach', '?x', '2')] => ('target', '?x', '1')
+[('cp', '?x', '0'), ('ca', '?x', '0'), ('thal', '?x', '2'), ('trestbps', '?x', '1'), ('thalach', '?x', '3')] => ('target', '?x', '1')
+[('cp', '?x', '0'), ('ca', '?x', '0'), ('thal', '?x', '2'), ('trestbps', '?x', '1'), ('thalach', '?x', '1')] => ('target', '?x', '0')
+[('cp', '?x', '0'), ('ca', '?x', '0'), ('thal', '?x', '2'), ('trestbps', '?x', '1'), ('thalach', '?x', '4')] => ('target', '?x', '1')
+[('cp', '?x', '0'), ('ca', '?x', '0'), ('thal', '?x', '2'), ('trestbps', '?x', '3')] => ('target', '?x', '0')
+[('cp', '?x', '0'), ('ca', '?x', '0'), ('thal', '?x', '2'), ('trestbps', '?x', '4')] => ('target', '?x', '0')
+[('cp', '?x', '0'), ('ca', '?x', '0'), ('thal', '?x', '1'), ('age', '?x', '2')] => ('target', '?x', '0')
+[('cp', '?x', '0'), ('ca', '?x', '0'), ('thal', '?x', '1'), ('age', '?x', '5')] => ('target', '?x', '0')
+[('cp', '?x', '0'), ('ca', '?x', '0'), ('thal', '?x', '1'), ('age', '?x', '1')] => ('target', '?x', '0')
+[('cp', '?x', '0'), ('ca', '?x', '0'), ('thal', '?x', '1'), ('age', '?x', '3')] => ('target', '?x', '1')
+[('cp', '?x', '0'), ('ca', '?x', '0'), ('thal', '?x', '1'), ('age', '?x', '4')] => ('target', '?x', '0')
+[('cp', '?x', '0'), ('ca', '?x', '0'), ('thal', '?x', '3')] => ('target', '?x', '0')
+Liste des faits initiaux :
+Patient 1:[('age', 'patient no 1', '3'), ('sex', 'patient no 1', '1'), ('cp', 'patient no 1', '0'), ('trestbps', 'patient no 1', '2'), ('chol', 'patient no 1', '2'), ('fbs', 'patient no 1', '0'), ('restecg', 'patient no 1', '0'), ('thalach', 'patient no 1', '4'), ('exang', 'patient no 1', '0'), ('oldpeak', 'patient no 1', '1'), ('slope', 'patient no 1', '1'), ('ca', 'patient no 1', '2'), ('thal', 'patient no 1', '3')]
+Patient 2:[('age', 'patient no 2', '2'), ('sex', 'patient no 2', '0'), ('cp', 'patient no 2', '0'), ('trestbps', 'patient no 2', '2'), ('chol', 'patient no 2', '2'), ('fbs', 'patient no 2', '0'), ('restecg', 'patient no 2', '1'), ('thalach', 'patient no 2', '3'), ('exang', 'patient no 2', '1'), ('oldpeak', 'patient no 2', '1'), ('slope', 'patient no 2', '1'), ('ca', 'patient no 2', '0'), ('thal', 'patient no 2', '3')]
+Patient 3:[('age', 'patient no 3', '2'), ('sex', 'patient no 3', '1'), ('cp', 'patient no 3', '0'), ('trestbps', 'patient no 3', '1'), ('chol', 'patient no 3', '1'), ('fbs', 'patient no 3', '0'), ('restecg', 'patient no 3', '1'), ('thalach', 'patient no 3', '3'), ('exang', 'patient no 3', '0'), ('oldpeak', 'patient no 3', '1'), ('slope', 'patient no 3', '2'), ('ca', 'patient no 3', '1'), ('thal', 'patient no 3', '2')]
+Patient 4:[('age', 'patient no 4', '2'), ('sex', 'patient no 4', '1'), ('cp', 'patient no 4', '0'), ('trestbps', 'patient no 4', '1'), ('chol', 'patient no 4', '1'), ('fbs', 'patient no 4', '0'), ('restecg', 'patient no 4', '0'), ('thalach', 'patient no 4', '2'), ('exang', 'patient no 4', '1'), ('oldpeak', 'patient no 4', '2'), ('slope', 'patient no 4', '1'), ('ca', 'patient no 4', '0'), ('thal', 'patient no 4', '3')]
+Patient 5:[('age', 'patient no 5', '3'), ('sex', 'patient no 5', '1'), ('cp', 'patient no 5', '0'), ('trestbps', 'patient no 5', '2'), ('chol', 'patient no 5', '2'), ('fbs', 'patient no 5', '0'), ('restecg', 'patient no 5', '1'), ('thalach', 'patient no 5', '1'), ('exang', 'patient no 5', '1'), ('oldpeak', 'patient no 5', '2'), ('slope', 'patient no 5', '1'), ('ca', 'patient no 5', '2'), ('thal', 'patient no 5', '3')]
+Patient 6:[('age', 'patient no 6', '3'), ('sex', 'patient no 6', '1'), ('cp', 'patient no 6', '1'), ('trestbps', 'patient no 6', '2'), ('chol', 'patient no 6', '2'), ('fbs', 'patient no 6', '0'), ('restecg', 'patient no 6', '1'), ('thalach', 'patient no 6', '3'), ('exang', 'patient no 6', '0'), ('oldpeak', 'patient no 6', '1'), ('slope', 'patient no 6', '2'), ('ca', 'patient no 6', '0'), ('thal', 'patient no 6', '3')]
+Patient 7:[('age', 'patient no 7', '3'), ('sex', 'patient no 7', '1'), ('cp', 'patient no 7', '2'), ('trestbps', 'patient no 7', '2'), ('chol', 'patient no 7', '2'), ('fbs', 'patient no 7', '0'), ('restecg', 'patient no 7', '1'), ('thalach', 'patient no 7', '2'), ('exang', 'patient no 7', '1'), ('oldpeak', 'patient no 7', '2'), ('slope', 'patient no 7', '1'), ('ca', 'patient no 7', '0'), ('thal', 'patient no 7', '3')]
+Patient 8:[('age', 'patient no 8', '3'), ('sex', 'patient no 8', '0'), ('cp', 'patient no 8', '0'), ('trestbps', 'patient no 8', '3'), ('chol', 'patient no 8', '2'), ('fbs', 'patient no 8', '0'), ('restecg', 'patient no 8', '1'), ('thalach', 'patient no 8', '3'), ('exang', 'patient no 8', '1'), ('oldpeak', 'patient no 8', '1'), ('slope', 'patient no 8', '1'), ('ca', 'patient no 8', '0'), ('thal', 'patient no 8', '2')]
+Patient 9:[('age', 'patient no 9', '3'), ('sex', 'patient no 9', '1'), ('cp', 'patient no 9', '0'), ('trestbps', 'patient no 9', '2'), ('chol', 'patient no 9', '1'), ('fbs', 'patient no 9', '0'), ('restecg', 'patient no 9', '0'), ('thalach', 'patient no 9', '3'), ('exang', 'patient no 9', '1'), ('oldpeak', 'patient no 9', '3'), ('slope', 'patient no 9', '2'), ('ca', 'patient no 9', '2'), ('thal', 'patient no 9', '3')]
+Patient 10:[('age', 'patient no 10', '4'), ('sex', 'patient no 10', '1'), ('cp', 'patient no 10', '2'), ('trestbps', 'patient no 10', '2'), ('chol', 'patient no 10', '2'), ('fbs', 'patient no 10', '0'), ('restecg', 'patient no 10', '0'), ('thalach', 'patient no 10', '3'), ('exang', 'patient no 10', '0'), ('oldpeak', 'patient no 10', '2'), ('slope', 'patient no 10', '1'), ('ca', 'patient no 10', '3'), ('thal', 'patient no 10', '3')]
+Patient 11:[('age', 'patient no 11', '3'), ('sex', 'patient no 11', '0'), ('cp', 'patient no 11', '0'), ('trestbps', 'patient no 11', '2'), ('chol', 'patient no 11', '2'), ('fbs', 'patient no 11', '0'), ('restecg', 'patient no 11', '0'), ('thalach', 'patient no 11', '3'), ('exang', 'patient no 11', '0'), ('oldpeak', 'patient no 11', '3'), ('slope', 'patient no 11', '0'), ('ca', 'patient no 11', '2'), ('thal', 'patient no 11', '2')]
+Patient 12:[('age', 'patient no 12', '2'), ('sex', 'patient no 12', '1'), ('cp', 'patient no 12', '1'), ('trestbps', 'patient no 12', '2'), ('chol', 'patient no 12', '2'), ('fbs', 'patient no 12', '0'), ('restecg', 'patient no 12', '1'), ('thalach', 'patient no 12', '4'), ('exang', 'patient no 12', '0'), ('oldpeak', 'patient no 12', '1'), ('slope', 'patient no 12', '2'), ('ca', 'patient no 12', '0'), ('thal', 'patient no 12', '2')]
+Patient 13:[('age', 'patient no 13', '3'), ('sex', 'patient no 13', '1'), ('cp', 'patient no 13', '1'), ('trestbps', 'patient no 13', '4'), ('chol', 'patient no 13', '2'), ('fbs', 'patient no 13', '0'), ('restecg', 'patient no 13', '0'), ('thalach', 'patient no 13', '4'), ('exang', 'patient no 13', '0'), ('oldpeak', 'patient no 13', '1'), ('slope', 'patient no 13', '2'), ('ca', 'patient no 13', '1'), ('thal', 'patient no 13', '3')]
+Patient 14:[('age', 'patient no 14', '3'), ('sex', 'patient no 14', '0'), ('cp', 'patient no 14', '1'), ('trestbps', 'patient no 14', '2'), ('chol', 'patient no 14', '1'), ('fbs', 'patient no 14', '0'), ('restecg', 'patient no 14', '1'), ('thalach', 'patient no 14', '4'), ('exang', 'patient no 14', '0'), ('oldpeak', 'patient no 14', '1'), ('slope', 'patient no 14', '2'), ('ca', 'patient no 14', '2'), ('thal', 'patient no 14', '2')]
+Patient 15:[('age', 'patient no 15', '3'), ('sex', 'patient no 15', '1'), ('cp', 'patient no 15', '0'), ('trestbps', 'patient no 15', '1'), ('chol', 'patient no 15', '1'), ('fbs', 'patient no 15', '0'), ('restecg', 'patient no 15', '1'), ('thalach', 'patient no 15', '2'), ('exang', 'patient no 15', '1'), ('oldpeak', 'patient no 15', '1'), ('slope', 'patient no 15', '1'), ('ca', 'patient no 15', '0'), ('thal', 'patient no 15', '1')]
+Patient 16:[('age', 'patient no 16', '3'), ('sex', 'patient no 16', '1'), ('cp', 'patient no 16', '0'), ('trestbps', 'patient no 16', '1'), ('chol', 'patient no 16', '2'), ('fbs', 'patient no 16', '0'), ('restecg', 'patient no 16', '1'), ('thalach', 'patient no 16', '1'), ('exang', 'patient no 16', '1'), ('oldpeak', 'patient no 16', '2'), ('slope', 'patient no 16', '1'), ('ca', 'patient no 16', '2'), ('thal', 'patient no 16', '3')]
+Patient 17:[('age', 'patient no 17', '4'), ('sex', 'patient no 17', '1'), ('cp', 'patient no 17', '0'), ('trestbps', 'patient no 17', '2'), ('chol', 'patient no 17', '2'), ('fbs', 'patient no 17', '0'), ('restecg', 'patient no 17', '0'), ('thalach', 'patient no 17', '2'), ('exang', 'patient no 17', '0'), ('oldpeak', 'patient no 17', '2'), ('slope', 'patient no 17', '1'), ('ca', 'patient no 17', '1'), ('thal', 'patient no 17', '3')]
+Patient 18:[('age', 'patient no 18', '2'), ('sex', 'patient no 18', '1'), ('cp', 'patient no 18', '1'), ('trestbps', 'patient no 18', '1'), ('chol', 'patient no 18', '1'), ('fbs', 'patient no 18', '0'), ('restecg', 'patient no 18', '1'), ('thalach', 'patient no 18', '4'), ('exang', 'patient no 18', '0'), ('oldpeak', 'patient no 18', '1'), ('slope', 'patient no 18', '2'), ('ca', 'patient no 18', '0'), ('thal', 'patient no 18', '2')]
+Patient 19:[('age', 'patient no 19', '2'), ('sex', 'patient no 19', '1'), ('cp', 'patient no 19', '2'), ('trestbps', 'patient no 19', '1'), ('chol', 'patient no 19', '1'), ('fbs', 'patient no 19', '0'), ('restecg', 'patient no 19', '0'), ('thalach', 'patient no 19', '2'), ('exang', 'patient no 19', '0'), ('oldpeak', 'patient no 19', '1'), ('slope', 'patient no 19', '2'), ('ca', 'patient no 19', '3'), ('thal', 'patient no 19', '2')]
+Patient 20:[('age', 'patient no 20', '4'), ('sex', 'patient no 20', '1'), ('cp', 'patient no 20', '0'), ('trestbps', 'patient no 20', '2'), ('chol', 'patient no 20', '2'), ('fbs', 'patient no 20', '0'), ('restecg', 'patient no 20', '0'), ('thalach', 'patient no 20', '2'), ('exang', 'patient no 20', '0'), ('oldpeak', 'patient no 20', '2'), ('slope', 'patient no 20', '1'), ('ca', 'patient no 20', '3'), ('thal', 'patient no 20', '2')]
+Patient 21:[('age', 'patient no 21', '3'), ('sex', 'patient no 21', '1'), ('cp', 'patient no 21', '0'), ('trestbps', 'patient no 21', '3'), ('chol', 'patient no 21', '2'), ('fbs', 'patient no 21', '1'), ('restecg', 'patient no 21', '0'), ('thalach', 'patient no 21', '2'), ('exang', 'patient no 21', '0'), ('oldpeak', 'patient no 21', '1'), ('slope', 'patient no 21', '1'), ('ca', 'patient no 21', '3'), ('thal', 'patient no 21', '3')]
+Patient 22:[('age', 'patient no 22', '3'), ('sex', 'patient no 22', '1'), ('cp', 'patient no 22', '2'), ('trestbps', 'patient no 22', '2'), ('chol', 'patient no 22', '1'), ('fbs', 'patient no 22', '0'), ('restecg', 'patient no 22', '0'), ('thalach', 'patient no 22', '4'), ('exang', 'patient no 22', '0'), ('oldpeak', 'patient no 22', '3'), ('slope', 'patient no 22', '2'), ('ca', 'patient no 22', '2'), ('thal', 'patient no 22', '3')]
+Patient 23:[('age', 'patient no 23', '3'), ('sex', 'patient no 23', '1'), ('cp', 'patient no 23', '0'), ('trestbps', 'patient no 23', '1'), ('chol', 'patient no 23', '2'), ('fbs', 'patient no 23', '0'), ('restecg', 'patient no 23', '0'), ('thalach', 'patient no 23', '3'), ('exang', 'patient no 23', '1'), ('oldpeak', 'patient no 23', '1'), ('slope', 'patient no 23', '1'), ('ca', 'patient no 23', '1'), ('thal', 'patient no 23', '3')]
+Patient 24:[('age', 'patient no 24', '3'), ('sex', 'patient no 24', '1'), ('cp', 'patient no 24', '0'), ('trestbps', 'patient no 24', '1'), ('chol', 'patient no 24', '1'), ('fbs', 'patient no 24', '0'), ('restecg', 'patient no 24', '1'), ('thalach', 'patient no 24', '3'), ('exang', 'patient no 24', '0'), ('oldpeak', 'patient no 24', '1'), ('slope', 'patient no 24', '2'), ('ca', 'patient no 24', '1'), ('thal', 'patient no 24', '3')]
+Patient 25:[('age', 'patient no 25', '3'), ('sex', 'patient no 25', '1'), ('cp', 'patient no 25', '2'), ('trestbps', 'patient no 25', '1'), ('chol', 'patient no 25', '2'), ('fbs', 'patient no 25', '0'), ('restecg', 'patient no 25', '0'), ('thalach', 'patient no 25', '3'), ('exang', 'patient no 25', '1'), ('oldpeak', 'patient no 25', '1'), ('slope', 'patient no 25', '1'), ('ca', 'patient no 25', '0'), ('thal', 'patient no 25', '3')]
+Patient 26:[('age', 'patient no 26', '2'), ('sex', 'patient no 26', '1'), ('cp', 'patient no 26', '0'), ('trestbps', 'patient no 26', '1'), ('chol', 'patient no 26', '2'), ('fbs', 'patient no 26', '0'), ('restecg', 'patient no 26', '0'), ('thalach', 'patient no 26', '2'), ('exang', 'patient no 26', '1'), ('oldpeak', 'patient no 26', '1'), ('slope', 'patient no 26', '1'), ('ca', 'patient no 26', '1'), ('thal', 'patient no 26', '2')]
+Patient 27:[('age', 'patient no 27', '4'), ('sex', 'patient no 27', '1'), ('cp', 'patient no 27', '3'), ('trestbps', 'patient no 27', '2'), ('chol', 'patient no 27', '2'), ('fbs', 'patient no 27', '1'), ('restecg', 'patient no 27', '0'), ('thalach', 'patient no 27', '4'), ('exang', 'patient no 27', '0'), ('oldpeak', 'patient no 27', '1'), ('slope', 'patient no 27', '1'), ('ca', 'patient no 27', '1'), ('thal', 'patient no 27', '2')]
+Patient 28:[('age', 'patient no 28', '3'), ('sex', 'patient no 28', '1'), ('cp', 'patient no 28', '0'), ('trestbps', 'patient no 28', '2'), ('chol', 'patient no 28', '1'), ('fbs', 'patient no 28', '1'), ('restecg', 'patient no 28', '0'), ('thalach', 'patient no 28', '3'), ('exang', 'patient no 28', '1'), ('oldpeak', 'patient no 28', '3'), ('slope', 'patient no 28', '0'), ('ca', 'patient no 28', '0'), ('thal', 'patient no 28', '3')]
+Patient 29:[('age', 'patient no 29', '2'), ('sex', 'patient no 29', '1'), ('cp', 'patient no 29', '0'), ('trestbps', 'patient no 29', '1'), ('chol', 'patient no 29', '2'), ('fbs', 'patient no 29', '0'), ('restecg', 'patient no 29', '0'), ('thalach', 'patient no 29', '3'), ('exang', 'patient no 29', '0'), ('oldpeak', 'patient no 29', '1'), ('slope', 'patient no 29', '2'), ('ca', 'patient no 29', '1'), ('thal', 'patient no 29', '2')]
+Patient 30:[('age', 'patient no 30', '3'), ('sex', 'patient no 30', '0'), ('cp', 'patient no 30', '2'), ('trestbps', 'patient no 30', '2'), ('chol', 'patient no 30', '2'), ('fbs', 'patient no 30', '1'), ('restecg', 'patient no 30', '1'), ('thalach', 'patient no 30', '4'), ('exang', 'patient no 30', '0'), ('oldpeak', 'patient no 30', '1'), ('slope', 'patient no 30', '2'), ('ca', 'patient no 30', '0'), ('thal', 'patient no 30', '2')]
+Patient 31:[('age', 'patient no 31', '3'), ('sex', 'patient no 31', '1'), ('cp', 'patient no 31', '0'), ('trestbps', 'patient no 31', '2'), ('chol', 'patient no 31', '2'), ('fbs', 'patient no 31', '0'), ('restecg', 'patient no 31', '0'), ('thalach', 'patient no 31', '3'), ('exang', 'patient no 31', '1'), ('oldpeak', 'patient no 31', '2'), ('slope', 'patient no 31', '1'), ('ca', 'patient no 31', '2'), ('thal', 'patient no 31', '3')]
+Patient 32:[('age', 'patient no 32', '3'), ('sex', 'patient no 32', '0'), ('cp', 'patient no 32', '0'), ('trestbps', 'patient no 32', '2'), ('chol', 'patient no 32', '1'), ('fbs', 'patient no 32', '0'), ('restecg', 'patient no 32', '1'), ('thalach', 'patient no 32', '2'), ('exang', 'patient no 32', '0'), ('oldpeak', 'patient no 32', '1'), ('slope', 'patient no 32', '1'), ('ca', 'patient no 32', '0'), ('thal', 'patient no 32', '2')]
+Patient 33:[('age', 'patient no 33', '4'), ('sex', 'patient no 33', '1'), ('cp', 'patient no 33', '0'), ('trestbps', 'patient no 33', '1'), ('chol', 'patient no 33', '2'), ('fbs', 'patient no 33', '0'), ('restecg', 'patient no 33', '1'), ('thalach', 'patient no 33', '1'), ('exang', 'patient no 33', '0'), ('oldpeak', 'patient no 33', '1'), ('slope', 'patient no 33', '1'), ('ca', 'patient no 33', '0'), ('thal', 'patient no 33', '2')]
+Patient 34:[('age', 'patient no 34', '4'), ('sex', 'patient no 34', '1'), ('cp', 'patient no 34', '0'), ('trestbps', 'patient no 34', '1'), ('chol', 'patient no 34', '1'), ('fbs', 'patient no 34', '0'), ('restecg', 'patient no 34', '0'), ('thalach', 'patient no 34', '2'), ('exang', 'patient no 34', '1'), ('oldpeak', 'patient no 34', '2'), ('slope', 'patient no 34', '1'), ('ca', 'patient no 34', '2'), ('thal', 'patient no 34', '3')]
+Patient 35:[('age', 'patient no 35', '3'), ('sex', 'patient no 35', '1'), ('cp', 'patient no 35', '0'), ('trestbps', 'patient no 35', '2'), ('chol', 'patient no 35', '2'), ('fbs', 'patient no 35', '0'), ('restecg', 'patient no 35', '0'), ('thalach', 'patient no 35', '3'), ('exang', 'patient no 35', '0'), ('oldpeak', 'patient no 35', '1'), ('slope', 'patient no 35', '1'), ('ca', 'patient no 35', '1'), ('thal', 'patient no 35', '3')]
+Patient 36:[('age', 'patient no 36', '2'), ('sex', 'patient no 36', '0'), ('cp', 'patient no 36', '1'), ('trestbps', 'patient no 36', '1'), ('chol', 'patient no 36', '1'), ('fbs', 'patient no 36', '0'), ('restecg', 'patient no 36', '1'), ('thalach', 'patient no 36', '4'), ('exang', 'patient no 36', '0'), ('oldpeak', 'patient no 36', '1'), ('slope', 'patient no 36', '2'), ('ca', 'patient no 36', '0'), ('thal', 'patient no 36', '2')]
+Patient 37:[('age', 'patient no 37', '2'), ('sex', 'patient no 37', '0'), ('cp', 'patient no 37', '1'), ('trestbps', 'patient no 37', '2'), ('chol', 'patient no 37', '1'), ('fbs', 'patient no 37', '0'), ('restecg', 'patient no 37', '0'), ('thalach', 'patient no 37', '4'), ('exang', 'patient no 37', '0'), ('oldpeak', 'patient no 37', '1'), ('slope', 'patient no 37', '1'), ('ca', 'patient no 37', '0'), ('thal', 'patient no 37', '2')]
+Patient 38:[('age', 'patient no 38', '4'), ('sex', 'patient no 38', '1'), ('cp', 'patient no 38', '3'), ('trestbps', 'patient no 38', '3'), ('chol', 'patient no 38', '1'), ('fbs', 'patient no 38', '1'), ('restecg', 'patient no 38', '0'), ('thalach', 'patient no 38', '2'), ('exang', 'patient no 38', '0'), ('oldpeak', 'patient no 38', '1'), ('slope', 'patient no 38', '1'), ('ca', 'patient no 38', '1'), ('thal', 'patient no 38', '2')]
+Patient 39:[('age', 'patient no 39', '3'), ('sex', 'patient no 39', '1'), ('cp', 'patient no 39', '2'), ('trestbps', 'patient no 39', '2'), ('chol', 'patient no 39', '2'), ('fbs', 'patient no 39', '0'), ('restecg', 'patient no 39', '1'), ('thalach', 'patient no 39', '3'), ('exang', 'patient no 39', '0'), ('oldpeak', 'patient no 39', '1'), ('slope', 'patient no 39', '2'), ('ca', 'patient no 39', '0'), ('thal', 'patient no 39', '2')]
+Patient 40:[('age', 'patient no 40', '3'), ('sex', 'patient no 40', '1'), ('cp', 'patient no 40', '0'), ('trestbps', 'patient no 40', '1'), ('chol', 'patient no 40', '1'), ('fbs', 'patient no 40', '0'), ('restecg', 'patient no 40', '1'), ('thalach', 'patient no 40', '2'), ('exang', 'patient no 40', '0'), ('oldpeak', 'patient no 40', '1'), ('slope', 'patient no 40', '1'), ('ca', 'patient no 40', '1'), ('thal', 'patient no 40', '3')]
+Patient 41:[('age', 'patient no 41', '1'), ('sex', 'patient no 41', '1'), ('cp', 'patient no 41', '0'), ('trestbps', 'patient no 41', '3'), ('chol', 'patient no 41', '1'), ('fbs', 'patient no 41', '0'), ('restecg', 'patient no 41', '1'), ('thalach', 'patient no 41', '4'), ('exang', 'patient no 41', '0'), ('oldpeak', 'patient no 41', '1'), ('slope', 'patient no 41', '2'), ('ca', 'patient no 41', '0'), ('thal', 'patient no 41', '3')]
+Patient 42:[('age', 'patient no 42', '3'), ('sex', 'patient no 42', '1'), ('cp', 'patient no 42', '0'), ('trestbps', 'patient no 42', '2'), ('chol', 'patient no 42', '1'), ('fbs', 'patient no 42', '0'), ('restecg', 'patient no 42', '0'), ('thalach', 'patient no 42', '2'), ('exang', 'patient no 42', '1'), ('oldpeak', 'patient no 42', '2'), ('slope', 'patient no 42', '1'), ('ca', 'patient no 42', '3'), ('thal', 'patient no 42', '3')]
+Patient 43:[('age', 'patient no 43', '3'), ('sex', 'patient no 43', '0'), ('cp', 'patient no 43', '0'), ('trestbps', 'patient no 43', '2'), ('chol', 'patient no 43', '3'), ('fbs', 'patient no 43', '0'), ('restecg', 'patient no 43', '0'), ('thalach', 'patient no 43', '3'), ('exang', 'patient no 43', '0'), ('oldpeak', 'patient no 43', '1'), ('slope', 'patient no 43', '1'), ('ca', 'patient no 43', '0'), ('thal', 'patient no 43', '2')]
+Patient 44:[('age', 'patient no 44', '3'), ('sex', 'patient no 44', '1'), ('cp', 'patient no 44', '0'), ('trestbps', 'patient no 44', '3'), ('chol', 'patient no 44', '2'), ('fbs', 'patient no 44', '0'), ('restecg', 'patient no 44', '0'), ('thalach', 'patient no 44', '3'), ('exang', 'patient no 44', '1'), ('oldpeak', 'patient no 44', '1'), ('slope', 'patient no 44', '1'), ('ca', 'patient no 44', '1'), ('thal', 'patient no 44', '3')]
+Patient 45:[('age', 'patient no 45', '3'), ('sex', 'patient no 45', '0'), ('cp', 'patient no 45', '0'), ('trestbps', 'patient no 45', '4'), ('chol', 'patient no 45', '2'), ('fbs', 'patient no 45', '0'), ('restecg', 'patient no 45', '2'), ('thalach', 'patient no 45', '2'), ('exang', 'patient no 45', '1'), ('oldpeak', 'patient no 45', '3'), ('slope', 'patient no 45', '1'), ('ca', 'patient no 45', '0'), ('thal', 'patient no 45', '2')]
+Patient 46:[('age', 'patient no 46', '2'), ('sex', 'patient no 46', '0'), ('cp', 'patient no 46', '2'), ('trestbps', 'patient no 46', '2'), ('chol', 'patient no 46', '2'), ('fbs', 'patient no 46', '0'), ('restecg', 'patient no 46', '0'), ('thalach', 'patient no 46', '3'), ('exang', 'patient no 46', '0'), ('oldpeak', 'patient no 46', '1'), ('slope', 'patient no 46', '2'), ('ca', 'patient no 46', '0'), ('thal', 'patient no 46', '2')]
+Patient 47:[('age', 'patient no 47', '2'), ('sex', 'patient no 47', '1'), ('cp', 'patient no 47', '1'), ('trestbps', 'patient no 47', '1'), ('chol', 'patient no 47', '1'), ('fbs', 'patient no 47', '1'), ('restecg', 'patient no 47', '1'), ('thalach', 'patient no 47', '3'), ('exang', 'patient no 47', '0'), ('oldpeak', 'patient no 47', '1'), ('slope', 'patient no 47', '2'), ('ca', 'patient no 47', '0'), ('thal', 'patient no 47', '3')]
+Patient 48:[('age', 'patient no 48', '4'), ('sex', 'patient no 48', '1'), ('cp', 'patient no 48', '0'), ('trestbps', 'patient no 48', '1'), ('chol', 'patient no 48', '2'), ('fbs', 'patient no 48', '0'), ('restecg', 'patient no 48', '0'), ('thalach', 'patient no 48', '2'), ('exang', 'patient no 48', '1'), ('oldpeak', 'patient no 48', '1'), ('slope', 'patient no 48', '1'), ('ca', 'patient no 48', '2'), ('thal', 'patient no 48', '2')]
+Patient 49:[('age', 'patient no 49', '3'), ('sex', 'patient no 49', '0'), ('cp', 'patient no 49', '2'), ('trestbps', 'patient no 49', '1'), ('chol', 'patient no 49', '2'), ('fbs', 'patient no 49', '0'), ('restecg', 'patient no 49', '1'), ('thalach', 'patient no 49', '4'), ('exang', 'patient no 49', '0'), ('oldpeak', 'patient no 49', '1'), ('slope', 'patient no 49', '2'), ('ca', 'patient no 49', '0'), ('thal', 'patient no 49', '2')]
+Patient 50:[('age', 'patient no 50', '2'), ('sex', 'patient no 50', '1'), ('cp', 'patient no 50', '0'), ('trestbps', 'patient no 50', '1'), ('chol', 'patient no 50', '1'), ('fbs', 'patient no 50', '0'), ('restecg', 'patient no 50', '0'), ('thalach', 'patient no 50', '3'), ('exang', 'patient no 50', '0'), ('oldpeak', 'patient no 50', '1'), ('slope', 'patient no 50', '2'), ('ca', 'patient no 50', '0'), ('thal', 'patient no 50', '3')]
+Patient 51:[('age', 'patient no 51', '2'), ('sex', 'patient no 51', '1'), ('cp', 'patient no 51', '0'), ('trestbps', 'patient no 51', '2'), ('chol', 'patient no 51', '1'), ('fbs', 'patient no 51', '0'), ('restecg', 'patient no 51', '1'), ('thalach', 'patient no 51', '3'), ('exang', 'patient no 51', '0'), ('oldpeak', 'patient no 51', '1'), ('slope', 'patient no 51', '2'), ('ca', 'patient no 51', '2'), ('thal', 'patient no 51', '3')]
+Patient 52:[('age', 'patient no 52', '3'), ('sex', 'patient no 52', '0'), ('cp', 'patient no 52', '0'), ('trestbps', 'patient no 52', '3'), ('chol', 'patient no 52', '1'), ('fbs', 'patient no 52', '1'), ('restecg', 'patient no 52', '0'), ('thalach', 'patient no 52', '3'), ('exang', 'patient no 52', '1'), ('oldpeak', 'patient no 52', '2'), ('slope', 'patient no 52', '1'), ('ca', 'patient no 52', '2'), ('thal', 'patient no 52', '1')]
+Patient 53:[('age', 'patient no 53', '3'), ('sex', 'patient no 53', '1'), ('cp', 'patient no 53', '0'), ('trestbps', 'patient no 53', '3'), ('chol', 'patient no 53', '2'), ('fbs', 'patient no 53', '0'), ('restecg', 'patient no 53', '0'), ('thalach', 'patient no 53', '3'), ('exang', 'patient no 53', '1'), ('oldpeak', 'patient no 53', '3'), ('slope', 'patient no 53', '0'), ('ca', 'patient no 53', '0'), ('thal', 'patient no 53', '3')]
+Patient 54:[('age', 'patient no 54', '2'), ('sex', 'patient no 54', '1'), ('cp', 'patient no 54', '1'), ('trestbps', 'patient no 54', '2'), ('chol', 'patient no 54', '1'), ('fbs', 'patient no 54', '1'), ('restecg', 'patient no 54', '1'), ('thalach', 'patient no 54', '4'), ('exang', 'patient no 54', '0'), ('oldpeak', 'patient no 54', '1'), ('slope', 'patient no 54', '2'), ('ca', 'patient no 54', '0'), ('thal', 'patient no 54', '2')]
+Patient 55:[('age', 'patient no 55', '3'), ('sex', 'patient no 55', '1'), ('cp', 'patient no 55', '0'), ('trestbps', 'patient no 55', '3'), ('chol', 'patient no 55', '1'), ('fbs', 'patient no 55', '1'), ('restecg', 'patient no 55', '0'), ('thalach', 'patient no 55', '1'), ('exang', 'patient no 55', '0'), ('oldpeak', 'patient no 55', '1'), ('slope', 'patient no 55', '1'), ('ca', 'patient no 55', '2'), ('thal', 'patient no 55', '1')]
+Patient 56:[('age', 'patient no 56', '3'), ('sex', 'patient no 56', '1'), ('cp', 'patient no 56', '1'), ('trestbps', 'patient no 56', '1'), ('chol', 'patient no 56', '2'), ('fbs', 'patient no 56', '0'), ('restecg', 'patient no 56', '0'), ('thalach', 'patient no 56', '1'), ('exang', 'patient no 56', '0'), ('oldpeak', 'patient no 56', '1'), ('slope', 'patient no 56', '1'), ('ca', 'patient no 56', '1'), ('thal', 'patient no 56', '3')]
+Patient 57:[('age', 'patient no 57', '3'), ('sex', 'patient no 57', '0'), ('cp', 'patient no 57', '0'), ('trestbps', 'patient no 57', '1'), ('chol', 'patient no 57', '2'), ('fbs', 'patient no 57', '0'), ('restecg', 'patient no 57', '1'), ('thalach', 'patient no 57', '3'), ('exang', 'patient no 57', '1'), ('oldpeak', 'patient no 57', '2'), ('slope', 'patient no 57', '1'), ('ca', 'patient no 57', '2'), ('thal', 'patient no 57', '2')]
+Patient 58:[('age', 'patient no 58', '3'), ('sex', 'patient no 58', '0'), ('cp', 'patient no 58', '0'), ('trestbps', 'patient no 58', '2'), ('chol', 'patient no 58', '2'), ('fbs', 'patient no 58', '1'), ('restecg', 'patient no 58', '1'), ('thalach', 'patient no 58', '2'), ('exang', 'patient no 58', '0'), ('oldpeak', 'patient no 58', '2'), ('slope', 'patient no 58', '1'), ('ca', 'patient no 58', '3'), ('thal', 'patient no 58', '2')]
+Patient 59:[('age', 'patient no 59', '3'), ('sex', 'patient no 59', '1'), ('cp', 'patient no 59', '0'), ('trestbps', 'patient no 59', '2'), ('chol', 'patient no 59', '1'), ('fbs', 'patient no 59', '0'), ('restecg', 'patient no 59', '0'), ('thalach', 'patient no 59', '2'), ('exang', 'patient no 59', '1'), ('oldpeak', 'patient no 59', '2'), ('slope', 'patient no 59', '1'), ('ca', 'patient no 59', '2'), ('thal', 'patient no 59', '3')]
+Patient 60:[('age', 'patient no 60', '2'), ('sex', 'patient no 60', '1'), ('cp', 'patient no 60', '2'), ('trestbps', 'patient no 60', '1'), ('chol', 'patient no 60', '2'), ('fbs', 'patient no 60', '0'), ('restecg', 'patient no 60', '1'), ('thalach', 'patient no 60', '3'), ('exang', 'patient no 60', '0'), ('oldpeak', 'patient no 60', '1'), ('slope', 'patient no 60', '2'), ('ca', 'patient no 60', '0'), ('thal', 'patient no 60', '2')]
+Patient 61:[('age', 'patient no 61', '3'), ('sex', 'patient no 61', '1'), ('cp', 'patient no 61', '2'), ('trestbps', 'patient no 61', '2'), ('chol', 'patient no 61', '1'), ('fbs', 'patient no 61', '1'), ('restecg', 'patient no 61', '1'), ('thalach', 'patient no 61', '2'), ('exang', 'patient no 61', '0'), ('oldpeak', 'patient no 61', '2'), ('slope', 'patient no 61', '1'), ('ca', 'patient no 61', '1'), ('thal', 'patient no 61', '1')]
+Patient 62:[('age', 'patient no 62', '4'), ('sex', 'patient no 62', '1'), ('cp', 'patient no 62', '1'), ('trestbps', 'patient no 62', '3'), ('chol', 'patient no 62', '2'), ('fbs', 'patient no 62', '0'), ('restecg', 'patient no 62', '1'), ('thalach', 'patient no 62', '2'), ('exang', 'patient no 62', '1'), ('oldpeak', 'patient no 62', '1'), ('slope', 'patient no 62', '1'), ('ca', 'patient no 62', '3'), ('thal', 'patient no 62', '1')]
+Patient 63:[('age', 'patient no 63', '3'), ('sex', 'patient no 63', '1'), ('cp', 'patient no 63', '0'), ('trestbps', 'patient no 63', '2'), ('chol', 'patient no 63', '1'), ('fbs', 'patient no 63', '0'), ('restecg', 'patient no 63', '0'), ('thalach', 'patient no 63', '3'), ('exang', 'patient no 63', '1'), ('oldpeak', 'patient no 63', '2'), ('slope', 'patient no 63', '2'), ('ca', 'patient no 63', '1'), ('thal', 'patient no 63', '3')]
+Patient 64:[('age', 'patient no 64', '2'), ('sex', 'patient no 64', '1'), ('cp', 'patient no 64', '0'), ('trestbps', 'patient no 64', '1'), ('chol', 'patient no 64', '1'), ('fbs', 'patient no 64', '0'), ('restecg', 'patient no 64', '1'), ('thalach', 'patient no 64', '3'), ('exang', 'patient no 64', '1'), ('oldpeak', 'patient no 64', '2'), ('slope', 'patient no 64', '0'), ('ca', 'patient no 64', '0'), ('thal', 'patient no 64', '1')]
+Patient 65:[('age', 'patient no 65', '2'), ('sex', 'patient no 65', '1'), ('cp', 'patient no 65', '3'), ('trestbps', 'patient no 65', '3'), ('chol', 'patient no 65', '2'), ('fbs', 'patient no 65', '0'), ('restecg', 'patient no 65', '0'), ('thalach', 'patient no 65', '4'), ('exang', 'patient no 65', '0'), ('oldpeak', 'patient no 65', '1'), ('slope', 'patient no 65', '2'), ('ca', 'patient no 65', '2'), ('thal', 'patient no 65', '2')]
+Patient 66:[('age', 'patient no 66', '4'), ('sex', 'patient no 66', '1'), ('cp', 'patient no 66', '2'), ('trestbps', 'patient no 66', '4'), ('chol', 'patient no 66', '2'), ('fbs', 'patient no 66', '1'), ('restecg', 'patient no 66', '0'), ('thalach', 'patient no 66', '3'), ('exang', 'patient no 66', '1'), ('oldpeak', 'patient no 66', '2'), ('slope', 'patient no 66', '1'), ('ca', 'patient no 66', '0'), ('thal', 'patient no 66', '3')]
+Patient 67:[('age', 'patient no 67', '1'), ('sex', 'patient no 67', '1'), ('cp', 'patient no 67', '0'), ('trestbps', 'patient no 67', '1'), ('chol', 'patient no 67', '1'), ('fbs', 'patient no 67', '0'), ('restecg', 'patient no 67', '1'), ('thalach', 'patient no 67', '3'), ('exang', 'patient no 67', '0'), ('oldpeak', 'patient no 67', '1'), ('slope', 'patient no 67', '1'), ('ca', 'patient no 67', '0'), ('thal', 'patient no 67', '3')]
+Patient 68:[('age', 'patient no 68', '3'), ('sex', 'patient no 68', '1'), ('cp', 'patient no 68', '2'), ('trestbps', 'patient no 68', '2'), ('chol', 'patient no 68', '1'), ('fbs', 'patient no 68', '0'), ('restecg', 'patient no 68', '0'), ('thalach', 'patient no 68', '3'), ('exang', 'patient no 68', '0'), ('oldpeak', 'patient no 68', '2'), ('slope', 'patient no 68', '1'), ('ca', 'patient no 68', '0'), ('thal', 'patient no 68', '2')]
+Patient 69:[('age', 'patient no 69', '3'), ('sex', 'patient no 69', '1'), ('cp', 'patient no 69', '0'), ('trestbps', 'patient no 69', '2'), ('chol', 'patient no 69', '1'), ('fbs', 'patient no 69', '0'), ('restecg', 'patient no 69', '1'), ('thalach', 'patient no 69', '2'), ('exang', 'patient no 69', '1'), ('oldpeak', 'patient no 69', '1'), ('slope', 'patient no 69', '1'), ('ca', 'patient no 69', '1'), ('thal', 'patient no 69', '3')]
+Patient 70:[('age', 'patient no 70', '1'), ('sex', 'patient no 70', '1'), ('cp', 'patient no 70', '3'), ('trestbps', 'patient no 70', '1'), ('chol', 'patient no 70', '1'), ('fbs', 'patient no 70', '0'), ('restecg', 'patient no 70', '0'), ('thalach', 'patient no 70', '4'), ('exang', 'patient no 70', '0'), ('oldpeak', 'patient no 70', '1'), ('slope', 'patient no 70', '2'), ('ca', 'patient no 70', '0'), ('thal', 'patient no 70', '2')]
+Patient 71:[('age', 'patient no 71', '5'), ('sex', 'patient no 71', '1'), ('cp', 'patient no 71', '0'), ('trestbps', 'patient no 71', '2'), ('chol', 'patient no 71', '2'), ('fbs', 'patient no 71', '0'), ('restecg', 'patient no 71', '0'), ('thalach', 'patient no 71', '3'), ('exang', 'patient no 71', '1'), ('oldpeak', 'patient no 71', '1'), ('slope', 'patient no 71', '2'), ('ca', 'patient no 71', '3'), ('thal', 'patient no 71', '2')]
+Patient 72:[('age', 'patient no 72', '3'), ('sex', 'patient no 72', '1'), ('cp', 'patient no 72', '0'), ('trestbps', 'patient no 72', '3'), ('chol', 'patient no 72', '2'), ('fbs', 'patient no 72', '0'), ('restecg', 'patient no 72', '0'), ('thalach', 'patient no 72', '2'), ('exang', 'patient no 72', '1'), ('oldpeak', 'patient no 72', '1'), ('slope', 'patient no 72', '2'), ('ca', 'patient no 72', '0'), ('thal', 'patient no 72', '3')]
+Patient 73:[('age', 'patient no 73', '3'), ('sex', 'patient no 73', '1'), ('cp', 'patient no 73', '2'), ('trestbps', 'patient no 73', '2'), ('chol', 'patient no 73', '1'), ('fbs', 'patient no 73', '0'), ('restecg', 'patient no 73', '1'), ('thalach', 'patient no 73', '3'), ('exang', 'patient no 73', '0'), ('oldpeak', 'patient no 73', '2'), ('slope', 'patient no 73', '1'), ('ca', 'patient no 73', '3'), ('thal', 'patient no 73', '3')]
+Patient 74:[('age', 'patient no 74', '3'), ('sex', 'patient no 74', '0'), ('cp', 'patient no 74', '0'), ('trestbps', 'patient no 74', '3'), ('chol', 'patient no 74', '2'), ('fbs', 'patient no 74', '0'), ('restecg', 'patient no 74', '0'), ('thalach', 'patient no 74', '3'), ('exang', 'patient no 74', '0'), ('oldpeak', 'patient no 74', '2'), ('slope', 'patient no 74', '1'), ('ca', 'patient no 74', '2'), ('thal', 'patient no 74', '3')]
+Patient 75:[('age', 'patient no 75', '2'), ('sex', 'patient no 75', '1'), ('cp', 'patient no 75', '2'), ('trestbps', 'patient no 75', '1'), ('chol', 'patient no 75', '1'), ('fbs', 'patient no 75', '0'), ('restecg', 'patient no 75', '1'), ('thalach', 'patient no 75', '3'), ('exang', 'patient no 75', '0'), ('oldpeak', 'patient no 75', '1'), ('slope', 'patient no 75', '2'), ('ca', 'patient no 75', '0'), ('thal', 'patient no 75', '2')]
+Patient 76:[('age', 'patient no 76', '2'), ('sex', 'patient no 76', '1'), ('cp', 'patient no 76', '0'), ('trestbps', 'patient no 76', '2'), ('chol', 'patient no 76', '2'), ('fbs', 'patient no 76', '0'), ('restecg', 'patient no 76', '1'), ('thalach', 'patient no 76', '3'), ('exang', 'patient no 76', '1'), ('oldpeak', 'patient no 76', '1'), ('slope', 'patient no 76', '2'), ('ca', 'patient no 76', '1'), ('thal', 'patient no 76', '3')]
+Patient 77:[('age', 'patient no 77', '1'), ('sex', 'patient no 77', '0'), ('cp', 'patient no 77', '2'), ('trestbps', 'patient no 77', '1'), ('chol', 'patient no 77', '1'), ('fbs', 'patient no 77', '0'), ('restecg', 'patient no 77', '1'), ('thalach', 'patient no 77', '4'), ('exang', 'patient no 77', '0'), ('oldpeak', 'patient no 77', '1'), ('slope', 'patient no 77', '2'), ('ca', 'patient no 77', '0'), ('thal', 'patient no 77', '2')]
+Patient 78:[('age', 'patient no 78', '2'), ('sex', 'patient no 78', '1'), ('cp', 'patient no 78', '2'), ('trestbps', 'patient no 78', '1'), ('chol', 'patient no 78', '1'), ('fbs', 'patient no 78', '0'), ('restecg', 'patient no 78', '1'), ('thalach', 'patient no 78', '3'), ('exang', 'patient no 78', '1'), ('oldpeak', 'patient no 78', '1'), ('slope', 'patient no 78', '1'), ('ca', 'patient no 78', '0'), ('thal', 'patient no 78', '2')]
+Patient 79:[('age', 'patient no 79', '3'), ('sex', 'patient no 79', '1'), ('cp', 'patient no 79', '0'), ('trestbps', 'patient no 79', '1'), ('chol', 'patient no 79', '2'), ('fbs', 'patient no 79', '0'), ('restecg', 'patient no 79', '1'), ('thalach', 'patient no 79', '3'), ('exang', 'patient no 79', '1'), ('oldpeak', 'patient no 79', '2'), ('slope', 'patient no 79', '1'), ('ca', 'patient no 79', '1'), ('thal', 'patient no 79', '3')]
+Patient 80:[('age', 'patient no 80', '3'), ('sex', 'patient no 80', '1'), ('cp', 'patient no 80', '0'), ('trestbps', 'patient no 80', '2'), ('chol', 'patient no 80', '2'), ('fbs', 'patient no 80', '0'), ('restecg', 'patient no 80', '0'), ('thalach', 'patient no 80', '2'), ('exang', 'patient no 80', '1'), ('oldpeak', 'patient no 80', '3'), ('slope', 'patient no 80', '1'), ('ca', 'patient no 80', '2'), ('thal', 'patient no 80', '2')]
+Patient 81:[('age', 'patient no 81', '3'), ('sex', 'patient no 81', '0'), ('cp', 'patient no 81', '0'), ('trestbps', 'patient no 81', '3'), ('chol', 'patient no 81', '1'), ('fbs', 'patient no 81', '0'), ('restecg', 'patient no 81', '0'), ('thalach', 'patient no 81', '3'), ('exang', 'patient no 81', '0'), ('oldpeak', 'patient no 81', '5'), ('slope', 'patient no 81', '0'), ('ca', 'patient no 81', '3'), ('thal', 'patient no 81', '3')]
+Patient 82:[('age', 'patient no 82', '3'), ('sex', 'patient no 82', '1'), ('cp', 'patient no 82', '1'), ('trestbps', 'patient no 82', '1'), ('chol', 'patient no 82', '2'), ('fbs', 'patient no 82', '0'), ('restecg', 'patient no 82', '0'), ('thalach', 'patient no 82', '3'), ('exang', 'patient no 82', '0'), ('oldpeak', 'patient no 82', '2'), ('slope', 'patient no 82', '1'), ('ca', 'patient no 82', '0'), ('thal', 'patient no 82', '2')]
+Patient 83:[('age', 'patient no 83', '2'), ('sex', 'patient no 83', '1'), ('cp', 'patient no 83', '2'), ('trestbps', 'patient no 83', '3'), ('chol', 'patient no 83', '1'), ('fbs', 'patient no 83', '0'), ('restecg', 'patient no 83', '1'), ('thalach', 'patient no 83', '3'), ('exang', 'patient no 83', '0'), ('oldpeak', 'patient no 83', '3'), ('slope', 'patient no 83', '1'), ('ca', 'patient no 83', '0'), ('thal', 'patient no 83', '2')]
+Patient 84:[('age', 'patient no 84', '2'), ('sex', 'patient no 84', '1'), ('cp', 'patient no 84', '0'), ('trestbps', 'patient no 84', '2'), ('chol', 'patient no 84', '2'), ('fbs', 'patient no 84', '0'), ('restecg', 'patient no 84', '1'), ('thalach', 'patient no 84', '2'), ('exang', 'patient no 84', '1'), ('oldpeak', 'patient no 84', '2'), ('slope', 'patient no 84', '1'), ('ca', 'patient no 84', '2'), ('thal', 'patient no 84', '3')]
+Patient 85:[('age', 'patient no 85', '3'), ('sex', 'patient no 85', '1'), ('cp', 'patient no 85', '3'), ('trestbps', 'patient no 85', '4'), ('chol', 'patient no 85', '2'), ('fbs', 'patient no 85', '0'), ('restecg', 'patient no 85', '0'), ('thalach', 'patient no 85', '3'), ('exang', 'patient no 85', '0'), ('oldpeak', 'patient no 85', '3'), ('slope', 'patient no 85', '0'), ('ca', 'patient no 85', '0'), ('thal', 'patient no 85', '3')]
+Patient 86:[('age', 'patient no 86', '3'), ('sex', 'patient no 86', '1'), ('cp', 'patient no 86', '0'), ('trestbps', 'patient no 86', '3'), ('chol', 'patient no 86', '2'), ('fbs', 'patient no 86', '0'), ('restecg', 'patient no 86', '1'), ('thalach', 'patient no 86', '1'), ('exang', 'patient no 86', '1'), ('oldpeak', 'patient no 86', '1'), ('slope', 'patient no 86', '1'), ('ca', 'patient no 86', '1'), ('thal', 'patient no 86', '3')]
+Patient 87:[('age', 'patient no 87', '3'), ('sex', 'patient no 87', '1'), ('cp', 'patient no 87', '0'), ('trestbps', 'patient no 87', '2'), ('chol', 'patient no 87', '2'), ('fbs', 'patient no 87', '0'), ('restecg', 'patient no 87', '1'), ('thalach', 'patient no 87', '3'), ('exang', 'patient no 87', '0'), ('oldpeak', 'patient no 87', '1'), ('slope', 'patient no 87', '2'), ('ca', 'patient no 87', '0'), ('thal', 'patient no 87', '2')]
+Patient 88:[('age', 'patient no 88', '1'), ('sex', 'patient no 88', '1'), ('cp', 'patient no 88', '3'), ('trestbps', 'patient no 88', '1'), ('chol', 'patient no 88', '1'), ('fbs', 'patient no 88', '0'), ('restecg', 'patient no 88', '1'), ('thalach', 'patient no 88', '4'), ('exang', 'patient no 88', '1'), ('oldpeak', 'patient no 88', '3'), ('slope', 'patient no 88', '1'), ('ca', 'patient no 88', '0'), ('thal', 'patient no 88', '3')]
+Patient 89:[('age', 'patient no 89', '4'), ('sex', 'patient no 89', '0'), ('cp', 'patient no 89', '0'), ('trestbps', 'patient no 89', '3'), ('chol', 'patient no 89', '1'), ('fbs', 'patient no 89', '0'), ('restecg', 'patient no 89', '0'), ('thalach', 'patient no 89', '2'), ('exang', 'patient no 89', '0'), ('oldpeak', 'patient no 89', '1'), ('slope', 'patient no 89', '1'), ('ca', 'patient no 89', '3'), ('thal', 'patient no 89', '3')]
+Patient 90:[('age', 'patient no 90', '3'), ('sex', 'patient no 90', '1'), ('cp', 'patient no 90', '2'), ('trestbps', 'patient no 90', '2'), ('chol', 'patient no 90', '1'), ('fbs', 'patient no 90', '0'), ('restecg', 'patient no 90', '0'), ('thalach', 'patient no 90', '3'), ('exang', 'patient no 90', '0'), ('oldpeak', 'patient no 90', '1'), ('slope', 'patient no 90', '1'), ('ca', 'patient no 90', '1'), ('thal', 'patient no 90', '3')]
+Patient 91:[('age', 'patient no 91', '3'), ('sex', 'patient no 91', '0'), ('cp', 'patient no 91', '1'), ('trestbps', 'patient no 91', '2'), ('chol', 'patient no 91', '2'), ('fbs', 'patient no 91', '1'), ('restecg', 'patient no 91', '0'), ('thalach', 'patient no 91', '3'), ('exang', 'patient no 91', '0'), ('oldpeak', 'patient no 91', '1'), ('slope', 'patient no 91', '2'), ('ca', 'patient no 91', '2'), ('thal', 'patient no 91', '2')]
+Patient 92:[('age', 'patient no 92', '3'), ('sex', 'patient no 92', '1'), ('cp', 'patient no 92', '0'), ('trestbps', 'patient no 92', '2'), ('chol', 'patient no 92', '2'), ('fbs', 'patient no 92', '0'), ('restecg', 'patient no 92', '0'), ('thalach', 'patient no 92', '4'), ('exang', 'patient no 92', '0'), ('oldpeak', 'patient no 92', '1'), ('slope', 'patient no 92', '2'), ('ca', 'patient no 92', '2'), ('thal', 'patient no 92', '3')]
+Patient 93:[('age', 'patient no 93', '3'), ('sex', 'patient no 93', '0'), ('cp', 'patient no 93', '3'), ('trestbps', 'patient no 93', '3'), ('chol', 'patient no 93', '2'), ('fbs', 'patient no 93', '1'), ('restecg', 'patient no 93', '0'), ('thalach', 'patient no 93', '3'), ('exang', 'patient no 93', '0'), ('oldpeak', 'patient no 93', '1'), ('slope', 'patient no 93', '2'), ('ca', 'patient no 93', '0'), ('thal', 'patient no 93', '2')]
+Patient 94:[('age', 'patient no 94', '3'), ('sex', 'patient no 94', '1'), ('cp', 'patient no 94', '0'), ('trestbps', 'patient no 94', '2'), ('chol', 'patient no 94', '1'), ('fbs', 'patient no 94', '0'), ('restecg', 'patient no 94', '0'), ('thalach', 'patient no 94', '2'), ('exang', 'patient no 94', '1'), ('oldpeak', 'patient no 94', '2'), ('slope', 'patient no 94', '1'), ('ca', 'patient no 94', '1'), ('thal', 'patient no 94', '1')]
+Patient 95:[('age', 'patient no 95', '3'), ('sex', 'patient no 95', '1'), ('cp', 'patient no 95', '0'), ('trestbps', 'patient no 95', '2'), ('chol', 'patient no 95', '2'), ('fbs', 'patient no 95', '1'), ('restecg', 'patient no 95', '0'), ('thalach', 'patient no 95', '2'), ('exang', 'patient no 95', '1'), ('oldpeak', 'patient no 95', '2'), ('slope', 'patient no 95', '2'), ('ca', 'patient no 95', '3'), ('thal', 'patient no 95', '3')]
+Patient 96:[('age', 'patient no 96', '3'), ('sex', 'patient no 96', '1'), ('cp', 'patient no 96', '0'), ('trestbps', 'patient no 96', '1'), ('chol', 'patient no 96', '1'), ('fbs', 'patient no 96', '0'), ('restecg', 'patient no 96', '0'), ('thalach', 'patient no 96', '2'), ('exang', 'patient no 96', '1'), ('oldpeak', 'patient no 96', '1'), ('slope', 'patient no 96', '1'), ('ca', 'patient no 96', '1'), ('thal', 'patient no 96', '2')]
+Patient 97:[('age', 'patient no 97', '2'), ('sex', 'patient no 97', '1'), ('cp', 'patient no 97', '0'), ('trestbps', 'patient no 97', '1'), ('chol', 'patient no 97', '1'), ('fbs', 'patient no 97', '0'), ('restecg', 'patient no 97', '0'), ('thalach', 'patient no 97', '4'), ('exang', 'patient no 97', '0'), ('oldpeak', 'patient no 97', '1'), ('slope', 'patient no 97', '2'), ('ca', 'patient no 97', '1'), ('thal', 'patient no 97', '2')]
+Patient 98:[('age', 'patient no 98', '3'), ('sex', 'patient no 98', '1'), ('cp', 'patient no 98', '0'), ('trestbps', 'patient no 98', '2'), ('chol', 'patient no 98', '2'), ('fbs', 'patient no 98', '0'), ('restecg', 'patient no 98', '1'), ('thalach', 'patient no 98', '3'), ('exang', 'patient no 98', '1'), ('oldpeak', 'patient no 98', '1'), ('slope', 'patient no 98', '2'), ('ca', 'patient no 98', '1'), ('thal', 'patient no 98', '3')]
+Patient 99:[('age', 'patient no 99', '3'), ('sex', 'patient no 99', '1'), ('cp', 'patient no 99', '0'), ('trestbps', 'patient no 99', '2'), ('chol', 'patient no 99', '3'), ('fbs', 'patient no 99', '0'), ('restecg', 'patient no 99', '1'), ('thalach', 'patient no 99', '2'), ('exang', 'patient no 99', '1'), ('oldpeak', 'patient no 99', '1'), ('slope', 'patient no 99', '1'), ('ca', 'patient no 99', '1'), ('thal', 'patient no 99', '3')]
+Patient 100:[('age', 'patient no 100', '4'), ('sex', 'patient no 100', '0'), ('cp', 'patient no 100', '0'), ('trestbps', 'patient no 100', '1'), ('chol', 'patient no 100', '1'), ('fbs', 'patient no 100', '0'), ('restecg', 'patient no 100', '1'), ('thalach', 'patient no 100', '2'), ('exang', 'patient no 100', '0'), ('oldpeak', 'patient no 100', '2'), ('slope', 'patient no 100', '1'), ('ca', 'patient no 100', '0'), ('thal', 'patient no 100', '2')]
+Patient 101:[('age', 'patient no 101', '3'), ('sex', 'patient no 101', '1'), ('cp', 'patient no 101', '0'), ('trestbps', 'patient no 101', '2'), ('chol', 'patient no 101', '1'), ('fbs', 'patient no 101', '0'), ('restecg', 'patient no 101', '1'), ('thalach', 'patient no 101', '2'), ('exang', 'patient no 101', '1'), ('oldpeak', 'patient no 101', '4'), ('slope', 'patient no 101', '0'), ('ca', 'patient no 101', '0'), ('thal', 'patient no 101', '3')]
+Patient 102:[('age', 'patient no 102', '2'), ('sex', 'patient no 102', '1'), ('cp', 'patient no 102', '1'), ('trestbps', 'patient no 102', '1'), ('chol', 'patient no 102', '1'), ('fbs', 'patient no 102', '0'), ('restecg', 'patient no 102', '1'), ('thalach', 'patient no 102', '3'), ('exang', 'patient no 102', '0'), ('oldpeak', 'patient no 102', '1'), ('slope', 'patient no 102', '0'), ('ca', 'patient no 102', '0'), ('thal', 'patient no 102', '3')]
+Patient 103:[('age', 'patient no 103', '4'), ('sex', 'patient no 103', '1'), ('cp', 'patient no 103', '0'), ('trestbps', 'patient no 103', '2'), ('chol', 'patient no 103', '2'), ('fbs', 'patient no 103', '1'), ('restecg', 'patient no 103', '1'), ('thalach', 'patient no 103', '3'), ('exang', 'patient no 103', '0'), ('oldpeak', 'patient no 103', '1'), ('slope', 'patient no 103', '1'), ('ca', 'patient no 103', '2'), ('thal', 'patient no 103', '3')]
+Patient 104:[('age', 'patient no 104', '3'), ('sex', 'patient no 104', '1'), ('cp', 'patient no 104', '0'), ('trestbps', 'patient no 104', '1'), ('chol', 'patient no 104', '2'), ('fbs', 'patient no 104', '0'), ('restecg', 'patient no 104', '1'), ('thalach', 'patient no 104', '2'), ('exang', 'patient no 104', '1'), ('oldpeak', 'patient no 104', '2'), ('slope', 'patient no 104', '1'), ('ca', 'patient no 104', '1'), ('thal', 'patient no 104', '3')]
+Patient 105:[('age', 'patient no 105', '4'), ('sex', 'patient no 105', '0'), ('cp', 'patient no 105', '0'), ('trestbps', 'patient no 105', '4'), ('chol', 'patient no 105', '1'), ('fbs', 'patient no 105', '1'), ('restecg', 'patient no 105', '1'), ('thalach', 'patient no 105', '3'), ('exang', 'patient no 105', '1'), ('oldpeak', 'patient no 105', '1'), ('slope', 'patient no 105', '1'), ('ca', 'patient no 105', '2'), ('thal', 'patient no 105', '3')]
+Patient 106:[('age', 'patient no 106', '2'), ('sex', 'patient no 106', '1'), ('cp', 'patient no 106', '0'), ('trestbps', 'patient no 106', '2'), ('chol', 'patient no 106', '1'), ('fbs', 'patient no 106', '0'), ('restecg', 'patient no 106', '0'), ('thalach', 'patient no 106', '2'), ('exang', 'patient no 106', '1'), ('oldpeak', 'patient no 106', '1'), ('slope', 'patient no 106', '1'), ('ca', 'patient no 106', '0'), ('thal', 'patient no 106', '3')]
+Patient 107:[('age', 'patient no 107', '3'), ('sex', 'patient no 107', '0'), ('cp', 'patient no 107', '0'), ('trestbps', 'patient no 107', '1'), ('chol', 'patient no 107', '3'), ('fbs', 'patient no 107', '0'), ('restecg', 'patient no 107', '1'), ('thalach', 'patient no 107', '3'), ('exang', 'patient no 107', '1'), ('oldpeak', 'patient no 107', '1'), ('slope', 'patient no 107', '2'), ('ca', 'patient no 107', '0'), ('thal', 'patient no 107', '2')]
+Patient 108:[('age', 'patient no 108', '3'), ('sex', 'patient no 108', '1'), ('cp', 'patient no 108', '3'), ('trestbps', 'patient no 108', '2'), ('chol', 'patient no 108', '1'), ('fbs', 'patient no 108', '0'), ('restecg', 'patient no 108', '1'), ('thalach', 'patient no 108', '3'), ('exang', 'patient no 108', '0'), ('oldpeak', 'patient no 108', '1'), ('slope', 'patient no 108', '2'), ('ca', 'patient no 108', '2'), ('thal', 'patient no 108', '2')]
+Patient 109:[('age', 'patient no 109', '3'), ('sex', 'patient no 109', '1'), ('cp', 'patient no 109', '3'), ('trestbps', 'patient no 109', '3'), ('chol', 'patient no 109', '2'), ('fbs', 'patient no 109', '0'), ('restecg', 'patient no 109', '0'), ('thalach', 'patient no 109', '2'), ('exang', 'patient no 109', '0'), ('oldpeak', 'patient no 109', '1'), ('slope', 'patient no 109', '2'), ('ca', 'patient no 109', '0'), ('thal', 'patient no 109', '2')]
+Patient 110:[('age', 'patient no 110', '2'), ('sex', 'patient no 110', '1'), ('cp', 'patient no 110', '0'), ('trestbps', 'patient no 110', '2'), ('chol', 'patient no 110', '2'), ('fbs', 'patient no 110', '0'), ('restecg', 'patient no 110', '1'), ('thalach', 'patient no 110', '2'), ('exang', 'patient no 110', '1'), ('oldpeak', 'patient no 110', '3'), ('slope', 'patient no 110', '1'), ('ca', 'patient no 110', '3'), ('thal', 'patient no 110', '3')]
+Patient 111:[('age', 'patient no 111', '3'), ('sex', 'patient no 111', '0'), ('cp', 'patient no 111', '0'), ('trestbps', 'patient no 111', '5'), ('chol', 'patient no 111', '2'), ('fbs', 'patient no 111', '1'), ('restecg', 'patient no 111', '0'), ('thalach', 'patient no 111', '2'), ('exang', 'patient no 111', '1'), ('oldpeak', 'patient no 111', '3'), ('slope', 'patient no 111', '0'), ('ca', 'patient no 111', '2'), ('thal', 'patient no 111', '3')]
+Patient 112:[('age', 'patient no 112', '1'), ('sex', 'patient no 112', '1'), ('cp', 'patient no 112', '3'), ('trestbps', 'patient no 112', '2'), ('chol', 'patient no 112', '1'), ('fbs', 'patient no 112', '0'), ('restecg', 'patient no 112', '1'), ('thalach', 'patient no 112', '4'), ('exang', 'patient no 112', '1'), ('oldpeak', 'patient no 112', '1'), ('slope', 'patient no 112', '2'), ('ca', 'patient no 112', '0'), ('thal', 'patient no 112', '3')]
+Patient 113:[('age', 'patient no 113', '2'), ('sex', 'patient no 113', '1'), ('cp', 'patient no 113', '0'), ('trestbps', 'patient no 113', '2'), ('chol', 'patient no 113', '2'), ('fbs', 'patient no 113', '0'), ('restecg', 'patient no 113', '0'), ('thalach', 'patient no 113', '3'), ('exang', 'patient no 113', '1'), ('oldpeak', 'patient no 113', '1'), ('slope', 'patient no 113', '1'), ('ca', 'patient no 113', '3'), ('thal', 'patient no 113', '3')]
+Patient 114:[('age', 'patient no 114', '3'), ('sex', 'patient no 114', '0'), ('cp', 'patient no 114', '2'), ('trestbps', 'patient no 114', '2'), ('chol', 'patient no 114', '2'), ('fbs', 'patient no 114', '0'), ('restecg', 'patient no 114', '0'), ('thalach', 'patient no 114', '4'), ('exang', 'patient no 114', '0'), ('oldpeak', 'patient no 114', '1'), ('slope', 'patient no 114', '2'), ('ca', 'patient no 114', '0'), ('thal', 'patient no 114', '2')]
+Patient 115:[('age', 'patient no 115', '3'), ('sex', 'patient no 115', '1'), ('cp', 'patient no 115', '0'), ('trestbps', 'patient no 115', '2'), ('chol', 'patient no 115', '2'), ('fbs', 'patient no 115', '0'), ('restecg', 'patient no 115', '0'), ('thalach', 'patient no 115', '2'), ('exang', 'patient no 115', '1'), ('oldpeak', 'patient no 115', '2'), ('slope', 'patient no 115', '1'), ('ca', 'patient no 115', '2'), ('thal', 'patient no 115', '3')]
+Patient 116:[('age', 'patient no 116', '3'), ('sex', 'patient no 116', '1'), ('cp', 'patient no 116', '0'), ('trestbps', 'patient no 116', '1'), ('chol', 'patient no 116', '2'), ('fbs', 'patient no 116', '0'), ('restecg', 'patient no 116', '2'), ('thalach', 'patient no 116', '3'), ('exang', 'patient no 116', '0'), ('oldpeak', 'patient no 116', '3'), ('slope', 'patient no 116', '0'), ('ca', 'patient no 116', '3'), ('thal', 'patient no 116', '1')]
+Patient 117:[('age', 'patient no 117', '3'), ('sex', 'patient no 117', '1'), ('cp', 'patient no 117', '0'), ('trestbps', 'patient no 117', '2'), ('chol', 'patient no 117', '1'), ('fbs', 'patient no 117', '0'), ('restecg', 'patient no 117', '1'), ('thalach', 'patient no 117', '3'), ('exang', 'patient no 117', '1'), ('oldpeak', 'patient no 117', '1'), ('slope', 'patient no 117', '2'), ('ca', 'patient no 117', '1'), ('thal', 'patient no 117', '3')]
+Patient 118:[('age', 'patient no 118', '3'), ('sex', 'patient no 118', '0'), ('cp', 'patient no 118', '0'), ('trestbps', 'patient no 118', '3'), ('chol', 'patient no 118', '3'), ('fbs', 'patient no 118', '0'), ('restecg', 'patient no 118', '0'), ('thalach', 'patient no 118', '3'), ('exang', 'patient no 118', '0'), ('oldpeak', 'patient no 118', '3'), ('slope', 'patient no 118', '1'), ('ca', 'patient no 118', '3'), ('thal', 'patient no 118', '3')]
+Patient 119:[('age', 'patient no 119', '2'), ('sex', 'patient no 119', '0'), ('cp', 'patient no 119', '1'), ('trestbps', 'patient no 119', '1'), ('chol', 'patient no 119', '2'), ('fbs', 'patient no 119', '0'), ('restecg', 'patient no 119', '1'), ('thalach', 'patient no 119', '3'), ('exang', 'patient no 119', '0'), ('oldpeak', 'patient no 119', '1'), ('slope', 'patient no 119', '2'), ('ca', 'patient no 119', '0'), ('thal', 'patient no 119', '2')]
+Patient 120:[('age', 'patient no 120', '4'), ('sex', 'patient no 120', '1'), ('cp', 'patient no 120', '0'), ('trestbps', 'patient no 120', '1'), ('chol', 'patient no 120', '1'), ('fbs', 'patient no 120', '0'), ('restecg', 'patient no 120', '0'), ('thalach', 'patient no 120', '2'), ('exang', 'patient no 120', '1'), ('oldpeak', 'patient no 120', '1'), ('slope', 'patient no 120', '2'), ('ca', 'patient no 120', '1'), ('thal', 'patient no 120', '2')]
+Patient 121:[('age', 'patient no 121', '4'), ('sex', 'patient no 121', '0'), ('cp', 'patient no 121', '2'), ('trestbps', 'patient no 121', '2'), ('chol', 'patient no 121', '2'), ('fbs', 'patient no 121', '0'), ('restecg', 'patient no 121', '0'), ('thalach', 'patient no 121', '3'), ('exang', 'patient no 121', '0'), ('oldpeak', 'patient no 121', '1'), ('slope', 'patient no 121', '1'), ('ca', 'patient no 121', '1'), ('thal', 'patient no 121', '2')]
+Patient 122:[('age', 'patient no 122', '4'), ('sex', 'patient no 122', '0'), ('cp', 'patient no 122', '2'), ('trestbps', 'patient no 122', '1'), ('chol', 'patient no 122', '5'), ('fbs', 'patient no 122', '0'), ('restecg', 'patient no 122', '0'), ('thalach', 'patient no 122', '3'), ('exang', 'patient no 122', '0'), ('oldpeak', 'patient no 122', '2'), ('slope', 'patient no 122', '1'), ('ca', 'patient no 122', '0'), ('thal', 'patient no 122', '3')]
+Patient 123:[('age', 'patient no 123', '3'), ('sex', 'patient no 123', '0'), ('cp', 'patient no 123', '0'), ('trestbps', 'patient no 123', '2'), ('chol', 'patient no 123', '1'), ('fbs', 'patient no 123', '0'), ('restecg', 'patient no 123', '1'), ('thalach', 'patient no 123', '2'), ('exang', 'patient no 123', '1'), ('oldpeak', 'patient no 123', '1'), ('slope', 'patient no 123', '1'), ('ca', 'patient no 123', '0'), ('thal', 'patient no 123', '2')]
+Patient 124:[('age', 'patient no 124', '3'), ('sex', 'patient no 124', '0'), ('cp', 'patient no 124', '0'), ('trestbps', 'patient no 124', '4'), ('chol', 'patient no 124', '2'), ('fbs', 'patient no 124', '0'), ('restecg', 'patient no 124', '1'), ('thalach', 'patient no 124', '3'), ('exang', 'patient no 124', '1'), ('oldpeak', 'patient no 124', '1'), ('slope', 'patient no 124', '1'), ('ca', 'patient no 124', '0'), ('thal', 'patient no 124', '2')]
+Patient 125:[('age', 'patient no 125', '3'), ('sex', 'patient no 125', '0'), ('cp', 'patient no 125', '0'), ('trestbps', 'patient no 125', '2'), ('chol', 'patient no 125', '2'), ('fbs', 'patient no 125', '0'), ('restecg', 'patient no 125', '0'), ('thalach', 'patient no 125', '3'), ('exang', 'patient no 125', '0'), ('oldpeak', 'patient no 125', '1'), ('slope', 'patient no 125', '2'), ('ca', 'patient no 125', '0'), ('thal', 'patient no 125', '2')]
+Patient 126:[('age', 'patient no 126', '2'), ('sex', 'patient no 126', '0'), ('cp', 'patient no 126', '0'), ('trestbps', 'patient no 126', '2'), ('chol', 'patient no 126', '2'), ('fbs', 'patient no 126', '1'), ('restecg', 'patient no 126', '0'), ('thalach', 'patient no 126', '2'), ('exang', 'patient no 126', '1'), ('oldpeak', 'patient no 126', '2'), ('slope', 'patient no 126', '1'), ('ca', 'patient no 126', '0'), ('thal', 'patient no 126', '3')]
+Patient 127:[('age', 'patient no 127', '3'), ('sex', 'patient no 127', '1'), ('cp', 'patient no 127', '0'), ('trestbps', 'patient no 127', '2'), ('chol', 'patient no 127', '2'), ('fbs', 'patient no 127', '1'), ('restecg', 'patient no 127', '0'), ('thalach', 'patient no 127', '3'), ('exang', 'patient no 127', '1'), ('oldpeak', 'patient no 127', '1'), ('slope', 'patient no 127', '1'), ('ca', 'patient no 127', '1'), ('thal', 'patient no 127', '2')]
+Patient 128:[('age', 'patient no 128', '4'), ('sex', 'patient no 128', '1'), ('cp', 'patient no 128', '0'), ('trestbps', 'patient no 128', '3'), ('chol', 'patient no 128', '2'), ('fbs', 'patient no 128', '0'), ('restecg', 'patient no 128', '0'), ('thalach', 'patient no 128', '2'), ('exang', 'patient no 128', '1'), ('oldpeak', 'patient no 128', '1'), ('slope', 'patient no 128', '1'), ('ca', 'patient no 128', '3'), ('thal', 'patient no 128', '2')]
+Patient 129:[('age', 'patient no 129', '3'), ('sex', 'patient no 129', '1'), ('cp', 'patient no 129', '0'), ('trestbps', 'patient no 129', '2'), ('chol', 'patient no 129', '2'), ('fbs', 'patient no 129', '1'), ('restecg', 'patient no 129', '0'), ('thalach', 'patient no 129', '1'), ('exang', 'patient no 129', '1'), ('oldpeak', 'patient no 129', '2'), ('slope', 'patient no 129', '0'), ('ca', 'patient no 129', '0'), ('thal', 'patient no 129', '3')]
+Patient 130:[('age', 'patient no 130', '3'), ('sex', 'patient no 130', '1'), ('cp', 'patient no 130', '0'), ('trestbps', 'patient no 130', '2'), ('chol', 'patient no 130', '1'), ('fbs', 'patient no 130', '0'), ('restecg', 'patient no 130', '0'), ('thalach', 'patient no 130', '2'), ('exang', 'patient no 130', '1'), ('oldpeak', 'patient no 130', '3'), ('slope', 'patient no 130', '1'), ('ca', 'patient no 130', '1'), ('thal', 'patient no 130', '2')]
+Patient 131:[('age', 'patient no 131', '1'), ('sex', 'patient no 131', '1'), ('cp', 'patient no 131', '0'), ('trestbps', 'patient no 131', '1'), ('chol', 'patient no 131', '1'), ('fbs', 'patient no 131', '0'), ('restecg', 'patient no 131', '0'), ('thalach', 'patient no 131', '2'), ('exang', 'patient no 131', '1'), ('oldpeak', 'patient no 131', '2'), ('slope', 'patient no 131', '1'), ('ca', 'patient no 131', '0'), ('thal', 'patient no 131', '3')]
+Patient 132:[('age', 'patient no 132', '3'), ('sex', 'patient no 132', '1'), ('cp', 'patient no 132', '0'), ('trestbps', 'patient no 132', '2'), ('chol', 'patient no 132', '1'), ('fbs', 'patient no 132', '0'), ('restecg', 'patient no 132', '0'), ('thalach', 'patient no 132', '2'), ('exang', 'patient no 132', '0'), ('oldpeak', 'patient no 132', '2'), ('slope', 'patient no 132', '1'), ('ca', 'patient no 132', '2'), ('thal', 'patient no 132', '1')]
+Patient 133:[('age', 'patient no 133', '3'), ('sex', 'patient no 133', '1'), ('cp', 'patient no 133', '3'), ('trestbps', 'patient no 133', '2'), ('chol', 'patient no 133', '1'), ('fbs', 'patient no 133', '0'), ('restecg', 'patient no 133', '1'), ('thalach', 'patient no 133', '3'), ('exang', 'patient no 133', '0'), ('oldpeak', 'patient no 133', '2'), ('slope', 'patient no 133', '1'), ('ca', 'patient no 133', '2'), ('thal', 'patient no 133', '2')]
+Patient 134:[('age', 'patient no 134', '2'), ('sex', 'patient no 134', '1'), ('cp', 'patient no 134', '0'), ('trestbps', 'patient no 134', '2'), ('chol', 'patient no 134', '2'), ('fbs', 'patient no 134', '1'), ('restecg', 'patient no 134', '0'), ('thalach', 'patient no 134', '3'), ('exang', 'patient no 134', '1'), ('oldpeak', 'patient no 134', '1'), ('slope', 'patient no 134', '1'), ('ca', 'patient no 134', '4'), ('thal', 'patient no 134', '3')]
+Patient 135:[('age', 'patient no 135', '2'), ('sex', 'patient no 135', '1'), ('cp', 'patient no 135', '0'), ('trestbps', 'patient no 135', '2'), ('chol', 'patient no 135', '2'), ('fbs', 'patient no 135', '1'), ('restecg', 'patient no 135', '0'), ('thalach', 'patient no 135', '3'), ('exang', 'patient no 135', '1'), ('oldpeak', 'patient no 135', '1'), ('slope', 'patient no 135', '2'), ('ca', 'patient no 135', '2'), ('thal', 'patient no 135', '3')]
+Patient 136:[('age', 'patient no 136', '3'), ('sex', 'patient no 136', '1'), ('cp', 'patient no 136', '0'), ('trestbps', 'patient no 136', '1'), ('chol', 'patient no 136', '2'), ('fbs', 'patient no 136', '0'), ('restecg', 'patient no 136', '1'), ('thalach', 'patient no 136', '3'), ('exang', 'patient no 136', '1'), ('oldpeak', 'patient no 136', '3'), ('slope', 'patient no 136', '1'), ('ca', 'patient no 136', '1'), ('thal', 'patient no 136', '3')]
+Patient 137:[('age', 'patient no 137', '3'), ('sex', 'patient no 137', '1'), ('cp', 'patient no 137', '2'), ('trestbps', 'patient no 137', '2'), ('chol', 'patient no 137', '2'), ('fbs', 'patient no 137', '1'), ('restecg', 'patient no 137', '0'), ('thalach', 'patient no 137', '3'), ('exang', 'patient no 137', '1'), ('oldpeak', 'patient no 137', '1'), ('slope', 'patient no 137', '1'), ('ca', 'patient no 137', '1'), ('thal', 'patient no 137', '1')]
+Patient 138:[('age', 'patient no 138', '3'), ('sex', 'patient no 138', '0'), ('cp', 'patient no 138', '1'), ('trestbps', 'patient no 138', '2'), ('chol', 'patient no 138', '2'), ('fbs', 'patient no 138', '0'), ('restecg', 'patient no 138', '0'), ('thalach', 'patient no 138', '4'), ('exang', 'patient no 138', '0'), ('oldpeak', 'patient no 138', '1'), ('slope', 'patient no 138', '1'), ('ca', 'patient no 138', '1'), ('thal', 'patient no 138', '2')]
+Patient 139:[('age', 'patient no 139', '2'), ('sex', 'patient no 139', '1'), ('cp', 'patient no 139', '0'), ('trestbps', 'patient no 139', '3'), ('chol', 'patient no 139', '2'), ('fbs', 'patient no 139', '0'), ('restecg', 'patient no 139', '0'), ('thalach', 'patient no 139', '2'), ('exang', 'patient no 139', '0'), ('oldpeak', 'patient no 139', '2'), ('slope', 'patient no 139', '1'), ('ca', 'patient no 139', '0'), ('thal', 'patient no 139', '3')]
+Patient 140:[('age', 'patient no 140', '2'), ('sex', 'patient no 140', '1'), ('cp', 'patient no 140', '2'), ('trestbps', 'patient no 140', '1'), ('chol', 'patient no 140', '2'), ('fbs', 'patient no 140', '1'), ('restecg', 'patient no 140', '1'), ('thalach', 'patient no 140', '4'), ('exang', 'patient no 140', '0'), ('oldpeak', 'patient no 140', '1'), ('slope', 'patient no 140', '0'), ('ca', 'patient no 140', '0'), ('thal', 'patient no 140', '3')]
+Patient 141:[('age', 'patient no 141', '3'), ('sex', 'patient no 141', '1'), ('cp', 'patient no 141', '0'), ('trestbps', 'patient no 141', '3'), ('chol', 'patient no 141', '1'), ('fbs', 'patient no 141', '0'), ('restecg', 'patient no 141', '1'), ('thalach', 'patient no 141', '3'), ('exang', 'patient no 141', '0'), ('oldpeak', 'patient no 141', '1'), ('slope', 'patient no 141', '2'), ('ca', 'patient no 141', '1'), ('thal', 'patient no 141', '3')]
+Patient 142:[('age', 'patient no 142', '4'), ('sex', 'patient no 142', '1'), ('cp', 'patient no 142', '2'), ('trestbps', 'patient no 142', '3'), ('chol', 'patient no 142', '1'), ('fbs', 'patient no 142', '0'), ('restecg', 'patient no 142', '0'), ('thalach', 'patient no 142', '3'), ('exang', 'patient no 142', '0'), ('oldpeak', 'patient no 142', '1'), ('slope', 'patient no 142', '1'), ('ca', 'patient no 142', '0'), ('thal', 'patient no 142', '3')]
+Patient 143:[('age', 'patient no 143', '2'), ('sex', 'patient no 143', '1'), ('cp', 'patient no 143', '0'), ('trestbps', 'patient no 143', '1'), ('chol', 'patient no 143', '2'), ('fbs', 'patient no 143', '0'), ('restecg', 'patient no 143', '1'), ('thalach', 'patient no 143', '4'), ('exang', 'patient no 143', '0'), ('oldpeak', 'patient no 143', '1'), ('slope', 'patient no 143', '1'), ('ca', 'patient no 143', '0'), ('thal', 'patient no 143', '2')]
+Liste des diagnostics:
+Pour le.la patiente no 1, voici mon diagnostic:Je ne diagnostique aucune maladie cardiaque chez ce.tte patient.e
+Ce diagnostic est basé sur les faits suivants:
+cp = 3, trestbps = 1, restecg = 1
+
+Pour le.la patiente no 2, voici mon diagnostic:Je diagnostique une maladie cardiaque chez ce.tte patient.e.
+Ce diagnostic est basé sur les faits suivants:
+cp = 1, age = 3, chol = 1
+
+Pour le.la patiente no 3, voici mon diagnostic:Je ne diagnostique aucune maladie cardiaque chez ce.tte patient.e
+Ce diagnostic est basé sur les faits suivants:
+cp = 1, age = 4
+
+Pour le.la patiente no 4, voici mon diagnostic:Je ne diagnostique aucune maladie cardiaque chez ce.tte patient.e
+Ce diagnostic est basé sur les faits suivants:
+cp = 1, age = 4
+
+Pour le.la patiente no 5, voici mon diagnostic:Je diagnostique une maladie cardiaque chez ce.tte patient.e.
+Ce diagnostic est basé sur les faits suivants:
+cp = 2, sex = 0
+
+Pour le.la patiente no 6, voici mon diagnostic:Je ne diagnostique aucune maladie cardiaque chez ce.tte patient.e
+Ce diagnostic est basé sur les faits suivants:
+cp = 1, age = 1
+
+Pour le.la patiente no 7, voici mon diagnostic:Je diagnostique une maladie cardiaque chez ce.tte patient.e.
+Ce diagnostic est basé sur les faits suivants:
+cp = 1, age = 2, slope = 2
+
+Pour le.la patiente no 8, voici mon diagnostic:Je diagnostique une maladie cardiaque chez ce.tte patient.e.
+Ce diagnostic est basé sur les faits suivants:
+cp = 0, ca = 0, thal = 2, trestbps = 1, thalach = 3
+
+Pour le.la patiente no 9, voici mon diagnostic:Je diagnostique une maladie cardiaque chez ce.tte patient.e.
+Ce diagnostic est basé sur les faits suivants:
+cp = 1, age = 2, slope = 2
+
+Pour le.la patiente no 10, voici mon diagnostic:Je ne diagnostique aucune maladie cardiaque chez ce.tte patient.e
+Ce diagnostic est basé sur les faits suivants:
+cp = 1, age = 3, chol = 2
+
+Pour le.la patiente no 11, voici mon diagnostic:Je ne diagnostique aucune maladie cardiaque chez ce.tte patient.e
+Ce diagnostic est basé sur les faits suivants:
+cp = 1, age = 3, chol = 2
+
+Pour le.la patiente no 12, voici mon diagnostic:Je diagnostique une maladie cardiaque chez ce.tte patient.e.
+Ce diagnostic est basé sur les faits suivants:
+cp = 0, ca = 0, thal = 2, trestbps = 2, exang = 0, chol = 1
+
+Pour le.la patiente no 13, voici mon diagnostic:Je diagnostique une maladie cardiaque chez ce.tte patient.e.
+Ce diagnostic est basé sur les faits suivants:
+cp = 2, sex = 0
+
+Pour le.la patiente no 14, voici mon diagnostic:Je diagnostique une maladie cardiaque chez ce.tte patient.e.
+Ce diagnostic est basé sur les faits suivants:
+cp = 1, age = 3, chol = 1
+
+Pour le.la patiente no 15, voici mon diagnostic:Je ne diagnostique aucune maladie cardiaque chez ce.tte patient.e
+Ce diagnostic est basé sur les faits suivants:
+cp = 0, ca = 0, thal = 3
+
+Pour le.la patiente no 16, voici mon diagnostic:Je diagnostique une maladie cardiaque chez ce.tte patient.e.
+Ce diagnostic est basé sur les faits suivants:
+cp = 2, sex = 0
+
+Pour le.la patiente no 17, voici mon diagnostic:Je ne diagnostique aucune maladie cardiaque chez ce.tte patient.e
+Ce diagnostic est basé sur les faits suivants:
+cp = 2, sex = 1, trestbps = 2, ca = 2
+
+Pour le.la patiente no 18, voici mon diagnostic:Je ne diagnostique aucune maladie cardiaque chez ce.tte patient.e
+Ce diagnostic est basé sur les faits suivants:
+cp = 0, ca = 0, thal = 3
+
+Pour le.la patiente no 19, voici mon diagnostic:Je diagnostique une maladie cardiaque chez ce.tte patient.e.
+Ce diagnostic est basé sur les faits suivants:
+cp = 2, sex = 1, trestbps = 1, slope = 2, chol = 1, restecg = 1
+
+Pour le.la patiente no 20, voici mon diagnostic:Je ne diagnostique aucune maladie cardiaque chez ce.tte patient.e
+Ce diagnostic est basé sur les faits suivants:
+cp = 2, sex = 1, trestbps = 2, ca = 0
+
+Pour le.la patiente no 21, voici mon diagnostic:Je ne diagnostique aucune maladie cardiaque chez ce.tte patient.e
+Ce diagnostic est basé sur les faits suivants:
+cp = 1, age = 3, chol = 2
+
+Pour le.la patiente no 22, voici mon diagnostic:Je ne diagnostique aucune maladie cardiaque chez ce.tte patient.e
+Ce diagnostic est basé sur les faits suivants:
+cp = 2, sex = 1, trestbps = 3
+
+Pour le.la patiente no 23, voici mon diagnostic:Je diagnostique une maladie cardiaque chez ce.tte patient.e.
+Ce diagnostic est basé sur les faits suivants:
+cp = 2, sex = 0
+
+Pour le.la patiente no 24, voici mon diagnostic:Je diagnostique une maladie cardiaque chez ce.tte patient.e.
+Ce diagnostic est basé sur les faits suivants:
+cp = 2, sex = 1, trestbps = 1, slope = 1
+
+Pour le.la patiente no 25, voici mon diagnostic:Je ne diagnostique aucune maladie cardiaque chez ce.tte patient.e
+Ce diagnostic est basé sur les faits suivants:
+cp = 2, sex = 1, trestbps = 2, ca = 1
+
+Pour le.la patiente no 26, voici mon diagnostic:Je ne diagnostique aucune maladie cardiaque chez ce.tte patient.e
+Ce diagnostic est basé sur les faits suivants:
+cp = 2, sex = 1, trestbps = 2, ca = 0
+
+Pour le.la patiente no 27, voici mon diagnostic:Je diagnostique une maladie cardiaque chez ce.tte patient.e.
+Ce diagnostic est basé sur les faits suivants:
+cp = 2, sex = 0
+
+Pour le.la patiente no 28, voici mon diagnostic:Je diagnostique une maladie cardiaque chez ce.tte patient.e.
+Ce diagnostic est basé sur les faits suivants:
+cp = 2, sex = 0
+
+Pour le.la patiente no 29, voici mon diagnostic:Je diagnostique une maladie cardiaque chez ce.tte patient.e.
+Ce diagnostic est basé sur les faits suivants:
+cp = 0, ca = 0, thal = 2, trestbps = 1, thalach = 3
+
+Pour le.la patiente no 30, voici mon diagnostic:Je diagnostique une maladie cardiaque chez ce.tte patient.e.
+Ce diagnostic est basé sur les faits suivants:
+cp = 3, trestbps = 3, age = 4
+
+Pour le.la patiente no 31, voici mon diagnostic:Je diagnostique une maladie cardiaque chez ce.tte patient.e.
+Ce diagnostic est basé sur les faits suivants:
+cp = 1, age = 2, slope = 2
+
+Pour le.la patiente no 32, voici mon diagnostic:Je diagnostique une maladie cardiaque chez ce.tte patient.e.
+Ce diagnostic est basé sur les faits suivants:
+cp = 2, sex = 0
+
+Pour le.la patiente no 33, voici mon diagnostic:Je ne diagnostique aucune maladie cardiaque chez ce.tte patient.e
+Ce diagnostic est basé sur les faits suivants:
+cp = 2, sex = 1, trestbps = 3
+
+Pour le.la patiente no 34, voici mon diagnostic:Je ne diagnostique aucune maladie cardiaque chez ce.tte patient.e
+Ce diagnostic est basé sur les faits suivants:
+cp = 0, ca = 0, thal = 2, trestbps = 2, exang = 1
+
+Pour le.la patiente no 35, voici mon diagnostic:Je ne diagnostique aucune maladie cardiaque chez ce.tte patient.e
+Ce diagnostic est basé sur les faits suivants:
+cp = 2, sex = 1, trestbps = 2, ca = 0
+
+Pour le.la patiente no 36, voici mon diagnostic:Je diagnostique une maladie cardiaque chez ce.tte patient.e.
+Ce diagnostic est basé sur les faits suivants:
+cp = 2, sex = 0
+
+Pour le.la patiente no 37, voici mon diagnostic:Je ne diagnostique aucune maladie cardiaque chez ce.tte patient.e
+Ce diagnostic est basé sur les faits suivants:
+cp = 0, ca = 0, thal = 3
+
+Pour le.la patiente no 38, voici mon diagnostic:Je ne diagnostique aucune maladie cardiaque chez ce.tte patient.e
+Ce diagnostic est basé sur les faits suivants:
+cp = 0, ca = 1
+
+Pour le.la patiente no 39, voici mon diagnostic:Je ne diagnostique aucune maladie cardiaque chez ce.tte patient.e
+Ce diagnostic est basé sur les faits suivants:
+cp = 0, ca = 2
+
+Pour le.la patiente no 40, voici mon diagnostic:Je ne diagnostique aucune maladie cardiaque chez ce.tte patient.e
+Ce diagnostic est basé sur les faits suivants:
+cp = 1, age = 3, chol = 2
+
+Pour le.la patiente no 41, voici mon diagnostic:Je ne diagnostique aucune maladie cardiaque chez ce.tte patient.e
+Ce diagnostic est basé sur les faits suivants:
+cp = 0, ca = 3
+
+Pour le.la patiente no 42, voici mon diagnostic:Je ne diagnostique aucune maladie cardiaque chez ce.tte patient.e
+Ce diagnostic est basé sur les faits suivants:
+cp = 2, sex = 1, trestbps = 2, ca = 0
+
+Pour le.la patiente no 43, voici mon diagnostic:Je diagnostique une maladie cardiaque chez ce.tte patient.e.
+Ce diagnostic est basé sur les faits suivants:
+cp = 1, age = 2, slope = 1
+
+Pour le.la patiente no 44, voici mon diagnostic:Je ne diagnostique aucune maladie cardiaque chez ce.tte patient.e
+Ce diagnostic est basé sur les faits suivants:
+cp = 0, ca = 0, thal = 3
+
+Pour le.la patiente no 45, voici mon diagnostic:Je diagnostique une maladie cardiaque chez ce.tte patient.e.
+Ce diagnostic est basé sur les faits suivants:
+cp = 0, ca = 0, thal = 2, trestbps = 2, exang = 0, chol = 1
+
+Pour le.la patiente no 46, voici mon diagnostic:Je ne diagnostique aucune maladie cardiaque chez ce.tte patient.e
+Ce diagnostic est basé sur les faits suivants:
+cp = 3, trestbps = 2, age = 3
+
+Pour le.la patiente no 47, voici mon diagnostic:Je diagnostique une maladie cardiaque chez ce.tte patient.e.
+Ce diagnostic est basé sur les faits suivants:
+cp = 1, age = 2, slope = 1
+
+Pour le.la patiente no 48, voici mon diagnostic:Je ne diagnostique aucune maladie cardiaque chez ce.tte patient.e
+Ce diagnostic est basé sur les faits suivants:
+cp = 0, ca = 1
+
+Pour le.la patiente no 49, voici mon diagnostic:Je ne diagnostique aucune maladie cardiaque chez ce.tte patient.e
+Ce diagnostic est basé sur les faits suivants:
+cp = 0, ca = 0, thal = 3
+
+Pour le.la patiente no 50, voici mon diagnostic:Je diagnostique une maladie cardiaque chez ce.tte patient.e.
+Ce diagnostic est basé sur les faits suivants:
+cp = 2, sex = 0
+
+Pour le.la patiente no 51, voici mon diagnostic:Je diagnostique une maladie cardiaque chez ce.tte patient.e.
+Ce diagnostic est basé sur les faits suivants:
+cp = 0, ca = 0, thal = 2, trestbps = 2, exang = 0, chol = 1
+
+Pour le.la patiente no 52, voici mon diagnostic:Je diagnostique une maladie cardiaque chez ce.tte patient.e.
+Ce diagnostic est basé sur les faits suivants:
+cp = 3, trestbps = 1, restecg = 0
+
+Pour le.la patiente no 53, voici mon diagnostic:Je ne diagnostique aucune maladie cardiaque chez ce.tte patient.e
+Ce diagnostic est basé sur les faits suivants:
+cp = 0, ca = 0, thal = 2, trestbps = 3
+
+Pour le.la patiente no 54, voici mon diagnostic:Je diagnostique une maladie cardiaque chez ce.tte patient.e.
+Ce diagnostic est basé sur les faits suivants:
+cp = 2, sex = 0
+
+Pour le.la patiente no 55, voici mon diagnostic:Je ne diagnostique aucune maladie cardiaque chez ce.tte patient.e
+Ce diagnostic est basé sur les faits suivants:
+cp = 0, ca = 2
+
+Pour le.la patiente no 56, voici mon diagnostic:Je ne diagnostique aucune maladie cardiaque chez ce.tte patient.e
+Ce diagnostic est basé sur les faits suivants:
+cp = 0, ca = 0, thal = 3
+
+Pour le.la patiente no 57, voici mon diagnostic:Je diagnostique une maladie cardiaque chez ce.tte patient.e.
+Ce diagnostic est basé sur les faits suivants:
+cp = 2, sex = 0
+
+Pour le.la patiente no 58, voici mon diagnostic:Je ne diagnostique aucune maladie cardiaque chez ce.tte patient.e
+Ce diagnostic est basé sur les faits suivants:
+cp = 2, sex = 1, trestbps = 2, ca = 0
+
+Pour le.la patiente no 59, voici mon diagnostic:Je ne diagnostique aucune maladie cardiaque chez ce.tte patient.e
+Ce diagnostic est basé sur les faits suivants:
+cp = 2, sex = 1, trestbps = 1, slope = 2, chol = 2
+
+Pour le.la patiente no 60, voici mon diagnostic:Je ne diagnostique aucune maladie cardiaque chez ce.tte patient.e
+Ce diagnostic est basé sur les faits suivants:
+cp = 3, trestbps = 3, age = 3, sex = 1
+
+Pour le.la patiente no 61, voici mon diagnostic:Le diagnostic n'a pas abouti...
+Pour le.la patiente no 62, voici mon diagnostic:Je ne diagnostique aucune maladie cardiaque chez ce.tte patient.e
+Ce diagnostic est basé sur les faits suivants:
+cp = 2, sex = 1, trestbps = 2, ca = 0
+
+Pour le.la patiente no 63, voici mon diagnostic:Je ne diagnostique aucune maladie cardiaque chez ce.tte patient.e
+Ce diagnostic est basé sur les faits suivants:
+cp = 0, ca = 1
+
+Pour le.la patiente no 64, voici mon diagnostic:Je diagnostique une maladie cardiaque chez ce.tte patient.e.
+Ce diagnostic est basé sur les faits suivants:
+cp = 2, sex = 0
+
+Pour le.la patiente no 65, voici mon diagnostic:Je ne diagnostique aucune maladie cardiaque chez ce.tte patient.e
+Ce diagnostic est basé sur les faits suivants:
+cp = 2, sex = 1, trestbps = 2, ca = 0
+
+Pour le.la patiente no 66, voici mon diagnostic:Je ne diagnostique aucune maladie cardiaque chez ce.tte patient.e
+Ce diagnostic est basé sur les faits suivants:
+cp = 0, ca = 0, thal = 3
+
+Pour le.la patiente no 67, voici mon diagnostic:Je ne diagnostique aucune maladie cardiaque chez ce.tte patient.e
+Ce diagnostic est basé sur les faits suivants:
+cp = 0, ca = 2
+
+Pour le.la patiente no 68, voici mon diagnostic:Je diagnostique une maladie cardiaque chez ce.tte patient.e.
+Ce diagnostic est basé sur les faits suivants:
+cp = 1, age = 2, slope = 1
+
+Pour le.la patiente no 69, voici mon diagnostic:Je diagnostique une maladie cardiaque chez ce.tte patient.e.
+Ce diagnostic est basé sur les faits suivants:
+cp = 2, sex = 1, trestbps = 1, slope = 1
+
+Pour le.la patiente no 70, voici mon diagnostic:Je diagnostique une maladie cardiaque chez ce.tte patient.e.
+Ce diagnostic est basé sur les faits suivants:
+cp = 0, ca = 0, thal = 2, trestbps = 2, exang = 0, chol = 1
+
+Pour le.la patiente no 71, voici mon diagnostic:Je ne diagnostique aucune maladie cardiaque chez ce.tte patient.e
+Ce diagnostic est basé sur les faits suivants:
+cp = 1, age = 3, chol = 2
+
+Pour le.la patiente no 72, voici mon diagnostic:Je ne diagnostique aucune maladie cardiaque chez ce.tte patient.e
+Ce diagnostic est basé sur les faits suivants:
+cp = 2, sex = 1, trestbps = 1, slope = 2, chol = 2
+
+Pour le.la patiente no 73, voici mon diagnostic:Je diagnostique une maladie cardiaque chez ce.tte patient.e.
+Ce diagnostic est basé sur les faits suivants:
+cp = 2, sex = 0
+
+Pour le.la patiente no 74, voici mon diagnostic:Je ne diagnostique aucune maladie cardiaque chez ce.tte patient.e
+Ce diagnostic est basé sur les faits suivants:
+cp = 0, ca = 1
+
+Pour le.la patiente no 75, voici mon diagnostic:Je ne diagnostique aucune maladie cardiaque chez ce.tte patient.e
+Ce diagnostic est basé sur les faits suivants:
+cp = 2, sex = 1, trestbps = 2, ca = 4
+
+Pour le.la patiente no 76, voici mon diagnostic:Je diagnostique une maladie cardiaque chez ce.tte patient.e.
+Ce diagnostic est basé sur les faits suivants:
+cp = 0, ca = 0, thal = 2, trestbps = 1, thalach = 2
+
+Pour le.la patiente no 77, voici mon diagnostic:Je diagnostique une maladie cardiaque chez ce.tte patient.e.
+Ce diagnostic est basé sur les faits suivants:
+cp = 2, sex = 0
+
+Pour le.la patiente no 78, voici mon diagnostic:Je ne diagnostique aucune maladie cardiaque chez ce.tte patient.e
+Ce diagnostic est basé sur les faits suivants:
+cp = 0, ca = 2
+
+Pour le.la patiente no 79, voici mon diagnostic:Je ne diagnostique aucune maladie cardiaque chez ce.tte patient.e
+Ce diagnostic est basé sur les faits suivants:
+cp = 2, sex = 1, trestbps = 2, ca = 0
+
+Pour le.la patiente no 80, voici mon diagnostic:Je diagnostique une maladie cardiaque chez ce.tte patient.e.
+Ce diagnostic est basé sur les faits suivants:
+cp = 1, age = 3, chol = 1
+
+
+Les guess sont dlfférents pour le moteur d'inférence et pour l'arbre de décision pour les cas: 61
