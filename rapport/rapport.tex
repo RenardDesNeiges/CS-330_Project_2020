@@ -97,6 +97,24 @@ Restricting us to changes of size smaller or eqal to $2$, we see that we can act
 
 \subsection{Task $5$}
 
+\subsection{Task $2$ bis}
+	In this supplementary section, we tried to implement the \emph{random forests} algorithm. We generate trees with randomly chosen subparts of the original training data set and then consider only the ones that can treat the whole original training data set. While testing the trees, we also compute their accuracy on the original data set.Then we can use $3$ different classifiers. Here we implemented the \emph{BESTTREE}, the \emph{MAJORITYVOTE} and the \emph{ADABOOST} algorithms. We describe them the following way :
+	\begin{itemize}
+		\item \emph{BESTTREE} algorithm : Choose the tree with the greater accuracy on the training data set and use it as a classifier,
+		\item \emph{MAJORITYVOTE} algorithm : Consider the guesses of all the trees generated and then gives a guess corresponding to the majority of the guesses,
+		\item \emph{ADABOOST} algorithm : Consider only the trees with a probability of error smaller to $50\%$  - as weak methods - and construct a classifier using the \emph{ADABOOST} algorithm presented in class.
+	\end{itemize}
+	We tested the accuracy of these algorithms on the test data set by genreating $1000$ trees from a randomly chosen quater of the training data. As the randomness play a big role in, we computed the accuracy $100$ times and considered the mean of these accuracies. The means of the computed accuracies are given in the following table.
+	\begin{center}
+		\begin{tabular}{ |c|c|c| }
+			\hline
+			\emph{BESTTREE} & \emph{MAJORITYVOTE} & \emph{ADABOOST}\\
+			\hline
+			$\approx 0.48$ & $\approx 0.42$ & $\approx 0.55$\\
+			\hline
+		\end{tabular}
+	\end{center}
+	We clearly see that the \emph{BESTREE} and \emph{MAJORITYVOTE} algorithms are worse than the expected accuracy of guessing randomly which allows us to conclude that they are practically useless. This said we note that \emph{ADABOOST} is a notable improvement has a better accuracy than guessing randomly.
 \section{Conclusion}
 
 \end{document}
