@@ -9,9 +9,9 @@ Je diagnostique une maladie cardiaque chez ce.tte patient.e.
 Ce diagnostic est basé sur les faits suivants:
 cp = 1, age = 3, chol = 1
 Et voici le traitement que je recommande:
-cp: 1 ---> 2
+cp: 1 ---> 3
 Ce traitement est basé sur la règle suivante:
-[('cp', '?x', '2'), ('sex', '?x', '1'), ('trestbps', '?x', '2'), ('ca', '?x', '0')] => ('target', '?x', '0')
+[('cp', '?x', '3'), ('trestbps', '?x', '2'), ('age', '?x', '3')] => ('target', '?x', '0')
 
 Pour le.la patiente no 3, voici mon diagnostic et le traitement approprié:
 Je ne diagnostique aucune maladie cardiaque chez ce.tte patient.e
@@ -42,9 +42,9 @@ Je diagnostique une maladie cardiaque chez ce.tte patient.e.
 Ce diagnostic est basé sur les faits suivants:
 cp = 1, age = 2, slope = 2
 Et voici le traitement que je recommande:
-cp: 1 ---> 3
+cp: 1 ---> 0
 Ce traitement est basé sur la règle suivante:
-[('cp', '?x', '3'), ('trestbps', '?x', '1'), ('restecg', '?x', '1')] => ('target', '?x', '0')
+[('cp', '?x', '0'), ('ca', '?x', '1')] => ('target', '?x', '0')
 
 Pour le.la patiente no 8, voici mon diagnostic et le traitement approprié:
 Je diagnostique une maladie cardiaque chez ce.tte patient.e.
@@ -60,9 +60,9 @@ Je diagnostique une maladie cardiaque chez ce.tte patient.e.
 Ce diagnostic est basé sur les faits suivants:
 cp = 1, age = 2, slope = 2
 Et voici le traitement que je recommande:
-cp: 1 ---> 2
+cp: 1 ---> 3
 Ce traitement est basé sur la règle suivante:
-[('cp', '?x', '2'), ('sex', '?x', '1'), ('trestbps', '?x', '1'), ('slope', '?x', '2'), ('chol', '?x', '2')] => ('target', '?x', '0')
+[('cp', '?x', '3'), ('trestbps', '?x', '1'), ('restecg', '?x', '1')] => ('target', '?x', '0')
 
 Pour le.la patiente no 10, voici mon diagnostic et le traitement approprié:
 Je ne diagnostique aucune maladie cardiaque chez ce.tte patient.e
@@ -97,9 +97,9 @@ Je diagnostique une maladie cardiaque chez ce.tte patient.e.
 Ce diagnostic est basé sur les faits suivants:
 cp = 1, age = 3, chol = 1
 Et voici le traitement que je recommande:
-cp: 1 ---> 2
+cp: 1 ---> 0
 Ce traitement est basé sur la règle suivante:
-[('cp', '?x', '2'), ('sex', '?x', '1'), ('trestbps', '?x', '3')] => ('target', '?x', '0')
+[('cp', '?x', '0'), ('ca', '?x', '1')] => ('target', '?x', '0')
 
 Pour le.la patiente no 15, voici mon diagnostic et le traitement approprié:
 Je ne diagnostique aucune maladie cardiaque chez ce.tte patient.e
@@ -130,9 +130,9 @@ Je diagnostique une maladie cardiaque chez ce.tte patient.e.
 Ce diagnostic est basé sur les faits suivants:
 cp = 2, sex = 1, trestbps = 1, slope = 2, chol = 1, restecg = 1
 Et voici le traitement que je recommande:
-cp: 2 ---> 3
+cp: 2 ---> 0
 Ce traitement est basé sur la règle suivante:
-[('cp', '?x', '3'), ('trestbps', '?x', '1'), ('restecg', '?x', '1')] => ('target', '?x', '0')
+[('cp', '?x', '0'), ('ca', '?x', '1')] => ('target', '?x', '0')
 
 Pour le.la patiente no 20, voici mon diagnostic et le traitement approprié:
 Je ne diagnostique aucune maladie cardiaque chez ce.tte patient.e
@@ -154,9 +154,9 @@ Je diagnostique une maladie cardiaque chez ce.tte patient.e.
 Ce diagnostic est basé sur les faits suivants:
 cp = 2, sex = 0
 Et voici le traitement que je recommande:
-cp: 2 ---> 3
+cp: 2 ---> 0
 Ce traitement est basé sur la règle suivante:
-[('cp', '?x', '3'), ('trestbps', '?x', '2'), ('age', '?x', '2')] => ('target', '?x', '0')
+[('cp', '?x', '0'), ('ca', '?x', '0'), ('thal', '?x', '2'), ('trestbps', '?x', '2'), ('exang', '?x', '0'), ('chol', '?x', '2'), ('sex', '?x', '0')] => ('target', '?x', '0')
 
 Pour le.la patiente no 24, voici mon diagnostic et le traitement approprié:
 Je diagnostique une maladie cardiaque chez ce.tte patient.e.
@@ -228,9 +228,9 @@ Je diagnostique une maladie cardiaque chez ce.tte patient.e.
 Ce diagnostic est basé sur les faits suivants:
 cp = 2, sex = 0
 Et voici le traitement que je recommande:
-cp: 2 ---> 3
+cp: 2 ---> 0
 Ce traitement est basé sur la règle suivante:
-[('cp', '?x', '3'), ('trestbps', '?x', '2'), ('age', '?x', '2')] => ('target', '?x', '0')
+[('cp', '?x', '0'), ('ca', '?x', '1')] => ('target', '?x', '0')
 
 Pour le.la patiente no 33, voici mon diagnostic et le traitement approprié:
 Je ne diagnostique aucune maladie cardiaque chez ce.tte patient.e
@@ -252,9 +252,9 @@ Je diagnostique une maladie cardiaque chez ce.tte patient.e.
 Ce diagnostic est basé sur les faits suivants:
 cp = 2, sex = 0
 Et voici le traitement que je recommande:
-cp: 2 ---> 3
+cp: 2 ---> 0
 Ce traitement est basé sur la règle suivante:
-[('cp', '?x', '3'), ('trestbps', '?x', '1'), ('restecg', '?x', '1')] => ('target', '?x', '0')
+[('cp', '?x', '0'), ('ca', '?x', '1')] => ('target', '?x', '0')
 
 Pour le.la patiente no 37, voici mon diagnostic et le traitement approprié:
 Je ne diagnostique aucune maladie cardiaque chez ce.tte patient.e
@@ -291,9 +291,9 @@ Je diagnostique une maladie cardiaque chez ce.tte patient.e.
 Ce diagnostic est basé sur les faits suivants:
 cp = 1, age = 2, slope = 1
 Et voici le traitement que je recommande:
-cp: 1 ---> 2
+cp: 1 ---> 3
 Ce traitement est basé sur la règle suivante:
-[('cp', '?x', '2'), ('sex', '?x', '1'), ('trestbps', '?x', '2'), ('ca', '?x', '0')] => ('target', '?x', '0')
+[('cp', '?x', '3'), ('trestbps', '?x', '2'), ('age', '?x', '2')] => ('target', '?x', '0')
 
 Pour le.la patiente no 44, voici mon diagnostic et le traitement approprié:
 Je ne diagnostique aucune maladie cardiaque chez ce.tte patient.e
@@ -319,9 +319,9 @@ Je diagnostique une maladie cardiaque chez ce.tte patient.e.
 Ce diagnostic est basé sur les faits suivants:
 cp = 1, age = 2, slope = 1
 Et voici le traitement que je recommande:
-cp: 1 ---> 2
+cp: 1 ---> 0
 Ce traitement est basé sur la règle suivante:
-[('cp', '?x', '2'), ('sex', '?x', '1'), ('trestbps', '?x', '2'), ('ca', '?x', '0')] => ('target', '?x', '0')
+[('cp', '?x', '0'), ('ca', '?x', '0'), ('thal', '?x', '1'), ('age', '?x', '2')] => ('target', '?x', '0')
 
 Pour le.la patiente no 48, voici mon diagnostic et le traitement approprié:
 Je ne diagnostique aucune maladie cardiaque chez ce.tte patient.e
@@ -347,9 +347,9 @@ Je diagnostique une maladie cardiaque chez ce.tte patient.e.
 Ce diagnostic est basé sur les faits suivants:
 cp = 0, ca = 0, thal = 2, trestbps = 2, exang = 0, chol = 1
 Et voici le traitement que je recommande:
-cp: 0 ---> 2
+cp: 0 ---> 3
 Ce traitement est basé sur la règle suivante:
-[('cp', '?x', '2'), ('sex', '?x', '1'), ('trestbps', '?x', '2'), ('ca', '?x', '0')] => ('target', '?x', '0')
+[('cp', '?x', '3'), ('trestbps', '?x', '2'), ('age', '?x', '2')] => ('target', '?x', '0')
 
 Pour le.la patiente no 52, voici mon diagnostic et le traitement approprié:
 Je diagnostique une maladie cardiaque chez ce.tte patient.e.
@@ -410,9 +410,9 @@ cp = 3, trestbps = 3, age = 3, sex = 1
 Pas de traitement à afficher.
 Pour le.la patiente no 61, voici mon diagnostic et le traitement approprié:
 Le diagnostic n'a pas abouti...Et voici le traitement que je recommande:
-cp: 0 ---> 2
+cp: 0 ---> 3
 Ce traitement est basé sur la règle suivante:
-[('cp', '?x', '2'), ('sex', '?x', '1'), ('trestbps', '?x', '2'), ('ca', '?x', '0')] => ('target', '?x', '0')
+[('cp', '?x', '3'), ('trestbps', '?x', '2'), ('age', '?x', '2')] => ('target', '?x', '0')
 
 Pour le.la patiente no 62, voici mon diagnostic et le traitement approprié:
 Je ne diagnostique aucune maladie cardiaque chez ce.tte patient.e
@@ -538,9 +538,9 @@ Je diagnostique une maladie cardiaque chez ce.tte patient.e.
 Ce diagnostic est basé sur les faits suivants:
 cp = 1, age = 3, chol = 1
 Et voici le traitement que je recommande:
-cp: 1 ---> 2
+cp: 1 ---> 0
 Ce traitement est basé sur la règle suivante:
-[('cp', '?x', '2'), ('sex', '?x', '1'), ('trestbps', '?x', '2'), ('ca', '?x', '0')] => ('target', '?x', '0')
+[('cp', '?x', '0'), ('ca', '?x', '0'), ('thal', '?x', '3')] => ('target', '?x', '0')
 
 
 Taux de personnes pour lesquelles ont a réussi à administrer un traitement : 1.0

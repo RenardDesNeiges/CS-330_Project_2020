@@ -111,16 +111,21 @@ The performance of the continuous diagnosis algorithm is slightly but not signif
 		\item \emph{MAJORITYVOTE} algorithm : Consider the guesses of all the trees generated and then gives a guess corresponding to the majority of the guesses,
 		\item \emph{ADABOOST} algorithm : Consider only the trees with a probability of error smaller to $50\%$  - as weak methods - and construct a classifier using the \emph{ADABOOST} algorithm presented in class.
 	\end{itemize}
-	We tested the accuracy of these algorithms on the test data set by genreating $1000$ trees from a randomly chosen quater of the training data. As the randomness play a big role in, we computed the accuracy $100$ times and considered the mean of these accuracies. The means of the computed accuracies are given in the following table.
+	We tested the accuracy of these algorithms on the test data set by genreating $1000$ trees from a randomly chosen subsets of the training data set. The size of the subset is detemined by the value of \emph{subsampling}. For a value $n$ of subsampling, we get that the subsets are of size $\floor{143/n}$ As the randomness play a big role in, we computed the accuracy $100$ times and considered the mean of these accuracies. The means of the computed accuracies are given in the following table.
 	\begin{center}
-		\begin{tabular}{ |c|c|c| }
+		\begin{tabular}{ |c|c|c|c| }
 			\hline
-			\emph{BESTTREE} & \emph{MAJORITYVOTE} & \emph{ADABOOST}\\
+			subsampling/algorithm& \emph{BESTTREE} & \emph{MAJORITYVOTE} & \emph{ADABOOST}\\
 			\hline
-			$\approx 0.48$ & $\approx 0.42$ & $\approx 0.55$\\
+			2 & $\approx 0.53$  & $\approx 0.50$ & $\approx 0.53$ \\
+			\hline
+			3 & $\approx 0.51 $ & $\approx 0.47$ & $\approx 0.53$ \\
+			\hline
+			4 & $\approx 0.48$ & $\approx 0.42$ & $\approx 0.55$\\
 			\hline
 		\end{tabular}
 	\end{center}
-	We clearly see that the \emph{BESTREE} and \emph{MAJORITYVOTE} algorithms are worse than the expected accuracy of guessing randomly which allows us to conclude that they are practically useless. This said we note that \emph{ADABOOST} is a notable improvement has a better accuracy than guessing randomly.
+	We clearly see that the \emph{BESTTREE} and \emph{MAJORITYVOTE} algorithms perform as good as or worse than the expected accuracy of guessing randomly which allows us to conclude that they are practically useless when the subsampling is greater than $2$.  We also notice that while both \emph{BESTTREE} and \emph{MAJORITYVOTE} perfom worse when the subsampling gets greater, the performance of \emph{ADABOOST} does not change. As the trees are generated from smaller training sets every row, it seems that on average, those trees get less effective in their guesses. The impact is visible on \emph{BESTTREE} and \emph{MAJORITYVOTE}. On \emph{ADABOOST} we see that despite the augmentation of the subsampling value, the accuracy stays the same. We conclude that the \emph{ADABOOST}algorithm is in fact the better one. This said we also have to observe that generating a tree with \emph{ID3} is still the better solution.
+\section{Conclusion}
 
 \end{document}

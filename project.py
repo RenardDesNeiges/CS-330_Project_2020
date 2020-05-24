@@ -90,7 +90,7 @@ class ResultValues():
         accuracy_total = 0
         rF_adaboost_tree = RandomForest()
         for i in range(100):
-            rF_adaboost_tree.generate_trees(train_bin,2,1000)
+            rF_adaboost_tree.generate_trees(train_bin,3,1000)
             rF_adaboost_tree.select_valid_trees(train_bin)
             rF_adaboost_tree.construct_classifier_adaboost(train_bin)
             accuracy_total += test_adaboost_tree.test_forest(rF_adaboost_tree,'AdaBoost',test_public_bin)
@@ -102,7 +102,7 @@ class ResultValues():
         accuracy_total = 0
         rF_majority_tree = RandomForest()
         for i in range(100):
-            rF_majority_tree.generate_trees(train_bin,2,1000)
+            rF_majority_tree.generate_trees(train_bin,3,1000)
             rF_majority_tree.select_valid_trees(train_bin)
             accuracy_total += test_majority_tree.test_forest(rF_majority_tree,'MajorityVote',test_public_bin)
         
@@ -113,7 +113,7 @@ class ResultValues():
         accuracy_total = 0
         rF_best_tree = RandomForest()
         for i in range(100):
-            rF_best_tree.generate_trees(train_bin,2,1000)
+            rF_best_tree.generate_trees(train_bin,3,1000)
             rF_best_tree.select_valid_trees(train_bin)
             rF_best_tree.construct_best_tree()
             accuracy_total += test_best_tree.test_forest(rF_best_tree,'BestTree',test_public_bin)
