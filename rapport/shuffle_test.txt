@@ -1,0 +1,2 @@
+The average accuracy of the the tree generated in Task 1 on the train data is : 100.0%
+The average accuracy of the the tree generated in Task 1 on the test data is : 69.42934782608695%

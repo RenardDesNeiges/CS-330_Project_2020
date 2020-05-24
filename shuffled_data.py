@@ -12,15 +12,9 @@ from moteur_id3.id3 import ID3
 
 from moteur_id3.arbre import Arbre
 
-from moteur_id3.noeud_de_decision_continu import NoeudDeDecision_continu
-from moteur_id3.id3_continu import ID3_continu
-
 from bin_test import BinTestEnv
-from continuous_test import ContinuousTestEnv
-from random_forest import RandomForest
-from moteur_diagnostic.first_year_md import FirstYearMedSchool
 
-from moteur_diagnostic.docteur import Docteur
+from statistics import mean
 
 import matplotlib.pyplot as plt
 
@@ -34,64 +28,55 @@ class ResultValues():
 
         # Do computations here
 
-        #parsing the data from the csv file
-        print("Data Shuffling demonstration: \n")
+        accuracies_train = []
+        accuracies_test = []
 
-        print("Parsing pre-binned training data...")
+        #parsing the data from the csv file
+        print("Data Shuffling demonstration:")
+
+        print("        Parsing pre-binned training data...")
         train_bin_csv = self.parseCSV("train_bin.csv")
         train_bin = [ [line["target"], {key:val for key, val in line.items() if key != "target"}] for line in train_bin_csv]
 
-        print("Parsing pre-binned testing data...")
+        print("        Parsing pre-binned testing data...")
         test_public_bin_csv = self.parseCSV("test_public_bin.csv")
         test_public_bin = [ [line["target"], {key:val for key, val in line.items() if key != "target"}] for line in test_public_bin_csv]
 
-        print("Shuffling the data...")
+        print("        Running the shuffling tests")
+
 
         complete_dataset = train_bin + test_public_bin
-        shuffle(complete_dataset)
 
-        train_bin = deepcopy(complete_dataset)
-        del train_bin[143:]
+        for i in range(100):
+            shuffle(complete_dataset)
 
-        test_public_bin = deepcopy(complete_dataset)
-        del test_public_bin[:143]
-        print("Task 1")
-        task1_report = open('rapport/Task1_data_shuffled.txt','w')
-        
-        task1_report.write("Generating ID3 tree from " + str(len(train_bin)) + " samples...\n")
-        id3 = ID3()
-        self.arbre = Arbre(id3.construit_arbre(train_bin))
-        nb_noeuds = len(self.arbre.noeuds)
-        nb_feuilles = len(self.arbre.noeuds_terminaux_profondeur)
-        profondeur = self.arbre.profondeur()        
-        moyenne_longueur_branche = sum([self.arbre.longueur_branche(feuille_longueur[0]) for feuille_longueur in self.arbre.noeuds_terminaux_profondeur])/len(self.arbre.noeuds_terminaux_profondeur)
-        moyenne_enfants_noeud = sum([len(noeud.enfants) for noeud in self.arbre.noeuds if noeud.enfants != None])/len([noeud for noeud in self.arbre.noeuds if not noeud.terminal()])
-        
+            train_bin = deepcopy(complete_dataset)
+            del train_bin[143:]
 
-        task1_report.write("L'arbre a un {} noeuds dont {} feuilles\n".format(nb_noeuds,nb_feuilles))
-        task1_report.write("L'arbre a une profondeur de " + str(profondeur) + "\n")
-        task1_report.write("La moyenne du nombre d'enfants par noeud est " +str(moyenne_enfants_noeud) + "\n")
-        task1_report.write("La moyenne de la longueur d'une branche est " +str(moyenne_longueur_branche) + "\n")
-        task1_report.write(NoeudDeDecision.__repr__(self.arbre.racine))
-        
-        task1_report.close()
-        print('Done with task 1')
-        
-        print("---------------------------------------------------------------------------------------------------------")
-        print("Task 2")
-        
-        task2_report = open("rapport/Task2_data_shuffled.txt",'w')
+            test_public_bin = deepcopy(complete_dataset)
+            del test_public_bin[:143]
+            
+            id3 = ID3()
+            self.arbre = Arbre(id3.construit_arbre(train_bin))
 
-        print("Setting up testing environnement...")
-        binTest = BinTestEnv()
-        accuracy_id3_train = binTest.tree_test(self.arbre.racine,train_bin,False)
-        accuracy_id3 = binTest.tree_test(self.arbre.racine,test_public_bin,False)
+            binTest = BinTestEnv()
+            try:
+                accuracy_id3_train = binTest.tree_test(self.arbre.racine,train_bin,False)
+                accuracy_id3 = binTest.tree_test(self.arbre.racine,test_public_bin,False)
+
+                accuracies_test.append(accuracy_id3)
+                accuracies_train.append(accuracy_id3_train)
+            except:
+                pass
+
         
-        task2_report.write("The accuracy of the the tree generated in Task 1 on the train data is : {}%\n".format(accuracy_id3_train*100)) 
-        task2_report.write("The accuracy of the the tree generated in Task 1 on the test data is : {}%".format(accuracy_id3*100))
-        task2_report.close()
+        shuffle_report = open("rapport/shuffle_test.txt",'w')
         
-        print("Done with Task 2")
+        shuffle_report.write("The average accuracy of the the tree generated in Task 1 on the train data is : {}%\n".format(mean(accuracies_train)*100)) 
+        shuffle_report.write("The average accuracy of the the tree generated in Task 1 on the test data is : {}%".format(mean(accuracies_test)*100))
+        shuffle_report.close()
+        
+        print("    Done!")
 
     def parseCSV(self,address):
         """ Takes a .csv file and returns a list of dictonaries where each element is has a key 
