@@ -92,9 +92,6 @@ class ResultValues():
         task2_report.close()
         
         print("Done with Task 2")
-        
-    def get_results(self):
-        return [self.arbre.racine, self.faits_initiaux, self.regles, self.arbre_advance]
 
     def parseCSV(self,address):
         """ Takes a .csv file and returns a list of dictonaries where each element is has a key 
