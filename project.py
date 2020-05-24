@@ -45,7 +45,7 @@ class ResultValues():
         self.arbre = Arbre(id3.construit_arbre(train_bin))
         nb_noeuds = len(self.arbre.noeuds)
         nb_feuilles = len(self.arbre.noeuds_terminaux_profondeur)
-        profondeur = self.arbre.profondeur()
+        profondeur = self.arbre.profondeur()        
         moyenne_longueur_branche = sum([self.arbre.longueur_branche(feuille_longueur[0]) for feuille_longueur in self.arbre.noeuds_terminaux_profondeur])/len(self.arbre.noeuds_terminaux_profondeur)
         moyenne_enfants_noeud = sum([len(noeud.enfants) for noeud in self.arbre.noeuds if noeud.enfants != None])/len([noeud for noeud in self.arbre.noeuds if not noeud.terminal()])
         
@@ -53,7 +53,8 @@ class ResultValues():
         task1_report.write("L'arbre a un {} noeuds dont {} feuilles\n".format(nb_noeuds,nb_feuilles))
         task1_report.write("L'arbre a une profondeur de " + str(profondeur) + "\n")
         task1_report.write("La moyenne du nombre d'enfants par noeud est " +str(moyenne_enfants_noeud) + "\n")
-        task1_report.write("La moyenne de la longueur d'une branche est " +str(moyenne_longueur_branche) + "\n") 
+        task1_report.write("La moyenne de la longueur d'une branche est " +str(moyenne_longueur_branche) + "\n")
+        task1_report.write(NoeudDeDecision.__repr__(self.arbre.racine))
         
         task1_report.close()
         print('Done with task 1')
@@ -70,9 +71,10 @@ class ResultValues():
 
         print("Setting up testing environnement...")
         binTest = BinTestEnv()
-
+        accuracy_id3_train = binTest.tree_test(self.arbre.racine,train_bin,False)
         accuracy_id3 = binTest.tree_test(self.arbre.racine,test_public_bin,False)
         
+        task2_report.write("The accuracy of the the tree generated in Task 1 on the train data is : {}%\n".format(accuracy_id3_train*100)) 
         task2_report.write("The accuracy of the the tree generated in Task 1 on the test data is : {}%".format(accuracy_id3*100))
         task2_report.close()
         
@@ -80,8 +82,10 @@ class ResultValues():
         
         """
         print("---------------------------------------------------------------------------------------------------------")
+
         print("Task 2 bis")
-        Adaboost tree test
+        """
+        #Adaboost tree test
         test_adaboost_tree = BinTestEnv()
         accuracy_total = 0
         rF_adaboost_tree = RandomForest()
@@ -93,7 +97,7 @@ class ResultValues():
         
         iTurnedMyselfIntoAPickleMorty(accuracy_total/100,"AdaBoost_test_accuracy.pkl")
 
-        Majority tree test
+        #Majority tree test
         test_majority_tree = BinTestEnv()
         accuracy_total = 0
         rF_majority_tree = RandomForest()
@@ -104,7 +108,7 @@ class ResultValues():
         
         iTurnedMyselfIntoAPickleMorty(accuracy_total/100,"Majority_test_accuracy.pkl")
         
-        Best tree test
+        #Best tree test
         test_best_tree = BinTestEnv()
         accuracy_total = 0
         rF_best_tree = RandomForest()
@@ -115,7 +119,7 @@ class ResultValues():
             accuracy_total += test_best_tree.test_forest(rF_best_tree,'BestTree',test_public_bin)
         
         iTurnedMyselfIntoAPickleMorty(accuracy_total/100,"BestTree_test_accuracy.pkl")
-        
+
         #Valid trees ratio test
         rForest = RandomForest()
         subsamplings = range(1,141)
@@ -159,6 +163,17 @@ class ResultValues():
         repr_diagnostics = Titou.repr_diagnostics_hopital(diagnostics)
         task3_report.write('Liste des diagnostics:\n')
         task3_report.write(repr_diagnostics)
+        task3_report.write("\n")
+        
+        inference_vs_tree = [i for i in range(len(test_public_bin)) if Titou.diagnostique(test_public_bin[i][1])[0] != self.arbre.racine.classifie(test_public_bin[i][1])[-1]]
+        if len(inference_vs_tree) > 0:
+            case = ''
+            for i in inference_vs_tree:
+                case += str(i+1) + ','
+            if len(case) > 0:
+                case = case[:len(case)-1]
+            task3_report.write("Les guess sont dlfférents pour le moteur d'inférence et pour l'arbre de décision pour les cas: " + case)
+        task3_report.close()
         
         print("---------------------------------------------------------------------------------------------------------")
         print("Task 4")
@@ -200,7 +215,7 @@ class ResultValues():
         continuousTest = ContinuousTestEnv()
 
         continuousTest.test(self.arbre_advance,test_continuous,True)
-
+        
     def get_results(self):
         return [self.arbre.racine, self.faits_initiaux, self.regles, self.arbre_advance]
 
