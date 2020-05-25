@@ -43,13 +43,12 @@ class NoeudDeDecision_continu:
             :param donnee: la donnée à classifier.
             :return: la classe de la donnée selon le noeud de décision courant.
         """
-        
         rep = ''
         if self.terminal():
             rep += 'Alors {}'.format(self.classe().upper())
         else:
             valeur = donnee[self.attribut]
-            rep += 'Si {} = {}, '.format(self.attribut, valeur.upper())
+            rep += 'Soit {} = {}, avec thresh = {} '.format(self.attribut, valeur.upper(),self.seuil)
         
             if len(self.enfants) == 2:
                 if float(valeur) <= self.seuil:

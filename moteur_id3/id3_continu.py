@@ -2,17 +2,11 @@ from math import log
 from .noeud_de_decision_continu import NoeudDeDecision_continu
 from statistics import mean
 
-#import matplotlib.pyplot as plt
+from copy import deepcopy
 
 def binarise(input):
     if input < 0.5: return 0
     else: return 1
-
-def variance(input):
-    if len(input) > 1:
-        return (1/len(input)) * sum(list(map(lambda x: float(x[0]) - mean(map(lambda x: float(x[0]),input)), input)))
-    else:
-        return 0
 
 class ID3_continu:
     """ Algorithme ID3. 
@@ -73,7 +67,7 @@ class ID3_continu:
         
         def classe_unique(donnees):
             """ Vérifie que toutes les données appartiennent à la même classe. """
-            
+        
             if len(donnees) == 0:
                 return True 
             premiere_classe = donnees[0][0]
@@ -87,22 +81,26 @@ class ID3_continu:
             return sorted(list(dict.fromkeys(values)))
 
         def partition(attribut):
-            
             def score(cut):
-                def pre_class(dataset):
-                    return binarise(mean(list(map(lambda x: float(x[0]), dataset))))
+                def replace_attribute_value(case):
+                    val = float(case[1][attribut])
+                    out = 0
+                    if val > cut:
+                        out = '1'
+                    else:
+                        out = '0'
+                    case[1][attribut] = out
+                    return case
 
-                lV = list(filter(lambda x: float(x[1][attribut]) <= cut, donnees))
-                hV = list(filter(lambda x: float(x[1][attribut]) > cut, donnees))
-                lS = self.h_C_A(lV, attribut, valeurs_possibles(lV,attribut)) #variance(lV)*len(lV) #len(list(filter(lambda x: int(x[0]) == int(pre_class(lV)), lV)))
-                hS = self.h_C_A(hV, attribut, valeurs_possibles(hV,attribut))#variance(hV)*len(hV) #len(list(filter(lambda x: int(x[0]) == int(pre_class(hV)), hV)))
-
-                return lS + hS
-
+                post_cut = deepcopy(donnees)
+                post_cut = list(map(lambda x: replace_attribute_value(x), post_cut))
+                h_cut = self.h_C_A(post_cut,attribut,['1','0'])
+                return h_cut
+                
             vals = valeurs_possibles(donnees, attribut)
             cuts = [(vals[i]+vals[i-1])/2 for i in range(1,len(vals))]
             scores = [(score(cut),cut) for cut in cuts]
-            thresh = max(scores, key =lambda x : x[0])[1]
+            thresh = min(scores, key =lambda x : x[0])[1]
             lV = list(filter(lambda x: float(x[1][attribut]) <= thresh, donnees))
             hV = list(filter(lambda x: float(x[1][attribut]) > thresh, donnees))
             return {'hV':hV, 'lV':lV, 'thresh':thresh}
@@ -120,9 +118,6 @@ class ID3_continu:
             h_C_As_attribs = [(self.h_C_A(donnees, attribut, attributs[attribut])/len(valeurs_possibles(donnees,attribut)), len(valeurs_possibles(donnees,attribut)),
                                attribut) for attribut in attributs]
             
-            #print(h_C_As_attribs)
-            
-            #print(h_C_As_attribs)
             attribut = min(h_C_As_attribs, key=lambda h_a: h_a[0])[2]
 
             #print(attribut)
