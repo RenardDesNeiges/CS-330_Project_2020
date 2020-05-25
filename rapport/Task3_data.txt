@@ -1,73 +1,73 @@
 Liste des regles developees :
-[('cp', '?x', '1'), ('age', '?x', '5')] => ('target', '?x', '0')
-[('cp', '?x', '1'), ('age', '?x', '3'), ('chol', '?x', '1')] => ('target', '?x', '1')
-[('cp', '?x', '1'), ('age', '?x', '3'), ('chol', '?x', '5')] => ('target', '?x', '0')
-[('cp', '?x', '1'), ('age', '?x', '3'), ('chol', '?x', '3')] => ('target', '?x', '0')
-[('cp', '?x', '1'), ('age', '?x', '3'), ('chol', '?x', '2')] => ('target', '?x', '0')
-[('cp', '?x', '1'), ('age', '?x', '2'), ('slope', '?x', '1')] => ('target', '?x', '1')
-[('cp', '?x', '1'), ('age', '?x', '2'), ('slope', '?x', '0')] => ('target', '?x', '0')
-[('cp', '?x', '1'), ('age', '?x', '2'), ('slope', '?x', '2')] => ('target', '?x', '1')
-[('cp', '?x', '1'), ('age', '?x', '1')] => ('target', '?x', '0')
-[('cp', '?x', '1'), ('age', '?x', '4')] => ('target', '?x', '0')
-[('cp', '?x', '3'), ('trestbps', '?x', '5')] => ('target', '?x', '0')
-[('cp', '?x', '3'), ('trestbps', '?x', '3'), ('age', '?x', '5')] => ('target', '?x', '0')
-[('cp', '?x', '3'), ('trestbps', '?x', '3'), ('age', '?x', '3'), ('sex', '?x', '1')] => ('target', '?x', '0')
-[('cp', '?x', '3'), ('trestbps', '?x', '3'), ('age', '?x', '3'), ('sex', '?x', '0')] => ('target', '?x', '1')
-[('cp', '?x', '3'), ('trestbps', '?x', '3'), ('age', '?x', '2')] => ('target', '?x', '1')
-[('cp', '?x', '3'), ('trestbps', '?x', '3'), ('age', '?x', '1')] => ('target', '?x', '0')
-[('cp', '?x', '3'), ('trestbps', '?x', '3'), ('age', '?x', '4')] => ('target', '?x', '1')
-[('cp', '?x', '3'), ('trestbps', '?x', '2'), ('age', '?x', '5')] => ('target', '?x', '0')
-[('cp', '?x', '3'), ('trestbps', '?x', '2'), ('age', '?x', '3')] => ('target', '?x', '0')
-[('cp', '?x', '3'), ('trestbps', '?x', '2'), ('age', '?x', '2')] => ('target', '?x', '0')
-[('cp', '?x', '3'), ('trestbps', '?x', '2'), ('age', '?x', '1')] => ('target', '?x', '1')
-[('cp', '?x', '3'), ('trestbps', '?x', '2'), ('age', '?x', '4')] => ('target', '?x', '0')
 [('cp', '?x', '3'), ('trestbps', '?x', '1'), ('restecg', '?x', '1')] => ('target', '?x', '0')
 [('cp', '?x', '3'), ('trestbps', '?x', '1'), ('restecg', '?x', '0')] => ('target', '?x', '1')
 [('cp', '?x', '3'), ('trestbps', '?x', '1'), ('restecg', '?x', '2')] => ('target', '?x', '0')
 [('cp', '?x', '3'), ('trestbps', '?x', '4')] => ('target', '?x', '1')
-[('cp', '?x', '0'), ('ca', '?x', '3')] => ('target', '?x', '0')
-[('cp', '?x', '0'), ('ca', '?x', '0'), ('thal', '?x', '1'), ('age', '?x', '5')] => ('target', '?x', '0')
-[('cp', '?x', '0'), ('ca', '?x', '0'), ('thal', '?x', '1'), ('age', '?x', '3')] => ('target', '?x', '1')
-[('cp', '?x', '0'), ('ca', '?x', '0'), ('thal', '?x', '1'), ('age', '?x', '2')] => ('target', '?x', '0')
+[('cp', '?x', '3'), ('trestbps', '?x', '3'), ('age', '?x', '1')] => ('target', '?x', '0')
+[('cp', '?x', '3'), ('trestbps', '?x', '3'), ('age', '?x', '4')] => ('target', '?x', '1')
+[('cp', '?x', '3'), ('trestbps', '?x', '3'), ('age', '?x', '3'), ('sex', '?x', '1')] => ('target', '?x', '0')
+[('cp', '?x', '3'), ('trestbps', '?x', '3'), ('age', '?x', '3'), ('sex', '?x', '0')] => ('target', '?x', '1')
+[('cp', '?x', '3'), ('trestbps', '?x', '3'), ('age', '?x', '5')] => ('target', '?x', '0')
+[('cp', '?x', '3'), ('trestbps', '?x', '3'), ('age', '?x', '2')] => ('target', '?x', '1')
+[('cp', '?x', '3'), ('trestbps', '?x', '5')] => ('target', '?x', '0')
+[('cp', '?x', '3'), ('trestbps', '?x', '2'), ('age', '?x', '1')] => ('target', '?x', '1')
+[('cp', '?x', '3'), ('trestbps', '?x', '2'), ('age', '?x', '4')] => ('target', '?x', '0')
+[('cp', '?x', '3'), ('trestbps', '?x', '2'), ('age', '?x', '3')] => ('target', '?x', '0')
+[('cp', '?x', '3'), ('trestbps', '?x', '2'), ('age', '?x', '5')] => ('target', '?x', '0')
+[('cp', '?x', '3'), ('trestbps', '?x', '2'), ('age', '?x', '2')] => ('target', '?x', '0')
+[('cp', '?x', '1'), ('age', '?x', '1')] => ('target', '?x', '0')
+[('cp', '?x', '1'), ('age', '?x', '4')] => ('target', '?x', '0')
+[('cp', '?x', '1'), ('age', '?x', '3'), ('chol', '?x', '3')] => ('target', '?x', '0')
+[('cp', '?x', '1'), ('age', '?x', '3'), ('chol', '?x', '1')] => ('target', '?x', '1')
+[('cp', '?x', '1'), ('age', '?x', '3'), ('chol', '?x', '5')] => ('target', '?x', '0')
+[('cp', '?x', '1'), ('age', '?x', '3'), ('chol', '?x', '2')] => ('target', '?x', '0')
+[('cp', '?x', '1'), ('age', '?x', '5')] => ('target', '?x', '0')
+[('cp', '?x', '1'), ('age', '?x', '2'), ('slope', '?x', '1')] => ('target', '?x', '1')
+[('cp', '?x', '1'), ('age', '?x', '2'), ('slope', '?x', '0')] => ('target', '?x', '0')
+[('cp', '?x', '1'), ('age', '?x', '2'), ('slope', '?x', '2')] => ('target', '?x', '1')
+[('cp', '?x', '0'), ('ca', '?x', '1')] => ('target', '?x', '0')
 [('cp', '?x', '0'), ('ca', '?x', '0'), ('thal', '?x', '1'), ('age', '?x', '1')] => ('target', '?x', '0')
 [('cp', '?x', '0'), ('ca', '?x', '0'), ('thal', '?x', '1'), ('age', '?x', '4')] => ('target', '?x', '0')
+[('cp', '?x', '0'), ('ca', '?x', '0'), ('thal', '?x', '1'), ('age', '?x', '3')] => ('target', '?x', '1')
+[('cp', '?x', '0'), ('ca', '?x', '0'), ('thal', '?x', '1'), ('age', '?x', '5')] => ('target', '?x', '0')
+[('cp', '?x', '0'), ('ca', '?x', '0'), ('thal', '?x', '1'), ('age', '?x', '2')] => ('target', '?x', '0')
 [('cp', '?x', '0'), ('ca', '?x', '0'), ('thal', '?x', '3')] => ('target', '?x', '0')
-[('cp', '?x', '0'), ('ca', '?x', '0'), ('thal', '?x', '2'), ('trestbps', '?x', '5')] => ('target', '?x', '0')
-[('cp', '?x', '0'), ('ca', '?x', '0'), ('thal', '?x', '2'), ('trestbps', '?x', '3')] => ('target', '?x', '0')
-[('cp', '?x', '0'), ('ca', '?x', '0'), ('thal', '?x', '2'), ('trestbps', '?x', '2'), ('exang', '?x', '1')] => ('target', '?x', '0')
-[('cp', '?x', '0'), ('ca', '?x', '0'), ('thal', '?x', '2'), ('trestbps', '?x', '2'), ('exang', '?x', '0'), ('chol', '?x', '1')] => ('target', '?x', '1')
-[('cp', '?x', '0'), ('ca', '?x', '0'), ('thal', '?x', '2'), ('trestbps', '?x', '2'), ('exang', '?x', '0'), ('chol', '?x', '5')] => ('target', '?x', '0')
-[('cp', '?x', '0'), ('ca', '?x', '0'), ('thal', '?x', '2'), ('trestbps', '?x', '2'), ('exang', '?x', '0'), ('chol', '?x', '3')] => ('target', '?x', '1')
-[('cp', '?x', '0'), ('ca', '?x', '0'), ('thal', '?x', '2'), ('trestbps', '?x', '2'), ('exang', '?x', '0'), ('chol', '?x', '2'), ('sex', '?x', '1')] => ('target', '?x', '1')
-[('cp', '?x', '0'), ('ca', '?x', '0'), ('thal', '?x', '2'), ('trestbps', '?x', '2'), ('exang', '?x', '0'), ('chol', '?x', '2'), ('sex', '?x', '0')] => ('target', '?x', '0')
 [('cp', '?x', '0'), ('ca', '?x', '0'), ('thal', '?x', '2'), ('trestbps', '?x', '1'), ('thalach', '?x', '1')] => ('target', '?x', '0')
-[('cp', '?x', '0'), ('ca', '?x', '0'), ('thal', '?x', '2'), ('trestbps', '?x', '1'), ('thalach', '?x', '3')] => ('target', '?x', '1')
 [('cp', '?x', '0'), ('ca', '?x', '0'), ('thal', '?x', '2'), ('trestbps', '?x', '1'), ('thalach', '?x', '4')] => ('target', '?x', '1')
+[('cp', '?x', '0'), ('ca', '?x', '0'), ('thal', '?x', '2'), ('trestbps', '?x', '1'), ('thalach', '?x', '3')] => ('target', '?x', '1')
 [('cp', '?x', '0'), ('ca', '?x', '0'), ('thal', '?x', '2'), ('trestbps', '?x', '1'), ('thalach', '?x', '2')] => ('target', '?x', '1')
 [('cp', '?x', '0'), ('ca', '?x', '0'), ('thal', '?x', '2'), ('trestbps', '?x', '4')] => ('target', '?x', '0')
-[('cp', '?x', '0'), ('ca', '?x', '2')] => ('target', '?x', '0')
-[('cp', '?x', '0'), ('ca', '?x', '1')] => ('target', '?x', '0')
+[('cp', '?x', '0'), ('ca', '?x', '0'), ('thal', '?x', '2'), ('trestbps', '?x', '3')] => ('target', '?x', '0')
+[('cp', '?x', '0'), ('ca', '?x', '0'), ('thal', '?x', '2'), ('trestbps', '?x', '5')] => ('target', '?x', '0')
+[('cp', '?x', '0'), ('ca', '?x', '0'), ('thal', '?x', '2'), ('trestbps', '?x', '2'), ('exang', '?x', '1')] => ('target', '?x', '0')
+[('cp', '?x', '0'), ('ca', '?x', '0'), ('thal', '?x', '2'), ('trestbps', '?x', '2'), ('exang', '?x', '0'), ('chol', '?x', '3')] => ('target', '?x', '1')
+[('cp', '?x', '0'), ('ca', '?x', '0'), ('thal', '?x', '2'), ('trestbps', '?x', '2'), ('exang', '?x', '0'), ('chol', '?x', '1')] => ('target', '?x', '1')
+[('cp', '?x', '0'), ('ca', '?x', '0'), ('thal', '?x', '2'), ('trestbps', '?x', '2'), ('exang', '?x', '0'), ('chol', '?x', '5')] => ('target', '?x', '0')
+[('cp', '?x', '0'), ('ca', '?x', '0'), ('thal', '?x', '2'), ('trestbps', '?x', '2'), ('exang', '?x', '0'), ('chol', '?x', '2'), ('sex', '?x', '1')] => ('target', '?x', '1')
+[('cp', '?x', '0'), ('ca', '?x', '0'), ('thal', '?x', '2'), ('trestbps', '?x', '2'), ('exang', '?x', '0'), ('chol', '?x', '2'), ('sex', '?x', '0')] => ('target', '?x', '0')
 [('cp', '?x', '0'), ('ca', '?x', '4')] => ('target', '?x', '0')
-[('cp', '?x', '2'), ('sex', '?x', '1'), ('trestbps', '?x', '5')] => ('target', '?x', '0')
-[('cp', '?x', '2'), ('sex', '?x', '1'), ('trestbps', '?x', '3')] => ('target', '?x', '0')
-[('cp', '?x', '2'), ('sex', '?x', '1'), ('trestbps', '?x', '2'), ('ca', '?x', '3'), ('age', '?x', '5')] => ('target', '?x', '0')
-[('cp', '?x', '2'), ('sex', '?x', '1'), ('trestbps', '?x', '2'), ('ca', '?x', '3'), ('age', '?x', '3')] => ('target', '?x', '1')
-[('cp', '?x', '2'), ('sex', '?x', '1'), ('trestbps', '?x', '2'), ('ca', '?x', '3'), ('age', '?x', '2')] => ('target', '?x', '0')
-[('cp', '?x', '2'), ('sex', '?x', '1'), ('trestbps', '?x', '2'), ('ca', '?x', '3'), ('age', '?x', '1')] => ('target', '?x', '0')
-[('cp', '?x', '2'), ('sex', '?x', '1'), ('trestbps', '?x', '2'), ('ca', '?x', '3'), ('age', '?x', '4')] => ('target', '?x', '0')
-[('cp', '?x', '2'), ('sex', '?x', '1'), ('trestbps', '?x', '2'), ('ca', '?x', '0')] => ('target', '?x', '0')
-[('cp', '?x', '2'), ('sex', '?x', '1'), ('trestbps', '?x', '2'), ('ca', '?x', '2')] => ('target', '?x', '0')
-[('cp', '?x', '2'), ('sex', '?x', '1'), ('trestbps', '?x', '2'), ('ca', '?x', '1')] => ('target', '?x', '0')
-[('cp', '?x', '2'), ('sex', '?x', '1'), ('trestbps', '?x', '2'), ('ca', '?x', '4')] => ('target', '?x', '0')
+[('cp', '?x', '0'), ('ca', '?x', '3')] => ('target', '?x', '0')
+[('cp', '?x', '0'), ('ca', '?x', '2')] => ('target', '?x', '0')
 [('cp', '?x', '2'), ('sex', '?x', '1'), ('trestbps', '?x', '1'), ('slope', '?x', '1')] => ('target', '?x', '1')
 [('cp', '?x', '2'), ('sex', '?x', '1'), ('trestbps', '?x', '1'), ('slope', '?x', '0')] => ('target', '?x', '1')
+[('cp', '?x', '2'), ('sex', '?x', '1'), ('trestbps', '?x', '1'), ('slope', '?x', '2'), ('chol', '?x', '3')] => ('target', '?x', '0')
 [('cp', '?x', '2'), ('sex', '?x', '1'), ('trestbps', '?x', '1'), ('slope', '?x', '2'), ('chol', '?x', '1'), ('restecg', '?x', '1')] => ('target', '?x', '1')
 [('cp', '?x', '2'), ('sex', '?x', '1'), ('trestbps', '?x', '1'), ('slope', '?x', '2'), ('chol', '?x', '1'), ('restecg', '?x', '0')] => ('target', '?x', '0')
 [('cp', '?x', '2'), ('sex', '?x', '1'), ('trestbps', '?x', '1'), ('slope', '?x', '2'), ('chol', '?x', '1'), ('restecg', '?x', '2')] => ('target', '?x', '0')
 [('cp', '?x', '2'), ('sex', '?x', '1'), ('trestbps', '?x', '1'), ('slope', '?x', '2'), ('chol', '?x', '5')] => ('target', '?x', '0')
-[('cp', '?x', '2'), ('sex', '?x', '1'), ('trestbps', '?x', '1'), ('slope', '?x', '2'), ('chol', '?x', '3')] => ('target', '?x', '0')
 [('cp', '?x', '2'), ('sex', '?x', '1'), ('trestbps', '?x', '1'), ('slope', '?x', '2'), ('chol', '?x', '2')] => ('target', '?x', '0')
 [('cp', '?x', '2'), ('sex', '?x', '1'), ('trestbps', '?x', '4')] => ('target', '?x', '0')
+[('cp', '?x', '2'), ('sex', '?x', '1'), ('trestbps', '?x', '3')] => ('target', '?x', '0')
+[('cp', '?x', '2'), ('sex', '?x', '1'), ('trestbps', '?x', '5')] => ('target', '?x', '0')
+[('cp', '?x', '2'), ('sex', '?x', '1'), ('trestbps', '?x', '2'), ('ca', '?x', '1')] => ('target', '?x', '0')
+[('cp', '?x', '2'), ('sex', '?x', '1'), ('trestbps', '?x', '2'), ('ca', '?x', '0')] => ('target', '?x', '0')
+[('cp', '?x', '2'), ('sex', '?x', '1'), ('trestbps', '?x', '2'), ('ca', '?x', '4')] => ('target', '?x', '0')
+[('cp', '?x', '2'), ('sex', '?x', '1'), ('trestbps', '?x', '2'), ('ca', '?x', '3'), ('age', '?x', '1')] => ('target', '?x', '0')
+[('cp', '?x', '2'), ('sex', '?x', '1'), ('trestbps', '?x', '2'), ('ca', '?x', '3'), ('age', '?x', '4')] => ('target', '?x', '0')
+[('cp', '?x', '2'), ('sex', '?x', '1'), ('trestbps', '?x', '2'), ('ca', '?x', '3'), ('age', '?x', '3')] => ('target', '?x', '1')
+[('cp', '?x', '2'), ('sex', '?x', '1'), ('trestbps', '?x', '2'), ('ca', '?x', '3'), ('age', '?x', '5')] => ('target', '?x', '0')
+[('cp', '?x', '2'), ('sex', '?x', '1'), ('trestbps', '?x', '2'), ('ca', '?x', '3'), ('age', '?x', '2')] => ('target', '?x', '0')
+[('cp', '?x', '2'), ('sex', '?x', '1'), ('trestbps', '?x', '2'), ('ca', '?x', '2')] => ('target', '?x', '0')
 [('cp', '?x', '2'), ('sex', '?x', '0')] => ('target', '?x', '1')
 Liste des faits initiaux :
 Patient 1:[('age', 'patient no 1', '3'), ('sex', 'patient no 1', '1'), ('cp', 'patient no 1', '0'), ('trestbps', 'patient no 1', '2'), ('chol', 'patient no 1', '2'), ('fbs', 'patient no 1', '0'), ('restecg', 'patient no 1', '0'), ('thalach', 'patient no 1', '4'), ('exang', 'patient no 1', '0'), ('oldpeak', 'patient no 1', '1'), ('slope', 'patient no 1', '1'), ('ca', 'patient no 1', '2'), ('thal', 'patient no 1', '3')]
@@ -215,321 +215,321 @@ Patient 142:[('age', 'patient no 142', '4'), ('sex', 'patient no 142', '1'), ('c
 Patient 143:[('age', 'patient no 143', '2'), ('sex', 'patient no 143', '1'), ('cp', 'patient no 143', '0'), ('trestbps', 'patient no 143', '1'), ('chol', 'patient no 143', '2'), ('fbs', 'patient no 143', '0'), ('restecg', 'patient no 143', '1'), ('thalach', 'patient no 143', '4'), ('exang', 'patient no 143', '0'), ('oldpeak', 'patient no 143', '1'), ('slope', 'patient no 143', '1'), ('ca', 'patient no 143', '0'), ('thal', 'patient no 143', '2')]
 Liste des diagnostics:
 Pour le.la patiente no 1, voici mon diagnostic:Je ne diagnostique aucune maladie cardiaque chez ce.tte patient.e
-Ce diagnostic est basé sur les faits suivants:
+Ce diagnostic est basÃ© sur les faits suivants:
 cp = 3, trestbps = 1, restecg = 1
 
 Pour le.la patiente no 2, voici mon diagnostic:Je diagnostique une maladie cardiaque chez ce.tte patient.e.
-Ce diagnostic est basé sur les faits suivants:
+Ce diagnostic est basÃ© sur les faits suivants:
 cp = 1, age = 3, chol = 1
 
 Pour le.la patiente no 3, voici mon diagnostic:Je ne diagnostique aucune maladie cardiaque chez ce.tte patient.e
-Ce diagnostic est basé sur les faits suivants:
+Ce diagnostic est basÃ© sur les faits suivants:
 cp = 1, age = 4
 
 Pour le.la patiente no 4, voici mon diagnostic:Je ne diagnostique aucune maladie cardiaque chez ce.tte patient.e
-Ce diagnostic est basé sur les faits suivants:
+Ce diagnostic est basÃ© sur les faits suivants:
 cp = 1, age = 4
 
 Pour le.la patiente no 5, voici mon diagnostic:Je diagnostique une maladie cardiaque chez ce.tte patient.e.
-Ce diagnostic est basé sur les faits suivants:
+Ce diagnostic est basÃ© sur les faits suivants:
 cp = 2, sex = 0
 
 Pour le.la patiente no 6, voici mon diagnostic:Je ne diagnostique aucune maladie cardiaque chez ce.tte patient.e
-Ce diagnostic est basé sur les faits suivants:
+Ce diagnostic est basÃ© sur les faits suivants:
 cp = 1, age = 1
 
 Pour le.la patiente no 7, voici mon diagnostic:Je diagnostique une maladie cardiaque chez ce.tte patient.e.
-Ce diagnostic est basé sur les faits suivants:
+Ce diagnostic est basÃ© sur les faits suivants:
 cp = 1, age = 2, slope = 2
 
 Pour le.la patiente no 8, voici mon diagnostic:Je diagnostique une maladie cardiaque chez ce.tte patient.e.
-Ce diagnostic est basé sur les faits suivants:
+Ce diagnostic est basÃ© sur les faits suivants:
 cp = 0, ca = 0, thal = 2, trestbps = 1, thalach = 3
 
 Pour le.la patiente no 9, voici mon diagnostic:Je diagnostique une maladie cardiaque chez ce.tte patient.e.
-Ce diagnostic est basé sur les faits suivants:
+Ce diagnostic est basÃ© sur les faits suivants:
 cp = 1, age = 2, slope = 2
 
 Pour le.la patiente no 10, voici mon diagnostic:Je ne diagnostique aucune maladie cardiaque chez ce.tte patient.e
-Ce diagnostic est basé sur les faits suivants:
+Ce diagnostic est basÃ© sur les faits suivants:
 cp = 1, age = 3, chol = 2
 
 Pour le.la patiente no 11, voici mon diagnostic:Je ne diagnostique aucune maladie cardiaque chez ce.tte patient.e
-Ce diagnostic est basé sur les faits suivants:
+Ce diagnostic est basÃ© sur les faits suivants:
 cp = 1, age = 3, chol = 2
 
 Pour le.la patiente no 12, voici mon diagnostic:Je diagnostique une maladie cardiaque chez ce.tte patient.e.
-Ce diagnostic est basé sur les faits suivants:
+Ce diagnostic est basÃ© sur les faits suivants:
 cp = 0, ca = 0, thal = 2, trestbps = 2, exang = 0, chol = 1
 
 Pour le.la patiente no 13, voici mon diagnostic:Je diagnostique une maladie cardiaque chez ce.tte patient.e.
-Ce diagnostic est basé sur les faits suivants:
+Ce diagnostic est basÃ© sur les faits suivants:
 cp = 2, sex = 0
 
 Pour le.la patiente no 14, voici mon diagnostic:Je diagnostique une maladie cardiaque chez ce.tte patient.e.
-Ce diagnostic est basé sur les faits suivants:
+Ce diagnostic est basÃ© sur les faits suivants:
 cp = 1, age = 3, chol = 1
 
 Pour le.la patiente no 15, voici mon diagnostic:Je ne diagnostique aucune maladie cardiaque chez ce.tte patient.e
-Ce diagnostic est basé sur les faits suivants:
+Ce diagnostic est basÃ© sur les faits suivants:
 cp = 0, ca = 0, thal = 3
 
 Pour le.la patiente no 16, voici mon diagnostic:Je diagnostique une maladie cardiaque chez ce.tte patient.e.
-Ce diagnostic est basé sur les faits suivants:
+Ce diagnostic est basÃ© sur les faits suivants:
 cp = 2, sex = 0
 
 Pour le.la patiente no 17, voici mon diagnostic:Je ne diagnostique aucune maladie cardiaque chez ce.tte patient.e
-Ce diagnostic est basé sur les faits suivants:
+Ce diagnostic est basÃ© sur les faits suivants:
 cp = 2, sex = 1, trestbps = 2, ca = 2
 
 Pour le.la patiente no 18, voici mon diagnostic:Je ne diagnostique aucune maladie cardiaque chez ce.tte patient.e
-Ce diagnostic est basé sur les faits suivants:
+Ce diagnostic est basÃ© sur les faits suivants:
 cp = 0, ca = 0, thal = 3
 
 Pour le.la patiente no 19, voici mon diagnostic:Je diagnostique une maladie cardiaque chez ce.tte patient.e.
-Ce diagnostic est basé sur les faits suivants:
+Ce diagnostic est basÃ© sur les faits suivants:
 cp = 2, sex = 1, trestbps = 1, slope = 2, chol = 1, restecg = 1
 
 Pour le.la patiente no 20, voici mon diagnostic:Je ne diagnostique aucune maladie cardiaque chez ce.tte patient.e
-Ce diagnostic est basé sur les faits suivants:
+Ce diagnostic est basÃ© sur les faits suivants:
 cp = 2, sex = 1, trestbps = 2, ca = 0
 
 Pour le.la patiente no 21, voici mon diagnostic:Je ne diagnostique aucune maladie cardiaque chez ce.tte patient.e
-Ce diagnostic est basé sur les faits suivants:
+Ce diagnostic est basÃ© sur les faits suivants:
 cp = 1, age = 3, chol = 2
 
 Pour le.la patiente no 22, voici mon diagnostic:Je ne diagnostique aucune maladie cardiaque chez ce.tte patient.e
-Ce diagnostic est basé sur les faits suivants:
+Ce diagnostic est basÃ© sur les faits suivants:
 cp = 2, sex = 1, trestbps = 3
 
 Pour le.la patiente no 23, voici mon diagnostic:Je diagnostique une maladie cardiaque chez ce.tte patient.e.
-Ce diagnostic est basé sur les faits suivants:
+Ce diagnostic est basÃ© sur les faits suivants:
 cp = 2, sex = 0
 
 Pour le.la patiente no 24, voici mon diagnostic:Je diagnostique une maladie cardiaque chez ce.tte patient.e.
-Ce diagnostic est basé sur les faits suivants:
+Ce diagnostic est basÃ© sur les faits suivants:
 cp = 2, sex = 1, trestbps = 1, slope = 1
 
 Pour le.la patiente no 25, voici mon diagnostic:Je ne diagnostique aucune maladie cardiaque chez ce.tte patient.e
-Ce diagnostic est basé sur les faits suivants:
+Ce diagnostic est basÃ© sur les faits suivants:
 cp = 2, sex = 1, trestbps = 2, ca = 1
 
 Pour le.la patiente no 26, voici mon diagnostic:Je ne diagnostique aucune maladie cardiaque chez ce.tte patient.e
-Ce diagnostic est basé sur les faits suivants:
+Ce diagnostic est basÃ© sur les faits suivants:
 cp = 2, sex = 1, trestbps = 2, ca = 0
 
 Pour le.la patiente no 27, voici mon diagnostic:Je diagnostique une maladie cardiaque chez ce.tte patient.e.
-Ce diagnostic est basé sur les faits suivants:
+Ce diagnostic est basÃ© sur les faits suivants:
 cp = 2, sex = 0
 
 Pour le.la patiente no 28, voici mon diagnostic:Je diagnostique une maladie cardiaque chez ce.tte patient.e.
-Ce diagnostic est basé sur les faits suivants:
+Ce diagnostic est basÃ© sur les faits suivants:
 cp = 2, sex = 0
 
 Pour le.la patiente no 29, voici mon diagnostic:Je diagnostique une maladie cardiaque chez ce.tte patient.e.
-Ce diagnostic est basé sur les faits suivants:
+Ce diagnostic est basÃ© sur les faits suivants:
 cp = 0, ca = 0, thal = 2, trestbps = 1, thalach = 3
 
 Pour le.la patiente no 30, voici mon diagnostic:Je diagnostique une maladie cardiaque chez ce.tte patient.e.
-Ce diagnostic est basé sur les faits suivants:
+Ce diagnostic est basÃ© sur les faits suivants:
 cp = 3, trestbps = 3, age = 4
 
 Pour le.la patiente no 31, voici mon diagnostic:Je diagnostique une maladie cardiaque chez ce.tte patient.e.
-Ce diagnostic est basé sur les faits suivants:
+Ce diagnostic est basÃ© sur les faits suivants:
 cp = 1, age = 2, slope = 2
 
 Pour le.la patiente no 32, voici mon diagnostic:Je diagnostique une maladie cardiaque chez ce.tte patient.e.
-Ce diagnostic est basé sur les faits suivants:
+Ce diagnostic est basÃ© sur les faits suivants:
 cp = 2, sex = 0
 
 Pour le.la patiente no 33, voici mon diagnostic:Je ne diagnostique aucune maladie cardiaque chez ce.tte patient.e
-Ce diagnostic est basé sur les faits suivants:
+Ce diagnostic est basÃ© sur les faits suivants:
 cp = 2, sex = 1, trestbps = 3
 
 Pour le.la patiente no 34, voici mon diagnostic:Je ne diagnostique aucune maladie cardiaque chez ce.tte patient.e
-Ce diagnostic est basé sur les faits suivants:
+Ce diagnostic est basÃ© sur les faits suivants:
 cp = 0, ca = 0, thal = 2, trestbps = 2, exang = 1
 
 Pour le.la patiente no 35, voici mon diagnostic:Je ne diagnostique aucune maladie cardiaque chez ce.tte patient.e
-Ce diagnostic est basé sur les faits suivants:
+Ce diagnostic est basÃ© sur les faits suivants:
 cp = 2, sex = 1, trestbps = 2, ca = 0
 
 Pour le.la patiente no 36, voici mon diagnostic:Je diagnostique une maladie cardiaque chez ce.tte patient.e.
-Ce diagnostic est basé sur les faits suivants:
+Ce diagnostic est basÃ© sur les faits suivants:
 cp = 2, sex = 0
 
 Pour le.la patiente no 37, voici mon diagnostic:Je ne diagnostique aucune maladie cardiaque chez ce.tte patient.e
-Ce diagnostic est basé sur les faits suivants:
+Ce diagnostic est basÃ© sur les faits suivants:
 cp = 0, ca = 0, thal = 3
 
 Pour le.la patiente no 38, voici mon diagnostic:Je ne diagnostique aucune maladie cardiaque chez ce.tte patient.e
-Ce diagnostic est basé sur les faits suivants:
+Ce diagnostic est basÃ© sur les faits suivants:
 cp = 0, ca = 1
 
 Pour le.la patiente no 39, voici mon diagnostic:Je ne diagnostique aucune maladie cardiaque chez ce.tte patient.e
-Ce diagnostic est basé sur les faits suivants:
+Ce diagnostic est basÃ© sur les faits suivants:
 cp = 0, ca = 2
 
 Pour le.la patiente no 40, voici mon diagnostic:Je ne diagnostique aucune maladie cardiaque chez ce.tte patient.e
-Ce diagnostic est basé sur les faits suivants:
+Ce diagnostic est basÃ© sur les faits suivants:
 cp = 1, age = 3, chol = 2
 
 Pour le.la patiente no 41, voici mon diagnostic:Je ne diagnostique aucune maladie cardiaque chez ce.tte patient.e
-Ce diagnostic est basé sur les faits suivants:
+Ce diagnostic est basÃ© sur les faits suivants:
 cp = 0, ca = 3
 
 Pour le.la patiente no 42, voici mon diagnostic:Je ne diagnostique aucune maladie cardiaque chez ce.tte patient.e
-Ce diagnostic est basé sur les faits suivants:
+Ce diagnostic est basÃ© sur les faits suivants:
 cp = 2, sex = 1, trestbps = 2, ca = 0
 
 Pour le.la patiente no 43, voici mon diagnostic:Je diagnostique une maladie cardiaque chez ce.tte patient.e.
-Ce diagnostic est basé sur les faits suivants:
+Ce diagnostic est basÃ© sur les faits suivants:
 cp = 1, age = 2, slope = 1
 
 Pour le.la patiente no 44, voici mon diagnostic:Je ne diagnostique aucune maladie cardiaque chez ce.tte patient.e
-Ce diagnostic est basé sur les faits suivants:
+Ce diagnostic est basÃ© sur les faits suivants:
 cp = 0, ca = 0, thal = 3
 
 Pour le.la patiente no 45, voici mon diagnostic:Je diagnostique une maladie cardiaque chez ce.tte patient.e.
-Ce diagnostic est basé sur les faits suivants:
+Ce diagnostic est basÃ© sur les faits suivants:
 cp = 0, ca = 0, thal = 2, trestbps = 2, exang = 0, chol = 1
 
 Pour le.la patiente no 46, voici mon diagnostic:Je ne diagnostique aucune maladie cardiaque chez ce.tte patient.e
-Ce diagnostic est basé sur les faits suivants:
+Ce diagnostic est basÃ© sur les faits suivants:
 cp = 3, trestbps = 2, age = 3
 
 Pour le.la patiente no 47, voici mon diagnostic:Je diagnostique une maladie cardiaque chez ce.tte patient.e.
-Ce diagnostic est basé sur les faits suivants:
+Ce diagnostic est basÃ© sur les faits suivants:
 cp = 1, age = 2, slope = 1
 
 Pour le.la patiente no 48, voici mon diagnostic:Je ne diagnostique aucune maladie cardiaque chez ce.tte patient.e
-Ce diagnostic est basé sur les faits suivants:
+Ce diagnostic est basÃ© sur les faits suivants:
 cp = 0, ca = 1
 
 Pour le.la patiente no 49, voici mon diagnostic:Je ne diagnostique aucune maladie cardiaque chez ce.tte patient.e
-Ce diagnostic est basé sur les faits suivants:
+Ce diagnostic est basÃ© sur les faits suivants:
 cp = 0, ca = 0, thal = 3
 
 Pour le.la patiente no 50, voici mon diagnostic:Je diagnostique une maladie cardiaque chez ce.tte patient.e.
-Ce diagnostic est basé sur les faits suivants:
+Ce diagnostic est basÃ© sur les faits suivants:
 cp = 2, sex = 0
 
 Pour le.la patiente no 51, voici mon diagnostic:Je diagnostique une maladie cardiaque chez ce.tte patient.e.
-Ce diagnostic est basé sur les faits suivants:
+Ce diagnostic est basÃ© sur les faits suivants:
 cp = 0, ca = 0, thal = 2, trestbps = 2, exang = 0, chol = 1
 
 Pour le.la patiente no 52, voici mon diagnostic:Je diagnostique une maladie cardiaque chez ce.tte patient.e.
-Ce diagnostic est basé sur les faits suivants:
+Ce diagnostic est basÃ© sur les faits suivants:
 cp = 3, trestbps = 1, restecg = 0
 
 Pour le.la patiente no 53, voici mon diagnostic:Je ne diagnostique aucune maladie cardiaque chez ce.tte patient.e
-Ce diagnostic est basé sur les faits suivants:
+Ce diagnostic est basÃ© sur les faits suivants:
 cp = 0, ca = 0, thal = 2, trestbps = 3
 
 Pour le.la patiente no 54, voici mon diagnostic:Je diagnostique une maladie cardiaque chez ce.tte patient.e.
-Ce diagnostic est basé sur les faits suivants:
+Ce diagnostic est basÃ© sur les faits suivants:
 cp = 2, sex = 0
 
 Pour le.la patiente no 55, voici mon diagnostic:Je ne diagnostique aucune maladie cardiaque chez ce.tte patient.e
-Ce diagnostic est basé sur les faits suivants:
+Ce diagnostic est basÃ© sur les faits suivants:
 cp = 0, ca = 2
 
 Pour le.la patiente no 56, voici mon diagnostic:Je ne diagnostique aucune maladie cardiaque chez ce.tte patient.e
-Ce diagnostic est basé sur les faits suivants:
+Ce diagnostic est basÃ© sur les faits suivants:
 cp = 0, ca = 0, thal = 3
 
 Pour le.la patiente no 57, voici mon diagnostic:Je diagnostique une maladie cardiaque chez ce.tte patient.e.
-Ce diagnostic est basé sur les faits suivants:
+Ce diagnostic est basÃ© sur les faits suivants:
 cp = 2, sex = 0
 
 Pour le.la patiente no 58, voici mon diagnostic:Je ne diagnostique aucune maladie cardiaque chez ce.tte patient.e
-Ce diagnostic est basé sur les faits suivants:
+Ce diagnostic est basÃ© sur les faits suivants:
 cp = 2, sex = 1, trestbps = 2, ca = 0
 
 Pour le.la patiente no 59, voici mon diagnostic:Je ne diagnostique aucune maladie cardiaque chez ce.tte patient.e
-Ce diagnostic est basé sur les faits suivants:
+Ce diagnostic est basÃ© sur les faits suivants:
 cp = 2, sex = 1, trestbps = 1, slope = 2, chol = 2
 
 Pour le.la patiente no 60, voici mon diagnostic:Je ne diagnostique aucune maladie cardiaque chez ce.tte patient.e
-Ce diagnostic est basé sur les faits suivants:
+Ce diagnostic est basÃ© sur les faits suivants:
 cp = 3, trestbps = 3, age = 3, sex = 1
 
 Pour le.la patiente no 61, voici mon diagnostic:Le diagnostic n'a pas abouti...
 Pour le.la patiente no 62, voici mon diagnostic:Je ne diagnostique aucune maladie cardiaque chez ce.tte patient.e
-Ce diagnostic est basé sur les faits suivants:
+Ce diagnostic est basÃ© sur les faits suivants:
 cp = 2, sex = 1, trestbps = 2, ca = 0
 
 Pour le.la patiente no 63, voici mon diagnostic:Je ne diagnostique aucune maladie cardiaque chez ce.tte patient.e
-Ce diagnostic est basé sur les faits suivants:
+Ce diagnostic est basÃ© sur les faits suivants:
 cp = 0, ca = 1
 
 Pour le.la patiente no 64, voici mon diagnostic:Je diagnostique une maladie cardiaque chez ce.tte patient.e.
-Ce diagnostic est basé sur les faits suivants:
+Ce diagnostic est basÃ© sur les faits suivants:
 cp = 2, sex = 0
 
 Pour le.la patiente no 65, voici mon diagnostic:Je ne diagnostique aucune maladie cardiaque chez ce.tte patient.e
-Ce diagnostic est basé sur les faits suivants:
+Ce diagnostic est basÃ© sur les faits suivants:
 cp = 2, sex = 1, trestbps = 2, ca = 0
 
 Pour le.la patiente no 66, voici mon diagnostic:Je ne diagnostique aucune maladie cardiaque chez ce.tte patient.e
-Ce diagnostic est basé sur les faits suivants:
+Ce diagnostic est basÃ© sur les faits suivants:
 cp = 0, ca = 0, thal = 3
 
 Pour le.la patiente no 67, voici mon diagnostic:Je ne diagnostique aucune maladie cardiaque chez ce.tte patient.e
-Ce diagnostic est basé sur les faits suivants:
+Ce diagnostic est basÃ© sur les faits suivants:
 cp = 0, ca = 2
 
 Pour le.la patiente no 68, voici mon diagnostic:Je diagnostique une maladie cardiaque chez ce.tte patient.e.
-Ce diagnostic est basé sur les faits suivants:
+Ce diagnostic est basÃ© sur les faits suivants:
 cp = 1, age = 2, slope = 1
 
 Pour le.la patiente no 69, voici mon diagnostic:Je diagnostique une maladie cardiaque chez ce.tte patient.e.
-Ce diagnostic est basé sur les faits suivants:
+Ce diagnostic est basÃ© sur les faits suivants:
 cp = 2, sex = 1, trestbps = 1, slope = 1
 
 Pour le.la patiente no 70, voici mon diagnostic:Je diagnostique une maladie cardiaque chez ce.tte patient.e.
-Ce diagnostic est basé sur les faits suivants:
+Ce diagnostic est basÃ© sur les faits suivants:
 cp = 0, ca = 0, thal = 2, trestbps = 2, exang = 0, chol = 1
 
 Pour le.la patiente no 71, voici mon diagnostic:Je ne diagnostique aucune maladie cardiaque chez ce.tte patient.e
-Ce diagnostic est basé sur les faits suivants:
+Ce diagnostic est basÃ© sur les faits suivants:
 cp = 1, age = 3, chol = 2
 
 Pour le.la patiente no 72, voici mon diagnostic:Je ne diagnostique aucune maladie cardiaque chez ce.tte patient.e
-Ce diagnostic est basé sur les faits suivants:
+Ce diagnostic est basÃ© sur les faits suivants:
 cp = 2, sex = 1, trestbps = 1, slope = 2, chol = 2
 
 Pour le.la patiente no 73, voici mon diagnostic:Je diagnostique une maladie cardiaque chez ce.tte patient.e.
-Ce diagnostic est basé sur les faits suivants:
+Ce diagnostic est basÃ© sur les faits suivants:
 cp = 2, sex = 0
 
 Pour le.la patiente no 74, voici mon diagnostic:Je ne diagnostique aucune maladie cardiaque chez ce.tte patient.e
-Ce diagnostic est basé sur les faits suivants:
+Ce diagnostic est basÃ© sur les faits suivants:
 cp = 0, ca = 1
 
 Pour le.la patiente no 75, voici mon diagnostic:Je ne diagnostique aucune maladie cardiaque chez ce.tte patient.e
-Ce diagnostic est basé sur les faits suivants:
+Ce diagnostic est basÃ© sur les faits suivants:
 cp = 2, sex = 1, trestbps = 2, ca = 4
 
 Pour le.la patiente no 76, voici mon diagnostic:Je diagnostique une maladie cardiaque chez ce.tte patient.e.
-Ce diagnostic est basé sur les faits suivants:
+Ce diagnostic est basÃ© sur les faits suivants:
 cp = 0, ca = 0, thal = 2, trestbps = 1, thalach = 2
 
 Pour le.la patiente no 77, voici mon diagnostic:Je diagnostique une maladie cardiaque chez ce.tte patient.e.
-Ce diagnostic est basé sur les faits suivants:
+Ce diagnostic est basÃ© sur les faits suivants:
 cp = 2, sex = 0
 
 Pour le.la patiente no 78, voici mon diagnostic:Je ne diagnostique aucune maladie cardiaque chez ce.tte patient.e
-Ce diagnostic est basé sur les faits suivants:
+Ce diagnostic est basÃ© sur les faits suivants:
 cp = 0, ca = 2
 
 Pour le.la patiente no 79, voici mon diagnostic:Je ne diagnostique aucune maladie cardiaque chez ce.tte patient.e
-Ce diagnostic est basé sur les faits suivants:
+Ce diagnostic est basÃ© sur les faits suivants:
 cp = 2, sex = 1, trestbps = 2, ca = 0
 
 Pour le.la patiente no 80, voici mon diagnostic:Je diagnostique une maladie cardiaque chez ce.tte patient.e.
-Ce diagnostic est basé sur les faits suivants:
+Ce diagnostic est basÃ© sur les faits suivants:
 cp = 1, age = 3, chol = 1
 
 
-Les guess sont différents pour le moteur d'inférence et pour l'arbre de décision pour les cas: 61
+Les guess sont diffÃ©rents pour le moteur d'infÃ©rence et pour l'arbre de dÃ©cision pour les cas: 61

@@ -3,7 +3,7 @@ L'arbre a un 74 noeuds dont 36 feuilles
 L'arbre a une profondeur de 14
 La moyenne du nombre d'enfants par noeud est 1.9210526315789473
 La moyenne de la longueur d'une branche est 7.277777777777778
-La répartition des attributs sur les noeuds est la suivante:
+La rÃ©partition des attributs sur les noeuds est la suivante:
 {'age': 4, 'sex': 3, 'cp': 6, 'trestbps': 3, 'chol': 1, 'fbs': 1, 'restecg': 5, 'thalach': 1, 'exang': 4, 'oldpeak': 2, 'slope': 3, 'ca': 3, 'thal': 2}
 The accuracy of the the tree generated in Task 5 on the train data is : 99.3006993006993%
 The accuracy of the the tree generated in Task 5 on the test data is : 58.75%

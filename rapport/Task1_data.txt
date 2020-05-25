@@ -3,5 +3,5 @@ L'arbre a un 94 noeuds dont 70 feuilles
 L'arbre a une profondeur de 8
 La moyenne du nombre d'enfants par noeud est 3.875
 La moyenne de la longueur d'une branche est 3.8285714285714287
-La répartition des attributs sur les noeuds est la suivante:
+La rÃ©partition des attributs sur les noeuds est la suivante:
 {'age': 5, 'sex': 3, 'cp': 1, 'trestbps': 3, 'chol': 3, 'fbs': 0, 'restecg': 2, 'thalach': 1, 'exang': 1, 'oldpeak': 0, 'slope': 2, 'ca': 2, 'thal': 1}
