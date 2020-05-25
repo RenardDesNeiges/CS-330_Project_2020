@@ -21,7 +21,7 @@ from moteur_diagnostic.docteur import Docteur
 
 import matplotlib.pyplot as plt
 
-def iTurnedMyselfIntoAPickleMorty(obj, filename):
+def pickler(obj, filename):
     with open(filename, 'wb') as output:  # Overwrites any existing file.
         pickle.dump(obj, output, pickle.HIGHEST_PROTOCOL)
 
@@ -80,9 +80,9 @@ class ResultValues():
         
         print("Done with Task 2")
         
-        """
+        
         print("---------------------------------------------------------------------------------------------------------")
-
+        """
         print("Task 2 bis")
         
         #Adaboost tree test
@@ -95,7 +95,7 @@ class ResultValues():
             rF_adaboost_tree.construct_classifier_adaboost(train_bin)
             accuracy_total += test_adaboost_tree.test_forest(rF_adaboost_tree,'AdaBoost',test_public_bin)
         
-        iTurnedMyselfIntoAPickleMorty(accuracy_total/100,"AdaBoost_test_accuracy.pkl")
+        pickler(accuracy_total/100,"AdaBoost_test_accuracy.pkl")
 
         #Majority tree test
         test_majority_tree = BinTestEnv()
@@ -106,7 +106,7 @@ class ResultValues():
             rF_majority_tree.select_valid_trees(train_bin)
             accuracy_total += test_majority_tree.test_forest(rF_majority_tree,'MajorityVote',test_public_bin)
         
-        iTurnedMyselfIntoAPickleMorty(accuracy_total/100,"Majority_test_accuracy.pkl")
+        pickler(accuracy_total/100,"Majority_test_accuracy.pkl")
         
         #Best tree test
         test_best_tree = BinTestEnv()
@@ -118,7 +118,7 @@ class ResultValues():
             rF_best_tree.construct_best_tree()
             accuracy_total += test_best_tree.test_forest(rF_best_tree,'BestTree',test_public_bin)
         
-        iTurnedMyselfIntoAPickleMorty(accuracy_total/100,"BestTree_test_accuracy.pkl")
+        pickler(accuracy_total/100,"BestTree_test_accuracy.pkl")
         
         #Valid trees ratio test
         rForest = RandomForest()
@@ -133,10 +133,11 @@ class ResultValues():
             
             invalid_trees_ratios.update({x:sum(test_invalid_ratio)/100})
         
-        iTurnedMyselfIntoAPickleMorty(invalid_trees_ratios,"x=subsamplings_y=invalid_trees_ratios.pkl")
+        pickler(invalid_trees_ratios,"x=subsamplings_y=invalid_trees_ratios.pkl")
 
         print("Done with Task 2 bis")
         print("---------------------------------------------------------------------------------------------------------")
+        """
         print("Task 3")
         
         task3_report = open("rapport/Task3_data.txt",'w')
@@ -174,7 +175,7 @@ class ResultValues():
                 case = case[:len(case)-1]
             task3_report.write("Les guess sont différents pour le moteur d'inférence et pour l'arbre de décision pour les cas: " + case)
         task3_report.close()
-        
+        print('Done with Task 3')
         print("---------------------------------------------------------------------------------------------------------")
         print("Task 4")
         task4_report = open("rapport/Task4_data.txt",'w')
@@ -200,14 +201,16 @@ class ResultValues():
         task4_report.write(Chris.repr_diagnostics_et_traitements_hopital(diagnostics,traitements))
         task4_report.write('\n')
         task4_report.write('Taux de personnes pour lesquelles ont a réussi à administrer un traitement : {}'.format(Chris.ratio_succes(traitements)))
+        print('Done with Task 4')
         print("---------------------------------------------------------------------------------------------------------")
-        """
+        
         print("Task 5")
         print("Parsing continuous training data...")    
         train_continuous_csv = self.parseCSV("train_continuous.csv")
         train_continuous = [ [line["target"], {key:val for key, val in line.items() if key != "target"}] for line in train_continuous_csv] #Gem bcp les oneliners :)
         test_continuous_csv = self.parseCSV("test_public_continuous.csv")
         test_continuous = [ [line["target"], {key:val for key, val in line.items() if key != "target"}] for line in test_continuous_csv]
+        print("Done!")
 
 
         task5_report = open('rapport/Task5_data.txt','w')
@@ -248,6 +251,7 @@ class ResultValues():
         task5_report.write("The accuracy of the the tree generated in Task 5 on the train data is : {}%\n".format(accuracy_self_continuous*100)) 
         task5_report.write("The accuracy of the the tree generated in Task 5 on the test data is : {}%".format(accuracy_test_continuous*100))
         task5_report.close()
+        print('Done with Task 5')
 
     def get_results(self):
         return [self.arbre.racine, self.faits_initiaux, self.regles, self.arbre_advance]
